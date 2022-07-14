@@ -180,11 +180,9 @@ Later, the environment can be reloaded using the command
 ---------------------------------
 
 .. list-table::
-   :widths: 25 50
-   :header-rows: 1
 
-  * - Command	
-    - Function
+  * - **Command**	
+    - **Function**
   * - module avail	
     - Displays the list of available modules in the machine
   * - module list	
