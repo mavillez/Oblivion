@@ -17,6 +17,7 @@ Contents
 .. toctree::
    :maxdepth: 1
    
+   information.rst
    quick_start.rst
    modules.rst
    management.rst
