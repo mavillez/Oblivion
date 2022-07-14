@@ -4,7 +4,7 @@ Welcome to OBLIVION's documentation!
 Here you can find the documentation on how to use the OBLIVION supercomputer:
 
 - Quick start guide
-- Working environment and modules
+- Environment modules
 - Available software
 - Job compilation and submission
 - Submission scripts
@@ -19,5 +19,6 @@ Contents
    
    quick_start.rst
    modules.rst
+   management.rst
 
 
