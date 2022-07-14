@@ -17,8 +17,7 @@ Contents
 .. toctree::
    :maxdepth: 1
    
-   usage
-   api
    quick_start.rst
+   modules.rst
 
 
