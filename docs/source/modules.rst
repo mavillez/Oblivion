@@ -11,11 +11,11 @@ There are several conflicting software packages installed in the Oblivion superc
 2. Working with Modules
 -----------------------
 
-The user sets the software environment by loading the modules associated to the packages he needs to use. This is easily done by using module load or module add. Software dependences are set in the same way. Oblivion uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
+The user sets the software environment by loading the modules associated to the packages he/she needs to use. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
 Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler and a MPI API.
 
-After logging into the machine the user should execute the command module av (av for available) obtaining the list of core modules:
+After logging into the machine the user should execute the command ``module av`` (av for available) obtaining the list of core modules:
 
 .. code-block:: console
 
@@ -38,7 +38,7 @@ After logging into the machine the user should execute the command module av (av
   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-The list shows the toolchains gompi/2021a, foss/2021a, intel/2021a, iimpi/2021a, iompi/2021a. One of the toolchains has to be loaded using, say for foss/2021a
+The list shows toolchains gompi/2021a, foss/2021a, intel/2021a, iimpi/2021a, iompi/2021a. One of the toolchains has to be loaded using, say for foss/2021a
 
 .. code-block:: console
 
@@ -100,75 +100,7 @@ Now, loading foss/2021a gives access to other modules that are only now availabl
    CubeGUI/4.6                         double-conversion/3.1.5
    CubeLib/4.6                         expat/2.2.9
    CubeWriter/4.6                      expecttest/0.1.3
-   DB/18.1.40                          flatbuffers-python/2.0
-   DBus/1.13.18                        flatbuffers/2.0.0
-   Doxygen/1.9.1                       flex/2.6.4                 (D)
-   Eigen/3.3.9                         fontconfig/2.13.93
-   FFmpeg/4.3.2                        freetype/2.10.4
-   FLAC/1.3.3                          gettext/0.21               (D)
-   Flask/1.1.4                         giflib/5.2.1
-   FriBidi/1.0.10                      git/2.32.0-nodocs
-   GLPK/5.0                            gnuplot/5.4.2
-   GLib/2.68.2                         gperf/3.1
-   GMP/6.2.1                           groff/1.22.4
-   GObject-Introspection/1.68.0        gzip/1.10
-   Ghostscript/9.54.0                  help2man/1.48.3
-   HDF/4.2.15                          hwloc/2.4.1                (L)
-   HarfBuzz/2.8.1                      hypothesis/6.13.1
-   ICU/69.1                            intltool/0.51.0
-   ImageMagick/7.0.11-14               jbigkit/2.1
-   JasPer/2.0.28                       libGLU/9.0.1
-   JsonCpp/1.9.4                       libarchive/3.5.1
-   LAME/3.100                          libcerf/1.17
-   LLVM/11.1.0                         libdrm/2.4.106
-   LMDB/0.9.28                         libevent/2.1.12            (L)
-   LibTIFF/4.2.0                       libfabric/1.12.1           (L)
-   LittleCMS/2.12                      libffi/3.3
-   Lua/5.4.3                           libgd/2.3.1
-   M4/1.4.18                           libgeotiff/1.6.0
-   METIS/5.1.0                         libgit2/1.1.0
-   MPFR/4.1.0                          libglvnd/1.3.3
-   Mako/1.1.4                          libiconv/1.16
-   Mesa/21.1.1                         libjpeg-turbo/2.0.6
-   Meson/0.58.0                        libogg/1.3.4
-   NASM/2.15.05                        libpciaccess/0.16          (L)
-   NLopt/2.7.0                         libpng/1.6.37
-   NSPR/4.30                           libreadline/8.1
-   NSS/3.65                            libsndfile/1.0.31
-   Ninja/1.10.2                        libtirpc/1.3.2
-   OPARI2/2.0.6                        libtool/2.4.6
-   OTF2/2.3                            libunwind/1.4.0
-   PAPI/6.0.0.1                        libvorbis/1.3.7
-   PCRE/8.44                           libxml2/2.9.10             (L)
-   PCRE2/10.36                         libxslt/1.1.34
-   PDT/3.25.1                          libyaml/0.2.5
-   PMIx/3.2.3                   (L)    lxml/4.6.3
-   PROJ/8.0.1                          lz4/1.9.3
-   Pango/1.48.5                        makeinfo/6.7-minimal
-   Perl/5.32.1-minimal                 ncurses/6.2                (D)
-   Perl/5.32.1                  (D)    nettle/3.7.2
-   Pillow-SIMD/8.2.0                   nodejs/14.17.0
-   Pillow/8.2.0                        nsync/1.24.0
-   PyYAML/5.4.1                        numactl/2.0.14             (L)
-   Python/2.7.18-bare                  pixman/0.40.0
-   Python/3.9.5-bare                   pkg-config/0.29.2          (D)
-   Python/3.9.5                 (D)    pkgconfig/1.5.4-python
-   Qhull/2020.2                        protobuf-python/3.17.3
-   Qt5/5.15.2                          protobuf/3.17.3
-   Rust/1.52.1                         pybind11/2.6.2
-   SIONlib/1.7.6-tools                 re2c/2.1.1
-   SQLite/3.35.4                       scikit-build/0.11.1
-   Szip/2.1.1                          snappy/1.1.8
-   Tcl/8.6.11                          typing-extensions/3.10.0.0
-   Tk/8.6.11                           util-linux/2.36
-   Tkinter/3.9.5                       x264/20210414
-   UCX/1.10.0                   (L)    x265/3.5
-   UDUNITS/2.2.28                      xorg-macros/1.19.3
-   UnZip/6.0                           xxd/8.2.4220
-   X11/20210518                        zlib/1.2.11                (L,D)
-   XZ/5.2.5                     (L)    zstd/1.4.9
-   Xvfb/1.20.11
-
+         ⋮                                      ⋮
  ----------------------- /opt/software/4.5.4/hmns/modules/all/Core -----------------------
    ANSYS_CFD/192                 M4/1.4.19       (D)    iimpi/2021a
    ANSYS_CFD/2021R1      (D)     OpenSSL/1.1     (L)    intel-compilers/2021.2.0
@@ -190,21 +122,21 @@ Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-The top row displays the modules for software compiled against OpenMPI, which in turn was compiled with GCC compiler (second row of modules). The third row displays the modules of software compiled with GCC/10.3.0. Finally, the core modules already seen before are displayed
+The top row displays the modules for software compiled against OpenMPI, which in turn was compiled with GCC compiler (second row of modules). The third row displays the modules of software compiled with GCC/10.3.0. Finally, the fourth row displays the core modules already seen before.
 
-Now the user only needs to load the modules of interest. For example, if a user wants to use TensorFlow he/she executes the following command:
+Now the user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.6.0`` he/she executes the following command:
 
 .. code-block:: console
 
   module load TensorFlow/2.6.0
 
-or if he/she wants to use GROMACS/2021.5 then just execute
+or if the user wants to use ``GROMACS/2021.5`` then just execute
 
 .. code-block:: console
 
   module load GROMACS/2021.5
 
-In the latter case the loaded modules, given by "module list", are
+In the latter case the loaded modules, given by ``module list``, are
 
 .. code-block:: console
 
@@ -244,7 +176,7 @@ Later, the environment can be reloaded using the command
   module restore <module_environment>.
 
  
-4. List of commonly used commands
+4. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
