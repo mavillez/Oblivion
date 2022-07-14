@@ -1,4 +1,4 @@
 OBLIVION Supercomputer Documentation
 =======================================
 
-This project includes the OBLIVION Supercomouter documentation for users
+This project includes the OBLIVION Supercomputer information for users
