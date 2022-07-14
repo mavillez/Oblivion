@@ -1,4 +1,4 @@
-Template for the Read the Docs tutorial
+OBLIVION Supercomputer Documentation
 =======================================
 
 This GitHub template includes fictional Python library
