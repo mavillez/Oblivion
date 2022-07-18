@@ -20,6 +20,7 @@ Contents
    information.rst
    quick_start.rst
    modules.rst
+   software_compilation.rst
    management.rst
 
 
