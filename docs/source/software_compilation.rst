@@ -67,7 +67,7 @@ Now lets see the content of the bin folder:
 
   $ ls -1 /opt/software/4.5.4/software/impi/2021.2.0-intel-compilers-2021.2.0/mpi/2021.2.0/bin
   
-  \vdots  
+  ⋮  
   mpif77
   mpif90
   mpifc
@@ -76,7 +76,7 @@ Now lets see the content of the bin folder:
   mpiicc
   mpiicpc
   mpiifort
-  \vdots  
+  ⋮ 
 
 `mpif77`, `mpif90`, `mpigcc`, and `mpigxx` are the executables for MPI compiled against GCC.
 
