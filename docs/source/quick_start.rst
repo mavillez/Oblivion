@@ -69,12 +69,32 @@ To see what compute nodes ara vailable use
   $ sinfo
   
   
+.. code-block:: julia
+
+  PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+  debug        up 1-00:00:00      4  alloc cn[001-003,009]
+  debug        up 1-00:00:00     54   idle cn[004-008,010-058]
+  private*     up 2-00:00:00      4  alloc cn[001-003,009]
+  private*     up 2-00:00:00     54   idle cn[004-008,010-058]
+  medium       up 2-00:00:00     48   idle cn[011-058]
+  short        up 3-00:00:00      4  alloc cn[001-003,009]
+  short        up 3-00:00:00      6   idle cn[004-008,010]
+
+  
 To check if the job is in the queue to run just execute
 
 .. code-block:: console
 
   $ squeue | grep USER_NAME
   
+  
+.. code-block:: julia
+ 
+    JOBID PARTITION     NAME       USER ST       TIME  NODES  NODELIST(REASON)
+    16868     debug     job1  USER_NAME  R    5:54:10      1  cn013
+    16867     debug     job2  USER_NAME  R    5:54:15      1  cn012
+    16866     debug     job3  USER_NAME  R    5:54:21      8  cn[001-008]
+
 
 5. Consumed CPU time
 --------------------
