@@ -193,7 +193,22 @@ Here is an example for two setups in OBLIVION. In the header of the Makefile add
     
 Note that three setups are referred in SYSTYPE and oblivion_impi_intel was the chosen one. Now, in the Makefile there are also the OPTS, OBJS, etc....
 
+4. Compile the Software
+-----------------------
 
+After adjusting the Makefile execute the following commands:
+
+.. code-block:: julia
+   
+   make
+   
+in case your makefile is named ``Makefile`` or
+
+.. code-block:: julia
+   
+   make -f <Makefile_name>
+
+for a makefile with a different name.
 
 
 
