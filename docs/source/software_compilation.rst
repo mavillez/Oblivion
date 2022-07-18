@@ -42,7 +42,7 @@ Load Intel MPI toolchain by executing
 
   module load iimpi/2021a
   
-Check the loaded modules using `module list` and obtaining
+Check the loaded modules using ``module list``
 
 .. code-block:: julia
 
