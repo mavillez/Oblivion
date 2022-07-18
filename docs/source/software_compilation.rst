@@ -78,9 +78,9 @@ Now lets see the content of the bin folder:
   mpiifort
   ⋮ 
 
-`mpif77`, `mpif90`, `mpigcc`, and `mpigxx` are the executables for MPI compiled against GCC.
+``mpif77``, ``mpif90``, ``mpigcc``, and ``mpigxx`` are the executables for MPI compiled against GCC.
 
-`mpiicc`, mpiicpc`, and `mpiifort` are the executables for MPI compiled against Intel Compilers.
+``mpiicc``, ``mpiicpc``, and ``mpiifort`` are the executables for MPI compiled against Intel Compilers.
 
 To check this just type
 
