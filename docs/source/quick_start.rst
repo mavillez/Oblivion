@@ -64,12 +64,9 @@ In this script we are setting the number of MPI tasks (ntasks), the number of co
 
 To see what compute nodes ara vailable use
 
-.. code-block:: console
+.. code-block:: julia
 
   $ sinfo
-  
-  
-.. code-block:: julia
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
   debug        up 1-00:00:00      8  alloc cn[001-008,012-013]
@@ -86,9 +83,6 @@ To check if the job is in the queue to run just execute
 .. code-block:: console
 
   $ squeue | grep USER_NAME
-  
-  
-.. code-block:: julia
  
     JOBID PARTITION     NAME       USER ST       TIME  NODES  NODELIST(REASON)
     16868     debug     job1  USER_NAME  R    5:54:10      1  cn013
@@ -102,8 +96,17 @@ To check if the job is in the queue to run just execute
 The user can always use sacct to see the CPU time used by the job by using, for example,
 
 .. code-block:: console
-  
-  sacct –format JobIdRaw,User,Partition,Submit,Start,Elapsed,AllocCPUS,CPUTime,CPUTimeRaw,MaxRSS,State,NodeList -S 2021-02-01 -E 2021-02-02
+ 
+  $ sacct --format=JobIdRaw,User,Partition,Submit,Start,Elapsed,AllocCPUS,CPUTime,CPUTimeRaw,MaxRSS,State,NodeList -S 2021-02-01 -E 2021-02-02
+
+  JobIDRaw      User  Partition              Submit               Start    Elapsed  AllocCPUS    CPUTime CPUTimeRAW     MaxRSS      State           NodeList 
+  ------------ --------- ---------- ------------------- ------------------- ---------- ---------- ---------- ---------- ---------- ---------- --------------- 
+  2002              USER      debug 2021-02-01T15:42:30 2021-02-01T15:42:30   00:14:17        576 5-17:07:12     493632             COMPLETED     cn[029-044] 
+  2002.batch                        2021-02-01T15:42:30 2021-02-01T15:42:30   00:14:17         36   08:34:12      30852      8792K  COMPLETED           cn029 
+  2002.0                            2021-02-01T15:42:30 2021-02-01T15:42:30   00:14:17        512 5-01:53:04     438784    174720K  COMPLETED     cn[029-044] 
+  2003              USER      debug 2021-02-01T15:44:13 2021-02-01T15:56:47   00:07:43       1152 6-04:09:36     533376             COMPLETED cn[020-027,029+ 
+  2003.batch                        2021-02-01T15:56:47 2021-02-01T15:56:47   00:07:43         36   04:37:48      16668     10104K  COMPLETED           cn020 
+  2003.0                            2021-02-01T15:56:47 2021-02-01T15:56:47   00:07:43       1024 5-11:41:52     474112    134972K  COMPLETED cn[020-027,029+ 
 
 
 For more information on the command sacct options at the terminal execute
