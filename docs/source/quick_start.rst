@@ -72,13 +72,13 @@ To see what compute nodes ara vailable use
 .. code-block:: julia
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-  debug        up 1-00:00:00      4  alloc cn[001-003,009]
-  debug        up 1-00:00:00     54   idle cn[004-008,010-058]
-  private*     up 2-00:00:00      4  alloc cn[001-003,009]
-  private*     up 2-00:00:00     54   idle cn[004-008,010-058]
+  debug        up 1-00:00:00      8  alloc cn[001-008,012-013]
+  debug        up 1-00:00:00     54   idle cn[009-011,014-058]
+  private*     up 2-00:00:00      4  alloc cn[001-008,012-013]
+  private*     up 2-00:00:00     54   idle cn[009-011,014-058]
   medium       up 2-00:00:00     48   idle cn[011-058]
-  short        up 3-00:00:00      4  alloc cn[001-003,009]
-  short        up 3-00:00:00      6   idle cn[004-008,010]
+  short        up 3-00:00:00      4  alloc cn[001-008]
+  short        up 3-00:00:00      6   idle cn[009-010]
 
   
 To check if the job is in the queue to run just execute
