@@ -173,10 +173,51 @@ Later, the environment can be reloaded using the command
 
 .. code-block:: console
 
-  module restore <module_environment>.
+  module restore <module_environment>
+
+4. Module Details
+-----------------
+
+To learn further details of a module, how to load it, and dependencies use 
+
+.. code-block:: julia
+
+  module spider <module_name>
+
+and to find detailed information of a module use
+
+.. code-block:: julia
+
+  module spider <module_name/version>
+  
+e.g., ``intel/2021a``
+
+.. code-block:: julia
+
+$  module spider intel/2021a
+
+   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  intel: intel/2021a
+   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Description:
+      Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
+
+
+    This module can be loaded directly: module load intel/2021a
+
+    Help:
+      
+      Description
+      ===========
+      Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
+      
+      
+      More information
+      ================
+       - Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain
 
  
-4. List of Commonly Used commands
+5. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
@@ -200,7 +241,7 @@ Later, the environment can be reloaded using the command
   * - module savelist	
     - Displays the list of saved modules environment
 
-5. List of Available Modules
+6. List of Available Modules
 ----------------------------
 
 To list all the available modules the user can use the command ``module spider`` obtaining
