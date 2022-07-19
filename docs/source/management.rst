@@ -122,3 +122,25 @@ For more information on the command sacct options at the terminal execute
 .. code-block:: console
 
   man sacct
+ 
+The total computing time consumed by the users of a project, say ProjID, over a period of time, say from 01.01.2022 through 18.07.2022 is obtained using the command ``sreport``
+
+.. code-block:: julia
+  
+  $ sreport -t HourPer cluster AccountUtilizationByUser Accounts=quim001 start=1/1/21 format=Accounts,Login,Used
+
+  --------------------------------------------------------------------------------
+Cluster/Account/User Utilization 2022-01-01T00:00:00 - 2022-07-18T23:59:59
+Usage reported in CPU Hours/Percentage of Total
+--------------------------------------------------------------------------------
+        Account     Login               Used 
+--------------- --------- ------------------ 
+         projID                211007(0.75%) 
+         projID    user01        4030(0.01%) 
+         projID    user01        1711(0.01%) 
+         projID    user01       41505(0.15%) 
+         projID    user02       58204(0.21%) 
+         projID    user02      105558(0.37%) 
+         projID    user02           0(0.00%) 
+ 
+This shows the total computing time and the time consumed by the project members, user01 and user02.
