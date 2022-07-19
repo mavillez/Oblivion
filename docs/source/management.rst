@@ -117,11 +117,7 @@ The user can always use ``sacct`` to see the CPU time used by his/her jobs by us
   2003.0                            2021-02-01T15:56:47 2021-02-01T15:56:47   00:07:43       1024 5-11:41:52     474112    134972K  COMPLETED cn[020-027,029+ 
 
 
-For more information on the command sacct options at the terminal execute
-
-.. code-block:: console
-
-  man sacct
+For more information on the command sacct options at the terminal execute ``man sacct``
  
 The total computing time consumed by the users of a project, say ProjID, over a period of time, say from 01.01.2022 through 18.07.2022 is obtained using the command ``sreport``
 
@@ -144,3 +140,5 @@ The total computing time consumed by the users of a project, say ProjID, over a 
           projID    user02           0(0.00%) 
  
 This shows the total computing time and the time consumed by the project members, user01 and user02.
+
+For further information see the user manual using ``man sreport``.
