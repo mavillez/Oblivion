@@ -44,7 +44,40 @@ In order to see what compute nodes are being used by user USER_NAME execute ``sq
 Accounting
 ----------
 
+Job Information
+---------------
 
+After submitting a job the user can learn detailed information about it, the useed resources, paths, scripts, etc. To do that the users only needs to execute ``scontrol show jobid <JOBID>``, with <JOBID> being the job id.
 
-.. code-block:: console
+.. code-block:: julia
+  
+  $ scontrol show jobid 16951
+
+JobId=16951 JobName=<JOB NAME>
+   UserId=dianagomes(15051) GroupId=dianagomes(15051) MCS_label=N/A
+   Priority=2484 Nice=0 Account=cpca21a208 QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=02:07:25 TimeLimit=1-00:00:00 TimeMin=N/A
+   SubmitTime=2022-07-19T09:15:43 EligibleTime=2022-07-19T09:15:43
+   AccrueTime=2022-07-19T09:15:43
+   StartTime=2022-07-19T09:15:43 EndTime=2022-07-20T09:15:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-07-19T09:15:43
+   Partition=debug AllocNode:Sid=mn01:9703
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=cn[005-006]
+   BatchHost=cn005
+   NumNodes=2 NumCPUs=72 NumTasks=72 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=72,node=2,billing=72
+   Socks/Node=* NtasksPerN:B:S:C=0:0:18:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryCPU=4600M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=<PROJECT_PATH>/<USER_FOLDERS>/slurm.sh
+   WorkDir=<PROJECT_PATH>/<USER_FOLDERS>
+   StdErr=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.err
+   StdIn=/dev/null
+   StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.out
+   Power=
+
 
