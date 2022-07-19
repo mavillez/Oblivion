@@ -21,7 +21,7 @@ Check the available modules in the machine by using
 
   module av
   
-Load the needed modules to create the working environment 
+Load the needed modules to create the working environment (:ref:`see the modules section<Environment Modules>`)
       
 .. code-block:: console  
     
