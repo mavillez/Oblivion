@@ -6,6 +6,7 @@ Resources and job management are managed by `SLURM Work Manager <https://slurm.s
 #. Available resources
 #. Job management
 #. Accounting
+#. Slurm commands
 
 Available Resources
 -------------------
