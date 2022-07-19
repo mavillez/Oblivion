@@ -44,10 +44,27 @@ In order to see what compute nodes are being used by user USER_NAME execute ``sq
 Accounting
 ----------
 
-Job Information
----------------
+Job Submission & Information
+----------------------------
 
-After submitting a job the user can learn detailed information about it, the useed resources, paths, scripts, etc. To do that the users only needs to execute ``scontrol show jobid <JOBID>``, with <JOBID> being the job id.
+The user submits the job to the system by using a SLURM script using the command
+
+.. code-block:: julia
+  
+  $ sbatch <slurm_script_name>
+     
+After submitting the job the user can check the compute nodes under use or the job status by issuing the command ``squeue`` as
+
+.. code-block:: julia
+
+  $ squeue | grep USER_NAME
+ 
+    JOBID PARTITION     NAME       USER ST       TIME  NODES  NODELIST(REASON)
+    16868     debug     job1  USER_NAME  R    5:54:10      1  cn013
+    16867     debug     job2  USER_NAME  R    5:54:15      1  cn012
+    16866     debug     job3  USER_NAME  R    5:54:21      8  cn[001-008]
+
+He/She can learn further detailed information on the submitted job, e.g., used resources, paths, scripts, etc., by executing ``scontrol show jobid <JOBID>``, with <JOBID> being the job id:
 
 .. code-block:: julia
   
