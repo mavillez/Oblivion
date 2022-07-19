@@ -27,9 +27,11 @@ To check the available resources the user should execute ``sinfo``
 
 and execute ``squeue`` that gives the compute nodes in use and the jobs status. In some systems one can see all jobs while in others it is limited to the user. (see example below)
 
+Job Management
+--------------
 
-Job Submission & Information
-----------------------------
+Job Submission
+~~~~~~~~~~~~~~
 
 The user submits the job to the system by using a SLURM script using the command
 
@@ -57,6 +59,9 @@ The script can have the form
   srun ./code_executable
 
 The script sets 1024 cores (``ntasks``), 1 MPI task per core (``cpus-per-task``), and 16 cores per CPU/Socket (``ntasks-per-socket``). The compute nodes are being used exclusively in this run (``exclusive``), and the queue, which in SLURM is called ``partition``, is ``debug``. The code is executed using srun.
+
+Job Information
+~~~~~~~~~~~~~~~
 
 After submitting the job the user can check the compute nodes under use or the job status by issuing the command ``squeue`` as
 
@@ -102,8 +107,9 @@ He/She can learn further detailed information on the submitted job, e.g., used r
    StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.out
    Power=
    
+
 Hold and Release Jobs
----------------------
+~~~~~~~~~~~~~~~~~~~~~
    
 Submitted jobs that are not running yet, because they are in a pending state, can be put on hold by using the command
 
