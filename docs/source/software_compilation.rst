@@ -1,5 +1,5 @@
-Software Compilation
-====================
+Software Compilation Using Message Passing Interface
+====================================================
 
 In order to compile a software several steps must be carried out by the user:
 
