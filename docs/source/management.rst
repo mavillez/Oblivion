@@ -14,15 +14,11 @@ Each user has folders in the users and project directories.
 2. Available Resources
 ----------------------
 
-To check the available resources the user should execute
+To check the available resources the user should execute ``sinfo``
 
 .. code-block:: julia
 
   $ sinfo
-
-obtaining
-
-.. code-block:: julia
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
   debug        up 1-00:00:00      8  alloc cn[001-008,012-013]
