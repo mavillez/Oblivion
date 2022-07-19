@@ -1,7 +1,11 @@
 Resources and Job Management
 ============================
 
-Resources and job management is caried out using `SLURM Work Manager <https://slurm.schedmd.com>`_.
+Resources and job management are managed by `SLURM Work Manager <https://slurm.schedmd.com>`_ providing insight on
+
+#. Available resources
+#. Job information
+#. Accounting
 
 Available Resources
 -------------------
