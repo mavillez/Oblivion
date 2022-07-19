@@ -101,6 +101,21 @@ He/She can learn further detailed information on the submitted job, e.g., used r
    StdIn=/dev/null
    StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.out
    Power=
+   
+Hold and Release Jobs
+---------------------
+   
+Submitted jobs that are not running yet, because they are in a pending state, can be put on hold by using the command
+
+.. code-block:: julia
+
+  $ scontrol hold <jobid>
+  
+The same job can be released using
+
+.. code-block:: julia
+
+  $ scontrol release <jobid>
 
 Accounting
 ----------
