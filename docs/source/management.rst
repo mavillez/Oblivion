@@ -3,8 +3,8 @@ Resources and Job Management
 
 Resources and job management is caried out using `SLURM Work Manager <https://slurm.schedmd.com>`_.
 
-1. Available Resources
-----------------------
+Available Resources
+-------------------
 
 To check the available resources the user should execute ``sinfo``
 
@@ -23,9 +23,6 @@ To check the available resources the user should execute ``sinfo``
 
 and execute ``squeue`` that gives the compute nodes in use and the jobs status. In some systems one can see all jobs while in others it is limited to the user. (see example below)
 
-
-Accounting
-----------
 
 Job Submission & Information
 ----------------------------
@@ -80,4 +77,5 @@ He/She can learn further detailed information on the submitted job, e.g., used r
    StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.out
    Power=
 
-
+Accounting
+----------
