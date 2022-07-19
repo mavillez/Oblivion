@@ -8,8 +8,8 @@ Resources and job management are managed by `SLURM Work Manager <https://slurm.s
 #. Accounting
 #. Slurm commands
 
-Available Resources
--------------------
+1. Available Resources
+----------------------
 
 To check the available resources the user should execute ``sinfo``
 
@@ -28,8 +28,8 @@ To check the available resources the user should execute ``sinfo``
 
 and execute ``squeue`` that gives the compute nodes in use and the jobs status. In some systems one can see all jobs while in others it is limited to the user. (see example below)
 
-Job Management
---------------
+2. Job Management
+-----------------
 
 Job Submission
 ~~~~~~~~~~~~~~
@@ -124,8 +124,8 @@ The same job can be released using
 
   $ scontrol release <jobid>
 
-Accounting
-----------
+3. Accounting
+-------------
 
 The user can always use ``sacct`` to see the CPU time used by his/her jobs by using, for example,
 
@@ -168,8 +168,8 @@ This shows the computing time (Hours) and energy (Joules) consumed by the projec
 
 For further information see the user manual using ``man sreport``.
 
-Most Commonly Used Slurm Commands
----------------------------------
+4. Most Commonly Used Slurm Commands
+------------------------------------
 
 .. list-table::   
     
