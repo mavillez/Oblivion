@@ -1,14 +1,11 @@
 Environment Modules
 ===================
 
-Introduction
-------------
-
 There are several conflicting software packages installed in the Oblivion supercomputer. In order for the user to use the adequate software there is a need to set the paths for the binaries, libraries, manuals, and includes. Either the user sets these paths for each package or the system provides an easy way to set those paths. The latter is the preferable and makes use of environment modules. 
 
 
-Working with Modules
---------------------
+1. Working with Modules
+-----------------------
 
 Loading Modules
 ~~~~~~~~~~~~~~~
@@ -217,7 +214,7 @@ e.g., ``intel/2021a``
        - Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain
 
  
-3. List of Commonly Used commands
+2. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
@@ -242,7 +239,7 @@ e.g., ``intel/2021a``
     - Displays the list of saved modules environment
 
 
-4. Available Modules
+3. Available Modules
 --------------------
 
 To list all the available modules the user can use the command ``module spider`` obtaining
