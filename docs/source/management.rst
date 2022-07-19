@@ -53,7 +53,7 @@ After submitting a job the user can learn detailed information about it, the use
   
   $ scontrol show jobid 16951
 
-JobId=16951 JobName=<JOB NAME>
+  JobId=16951 JobName=<JOB NAME>
    UserId=dianagomes(15051) GroupId=dianagomes(15051) MCS_label=N/A
    Priority=2484 Nice=0 Account=cpca21a208 QOS=normal
    JobState=RUNNING Reason=None Dependency=(null)
