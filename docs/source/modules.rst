@@ -1,14 +1,17 @@
 Environment Modules
 ===================
 
-1. Introduction
----------------
+Introduction
+------------
 
 There are several conflicting software packages installed in the Oblivion supercomputer. In order for the user to use the adequate software there is a need to set the paths for the binaries, libraries, manuals, and includes. Either the user sets these paths for each package or the system provides an easy way to set those paths. The latter is the preferable and makes use of environment modules. 
 
 
-2. Working with Modules
------------------------
+Working with Modules
+--------------------
+
+Loading Modules
+~~~~~~~~~~~~~~~
 
 The user sets the software environment by loading the modules associated to the packages he/she needs to use. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
@@ -153,8 +156,8 @@ In the latter case the loaded modules, given by ``module list``, are
  11) libevent/2.1.12    22) ncurses/6.2
 
 
-3. Purging Modules
-------------------
+Purging Modules
+~~~~~~~~~~~~~~~
 
 The user can purge the loaded modules by executing 
 
@@ -174,8 +177,8 @@ Later, the environment can be reloaded using the command
 
   module restore <module_environment>
 
-4. Module Details
------------------
+Module Details
+~~~~~~~~~~~~~~
 
 To learn further details of a module, how to load it, and dependencies use 
 
@@ -214,7 +217,7 @@ e.g., ``intel/2021a``
        - Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain
 
  
-5. List of Commonly Used commands
+3. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
@@ -239,8 +242,8 @@ e.g., ``intel/2021a``
     - Displays the list of saved modules environment
 
 
-6. List of Available Modules
-----------------------------
+4. Available Modules
+--------------------
 
 To list all the available modules the user can use the command ``module spider`` obtaining
 
