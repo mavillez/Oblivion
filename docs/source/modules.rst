@@ -1,7 +1,6 @@
 Environment Modules
 ===================
 
-
 1. Introduction
 ---------------
 
@@ -196,12 +195,11 @@ e.g., ``intel/2021a``
 
    $ module spider intel/2021a
 
-   -----------------------------------------------------------------------------------------------------------------------------------------------
-  intel: intel/2021a
-   -----------------------------------------------------------------------------------------------------------------------------------------------
+   -----------------------------------------------------------------------------------------------
+   intel: intel/2021a
+   -----------------------------------------------------------------------------------------------
     Description:
       Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
-
 
     This module can be loaded directly: module load intel/2021a
 
@@ -210,7 +208,6 @@ e.g., ``intel/2021a``
       Description
       ===========
       Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
-      
       
       More information
       ================
@@ -240,6 +237,7 @@ e.g., ``intel/2021a``
     - Loads a module environment saved in file [name_file]
   * - module savelist	
     - Displays the list of saved modules environment
+
 
 6. List of Available Modules
 ----------------------------
