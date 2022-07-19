@@ -4,7 +4,7 @@ Resources and Job Management
 Resources and job management are managed by `SLURM Work Manager <https://slurm.schedmd.com>`_ providing insight, among others, on:
 
 #. Available resources
-#. Job information
+#. Job management and information
 #. Accounting
 
 Available Resources
@@ -76,8 +76,8 @@ He/She can learn further detailed information on the submitted job, e.g., used r
   $ scontrol show jobid 16951
 
   JobId=16951 JobName=<JOB NAME>
-   UserId=dianagomes(15051) GroupId=dianagomes(15051) MCS_label=N/A
-   Priority=2484 Nice=0 Account=cpca21a208 QOS=normal
+   UserId=<UserID> GroupId=<GroupID> MCS_label=N/A
+   Priority=2484 Nice=0 Account=<ProjID> QOS=normal
    JobState=RUNNING Reason=None Dependency=(null)
    Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
    RunTime=02:07:25 TimeLimit=1-00:00:00 TimeMin=N/A
