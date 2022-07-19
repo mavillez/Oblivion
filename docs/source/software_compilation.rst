@@ -1,5 +1,5 @@
-Software Compilation Using Message Passing Interface
-====================================================
+Software Compilation Using MPI
+==============================
 
 In order to compile a software several steps must be carried out by the user:
 
