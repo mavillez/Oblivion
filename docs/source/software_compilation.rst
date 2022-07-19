@@ -1,7 +1,7 @@
 Software Compilation
 ====================
 
-Before compiling a software several things must be carried out by the user:
+In order to compile a software several steps must be carried out by the user:
 
 #. Set the work environment by loading modules
 #. Identify the software paths (compiler, libraries, includes, etc)
