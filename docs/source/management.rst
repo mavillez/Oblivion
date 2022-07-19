@@ -123,22 +123,21 @@ The total computing time consumed by the users of a project, say ProjID, over a 
 
 .. code-block:: julia
   
-  $ sreport -t HourPer cluster AccountUtilizationByUser Accounts=quim001 start=1/1/21 format=Accounts,Login,Used
+  $ sreport -t Hours cluster AccountUtilizationByUser Accounts=projID start=1/1/22 format=Accounts,Login,Used,Energy
 
   --------------------------------------------------------------------------------
   Cluster/Account/User Utilization 2022-01-01T00:00:00 - 2022-07-18T23:59:59
-  Usage reported in CPU Hours/Percentage of Total
+  Usage reported in CPU Hours
   --------------------------------------------------------------------------------
-          Account     Login               Used 
-  --------------- --------- ------------------ 
-          projID                211007(0.75%) 
-          projID    user01        4030(0.01%) 
-          projID    user01        1711(0.01%) 
-          projID    user01       41505(0.15%) 
-          projID    user02       58204(0.21%) 
-          projID    user02      105558(0.37%) 
-          projID    user02           0(0.00%) 
+          Account     Login      Used     Energy 
+  --------------- --------- --------- ---------- 
+           projID              211007    2217368 
+           projID    user01     4030       45434 
+           projID    user01      1711      23285 
+           projID    user01     41505     525459 
+           projID    user02     58204     542022 
+           projID    user02    105558    1081168
  
-This shows the total computing time and the time consumed by the project members, user01 and user02.
+This shows the computing time (Hours) and energy (Joules) consumed by the project members, user01 and user02 and by the project.
 
 For further information see the user manual using ``man sreport``.
