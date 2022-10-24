@@ -11,6 +11,7 @@ Here you can find the documentation on how to use the OBLIVION supercomputer:
 - Job submission scripts
 - Accounting
 - Slurm commands
+- User responsibilities
 
 
 Contents
@@ -24,5 +25,6 @@ Contents
    modules.rst
    compilation.rst
    management.rst
+   responsibilities.rst
 
 
