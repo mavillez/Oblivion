@@ -23,6 +23,7 @@ Contents
    information.rst
    quick_start.rst
    modules.rst
+   software.rst
    compilation.rst
    management.rst
    responsibilities.rst
