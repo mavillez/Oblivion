@@ -59,14 +59,14 @@ User can set exclusivity for the first 4 compute nodes.
 
 .. list-table::
 
-  * - private	
+  * - private
     - Exclusive for sys admin or national urgency runs (high priority)
   * - short	
-    - 10 nodes (360 cores) Maxtime=72 hours
+    - 30 nodes (1080 cores) Maxtime=72 hours
   * - medium	
-    - 30 nodes (1080 cores) Maxtime=48 hours
+    - 58 nodes (2088 cores) Maxtime=48 hours
   * - debug	
-    - 58 nodes (2088 cores) Maxtime=24 hours
+    - 88 nodes (3168 cores) Maxtime=48 hours
  
 
 8. Accounting
