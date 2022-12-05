@@ -62,11 +62,11 @@ User can set exclusivity for the first 4 compute nodes.
   * - private
     - Exclusive for sys admin or national urgency runs (high priority)
   * - short	
-    - 30 nodes (1080 cores) Maxtime=72 hours
+    - 30 nodes; Maxtime=72 hours
   * - medium	
-    - 58 nodes (2088 cores) Maxtime=48 hours
+    - 58 nodes; Maxtime=48 hours
   * - debug	
-    - 88 nodes (3168 cores) Maxtime=48 hours
+    - 88 nodes; Maxtime=48 hours
  
 
 8. Accounting
