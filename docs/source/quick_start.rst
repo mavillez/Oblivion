@@ -71,7 +71,7 @@ To see what compute nodes ara vailable use
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
   debug        up 2-00:00:00     10  alloc cn[001-008,012-013]
   debug        up 2-00:00:00     78   idle cn[009-011,014-058,063-088]
-  private*     up 3-00:00:00     78  alloc cn[001-008,012-013]
+  private*     up 3-00:00:00     10  alloc cn[001-008,012-013]
   private*     up 3-00:00:00     78   idle cn[009-011,014-058,063-088]
   medium       up 2-00:00:00     10  alloc cn[001-008,012-013]
   medium       up 2-00:00:00     48   idle cn[009-011,014-058]
