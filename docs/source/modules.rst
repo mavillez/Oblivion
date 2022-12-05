@@ -16,7 +16,7 @@ Core refers to the basic core modules that have to be loaded in order to have ac
 
 After logging into the machine the user should execute the command ``module av`` (av for available) obtaining the list of core modules:
 
-.. code-block:: console
+.. code-block:: julia
 
    ----------------------- /opt/software/4.5.4/hmns/modules/all/Core -----------------------
      ANSYS_CFD/192                 M4/1.4.19          iimpi/2021a
@@ -51,7 +51,7 @@ To learn the loaded modules use
 
 obtaining
 
-.. code-block:: console
+.. code-block:: julia
 
   Currently Loaded Modules:
   1) GCCcore/10.3.0    8) libpciaccess/0.16  15) OpenMPI/4.1.1
@@ -64,7 +64,7 @@ obtaining
 
 Now, loading foss/2021a gives access to other modules that are only now available. Use module av and obtain
 
-.. code-block:: console
+.. code-block:: julia
 
   ----------- /opt/software/4.5.4/hmns/modules/all/MPI/GCC/10.3.0/OpenMPI/4.1.1 -----------
    ABINIT/9.4.2            PSolver/1.8.3               futile/1.8.3
