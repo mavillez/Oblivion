@@ -137,7 +137,7 @@ or if the user wants to use ``GROMACS/2021.5`` then just execute
 
 In the latter case the loaded modules, given by ``module list``, are
 
-.. code-block:: console
+.. code-block:: julia
 
   Currently Loaded Modules:
   1) GCCcore/10.3.0     12) UCX/1.10.0          23) libreadline/8.1
@@ -158,19 +158,19 @@ Purging Modules
 
 The user can purge the loaded modules by executing 
 
-.. code-block:: console
+.. code-block:: julia
   
   module purge
   
 Often a user uses different environments for his/her processes. Hence, he/she needs to load and purge the loaded modules several times. An easy way to proceed is to save those module environments into a file, say <module_environment>, by using 
 
-.. code-block:: console
+.. code-block:: julia
 
   module save <module_environment>. 
   
 Later, the environment can be reloaded using the command 
 
-.. code-block:: console
+.. code-block:: julia
 
   module restore <module_environment>
 
