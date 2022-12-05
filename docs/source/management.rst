@@ -18,13 +18,14 @@ To check the available resources the user should execute ``sinfo``
   $ sinfo
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-  debug        up 1-00:00:00      8  alloc cn[001-008,012-013]
-  debug        up 1-00:00:00     54   idle cn[009-011,014-058]
-  private*     up 2-00:00:00      4  alloc cn[001-008,012-013]
-  private*     up 2-00:00:00     54   idle cn[009-011,014-058]
-  medium       up 2-00:00:00     48   idle cn[011-058]
-  short        up 3-00:00:00      4  alloc cn[001-008]
-  short        up 3-00:00:00      6   idle cn[009-010]
+  debug        up 2-00:00:00     10  alloc cn[001-008,012-013]
+  debug        up 2-00:00:00     78   idle cn[009-011,014-058,063-088]
+  private*     up 3-00:00:00     10  alloc cn[001-008,012-013]
+  private*     up 3-00:00:00     78   idle cn[009-011,014-058,063-088]
+  medium       up 2-00:00:00     10  alloc cn[001-008,012-013]
+  medium       up 2-00:00:00     48   idle cn[009-011,014-058]
+  short        up 3-00:00:00      4  alloc cn[059-062]
+  short        up 3-00:00:00     26   idle cn[063-088]  
 
 and execute ``squeue`` that gives the compute nodes in use and the jobs status. In some systems one can see all jobs while in others it is limited to the user. (see example below)
 
@@ -79,18 +80,18 @@ He/She can learn further detailed information on the submitted job, e.g., used r
 
 .. code-block:: julia
   
-  $ scontrol show jobid 16951
+  $ scontrol show jobid 17551
 
-  JobId=16951 JobName=<JOB NAME>
+  JobId=17551 JobName=<JOB NAME>
    UserId=<UserID> GroupId=<GroupID> MCS_label=N/A
    Priority=2484 Nice=0 Account=<ProjID> QOS=normal
    JobState=RUNNING Reason=None Dependency=(null)
    Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
    RunTime=02:07:25 TimeLimit=1-00:00:00 TimeMin=N/A
-   SubmitTime=2022-07-19T09:15:43 EligibleTime=2022-07-19T09:15:43
-   AccrueTime=2022-07-19T09:15:43
-   StartTime=2022-07-19T09:15:43 EndTime=2022-07-20T09:15:43 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-07-19T09:15:43
+   SubmitTime=2022-12-01T09:15:43 EligibleTime=2022-12-01T09:15:43
+   AccrueTime=2022-12-01T09:15:43
+   StartTime=2022-12-01T09:15:43 EndTime=2022-12-02T09:15:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-12-01T09:15:43
    Partition=debug AllocNode:Sid=mn01:9703
    ReqNodeList=(null) ExcNodeList=(null)
    NodeList=cn[005-006]
@@ -103,9 +104,9 @@ He/She can learn further detailed information on the submitted job, e.g., used r
    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
    Command=<PROJECT_PATH>/<USER_FOLDERS>/slurm.sh
    WorkDir=<PROJECT_PATH>/<USER_FOLDERS>
-   StdErr=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.err
+   StdErr=<PROJECT_PATH>/<USER_FOLDERS>/slurm-17551.err
    StdIn=/dev/null
-   StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-16951.out
+   StdOut=<PROJECT_PATH>/<USER_FOLDERS>/slurm-17551.out
    Power=
    
 
