@@ -39,13 +39,13 @@ After logging into the machine the user should execute the command ``module av``
 
 The list shows toolchains gompi/2021a, foss/2021a, intel/2021a, iimpi/2021a, iompi/2021a. One of the toolchains has to be loaded using, say for foss/2021a
 
-.. code-block:: console
+.. code-block:: julia
 
   module load foss/2021a
 
 To learn the loaded modules use
 
-.. code-block:: console
+.. code-block:: julia
 
   module list
 
@@ -125,13 +125,13 @@ The top row displays the modules for software compiled against OpenMPI, which in
 
 Now the user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.6.0`` he/she executes the following command:
 
-.. code-block:: console
+.. code-block:: julia
 
   module load TensorFlow/2.6.0
 
 or if the user wants to use ``GROMACS/2021.5`` then just execute
 
-.. code-block:: console
+.. code-block:: julia
 
   module load GROMACS/2021.5
 
