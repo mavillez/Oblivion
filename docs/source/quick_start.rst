@@ -69,14 +69,15 @@ To see what compute nodes ara vailable use
   $ sinfo
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-  debug        up 1-00:00:00      8  alloc cn[001-008,012-013]
-  debug        up 1-00:00:00     54   idle cn[009-011,014-058]
-  private*     up 2-00:00:00      4  alloc cn[001-008,012-013]
-  private*     up 2-00:00:00     54   idle cn[009-011,014-058]
-  medium       up 2-00:00:00     48   idle cn[011-058]
-  short        up 3-00:00:00      4  alloc cn[001-008]
-  short        up 3-00:00:00      6   idle cn[009-010]
-
+  debug        up 2-00:00:00     10  alloc cn[001-008,012-013]
+  debug        up 2-00:00:00     78   idle cn[009-011,014-058,063-088]
+  private*     up 3-00:00:00     78  alloc cn[001-008,012-013]
+  private*     up 3-00:00:00     78   idle cn[009-011,014-058,063-088]
+  medium       up 2-00:00:00     10  alloc cn[001-008,012-013]
+  medium       up 2-00:00:00     48   idle cn[009-011,014-058]
+  short        up 3-00:00:00      4  alloc cn[059-062]
+  short        up 3-00:00:00     26   idle cn[063-088]
+  
   
 To check if the job is in the queue to run just execute
 
