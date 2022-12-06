@@ -60,7 +60,7 @@ User can set exclusivity for the first 4 compute nodes.
 .. list-table::
 
   * - private
-    - All compute nodes; MaxTime=72 hours; Exclusive for sys admin or national urgency runs (high priority)
+    - All compute nodes; Maxtime=72 hours; Exclusive for sys admin or national urgency runs (high priority)
   * - short	
     - 30 compute nodes; Maxtime=72 hours
   * - medium	
