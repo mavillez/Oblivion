@@ -61,8 +61,8 @@ User can set exclusivity for the first 4 compute nodes.
 
   * - private
     - All compute nodes; Maxtime=72 hours; Exclusive for sys admin or national urgency runs (high priority)
-  * - highmem - Not available yet
-    - 30 compute nodes; Maxtime=72 hours cn[059-088]
+  * - highmem
+    - 30 compute nodes; Maxtime=72 hours cn[059-088] - Not available to users yet
   * - short	
     - 20 compute nodes; Maxtime=72 hours cn[001-020]
   * - medium	
