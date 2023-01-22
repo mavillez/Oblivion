@@ -18,16 +18,32 @@ After logging into the machine the user should execute the command ``module av``
 
 .. code-block:: julia
 
-   ----------------------- /opt/software/4.5.4/hmns/modules/all/Core -----------------------
-     ANSYS_CFD/192                 M4/1.4.19          iimpi/2021a
-     ANSYS_CFD/2021R1      (D)     OpenSSL/1.1        intel-compilers/2021.2.0
-     Bison/3.8.2                   binutils/2.36.1    intel/2021a
-     GCC/10.3.0                    flex/2.6.4         iompi/2021a
-     GCCcore/10.3.0                foss/2021a         ncurses/6.2
-     GPAW-setups/0.9.20000         gettext/0.21       pkg-config/0.29.2
-     Java/11.0.2           (11)    gompi/2021a        zlib/1.2.11
-    ------------------------- /usr/share/lmod/lmod/modulefiles/Core -------------------------
-    lmod    settarg
+------------------------------ /mnt/beegfs/apps/4.7.x/modules/all/Core ------------------------------
+   Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b
+   GCC/9.3.0                     binutils/2.34              imkl/2021.4.0
+   GCC/11.2.0                    binutils/2.37              intel-compilers/2021.4.0
+   GCCcore/9.3.0                 flex/2.6.4          (D)    intel/2021b
+   GCCcore/11.2.0                foss/2021b                 ncurses/6.1
+   GPAW-setups/0.9.20000 (D)     gettext/0.20.1             ncurses/6.2              (D)
+   Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0            (D)
+   M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
+   OpenSSL/1.1           (D)     gompi/2021b
+
+------------------------------ /mnt/beegfs/apps/4.7.0/modules/all/Core ------------------------------
+   Bison/3.8.2                  flex/2.6.4                      intel/2022a   (D)
+   GCC/11.3.0            (D)    foss/2022a               (D)    iompi/2022a
+   GCCcore/11.3.0        (D)    gettext/0.20.1                  ncurses/6.1
+   GPAW-setups/0.9.20000        gettext/0.21                    ncurses/6.2
+   M4/1.4.19                    gompi/2022a              (D)    pkgconf/1.8.0
+   OpenSSL/1.1                  iimpi/2022a              (D)    zlib/1.2.11
+   binutils/2.34                imkl/2022.1.0            (D)    zlib/1.2.12   (D)
+   binutils/2.38         (D)    intel-compilers/2022.1.0 (D)
+
+-------------------------------------- /usr/share/modulefiles ---------------------------------------
+   pmi/pmix-x86_64
+
+------------------------------- /usr/share/lmod/lmod/modulefiles/Core -------------------------------
+   lmod    settarg
 
     Where:
      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
@@ -37,7 +53,23 @@ After logging into the machine the user should execute the command ``module av``
   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-The list shows toolchains gompi/2021a, foss/2021a, intel/2021a, iimpi/2021a, iompi/2021a. One of the toolchains has to be loaded using, say for foss/2021a
+The list shows toolchains foss/2021b, foss/2022a, intel/2021b, and intel/2022a and subtoolchains gompi/2020a, gompi/2021b, gompi/2022a, intel-compilers/2021.4.0, intel-compilers/2022.1.0, iimpi/2021b, iimpi/2022a, and iompi/2022a.
+
+Toolchain foss includes the following software:
+
+- C, C++ and Fortran compilers: GCC
+- MPI implementation: OpenMPI
+- BLAS and LAPACK implementation: OpenBLAS
+- Parallel, distributed LAPACK implementation: ScaLAPACK
+- Fourier transforms: FFTW
+
+Toolchain intel includes the following software:
+
+- C, C++ and Fortran compilers (icc/icpc/ifort)
+- MPI implementation (Intel MPI)
+- BLAS, LAPACK and fourier transforms: Intel MKL
+
+One of the toolchains has to be loaded using, say for foss/2021a
 
 .. code-block:: julia
 
