@@ -149,7 +149,7 @@ The user can now load OpenMPI-4.0.3 using ``module load OpenMPI/4.0.3`` and chec
       3) binutils/2.34   7) libxml2/2.9.10     11) UCX/1.8.0
       4) GCC/9.3.0       8) libpciaccess/0.16  12) libfabric/1.11.0
 
-Now, not only OpenMPI is loaded, but also UCX, PMIx, etc., are loaded. UCX stands for Unified Communication X and is "an optimized production communication framework for modern, high-bandwidth and low-latency networks" (see https://github.com/openucx/ucx) meaning for infiniband. PMIx stands for Process Management Interface - Exascale and, in a simplified formn, enabbles the interaction of MPI applications with Resource Managers like SLURM.
+Now, not only OpenMPI is loaded, but also UCX, PMIx, etc., are loaded. UCX stands for Unified Communication X and is "an optimized production communication framework for modern, high-bandwidth and low-latency networks" (see https://github.com/openucx/ucx) meaning for infiniband. PMIx stands for Process Management Interface - Exascale and enables the interaction of MPI applications with Resource Managers like SLURM (see https://pmix.github.io)
 
 Let us now use an enviromment based on GCC-11.2.0. Hence, load the module GCC/11.2.0 (use ``module load GCC/11.2.0``) and immediately you see
 
