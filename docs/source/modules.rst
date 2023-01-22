@@ -320,7 +320,7 @@ and see what is available (``module av``)
 
 Now the user got access to all the software that was compiled against OpenMPI-4.1.1. The top row displays the modules for software compiled against OpenMPI, which in turn was compiled with GCC compiler (second row of modules). The third row displays the core modules associated to GCC/11.2.0.
 
-We could do all this in a single command by loading foss/2021b. So, let's check it. Start with a ``module purge`` followed with ``module av`` getting
+All this work can be executed with just a single command by loading foss/2021b. So, let's check it. Start with a ``module purge`` followed with ``module av`` getting
 
 .. code-block:: julia
 
@@ -335,8 +335,7 @@ We could do all this in a single command by loading foss/2021b. So, let's check 
       M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
       OpenSSL/1.1           (D)     gompi/2021b
 
-
-Load foss/2021b (``module load foss/2021b``) and check what is available with ``module av`` getting
+Load foss/2021b (``module load foss/2021b``) and check what is available (``module av``) getting
 
 .. code-block:: julia
 
@@ -352,16 +351,16 @@ Load foss/2021b (``module load foss/2021b``) and check what is available with ``
       CP2K/8.2                           ParMETIS/4.0.3                        libGridXC/0.9.6
       ...
       
-the same obtained previously by loading GCC/11.2.0 and OpenMPI/4.1.1.
+It is the same obtained previously by loading GCC/11.2.0 and OpenMPI/4.1.1.
 
+3. Loading a Particular Software
+--------------------------------
 
-
-
-Now the user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.6.0`` he/she executes the following command:
+The user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.8.4`` after loading foss/2021b he/she executes the command
 
 .. code-block:: julia
 
-  module load TensorFlow/2.6.0
+  module load TensorFlow/2.8.4
 
 or if the user wants to use ``GROMACS/2021.5`` then just execute
 
@@ -373,19 +372,18 @@ In the latter case the loaded modules, given by ``module list``, are
 
 .. code-block:: julia
 
-  Currently Loaded Modules:
-  1) GCCcore/10.3.0     12) UCX/1.10.0          23) libreadline/8.1
-  2) zlib/1.2.11        13) libfabric/1.12.1    24) Tcl/8.6.11
-  3) binutils/2.36.1    14) PMIx/3.2.3          25) SQLite/3.35.4
-  4) GCC/10.3.0         15) OpenMPI/4.1.1       26) GMP/6.2.1
-  5) numactl/2.0.14     16) OpenBLAS/0.3.15     27) libffi/3.3
-  6) XZ/5.2.5           17) FlexiBLAS/3.0.4     28) Python/3.9.5
-  7) libxml2/2.9.10     18) FFTW/3.3.9          29) pybind11/2.6.2
-  8) libpciaccess/0.16  19) ScaLAPACK/2.1.0-fb  30) SciPy-bundle/2021.05
-  9) hwloc/2.4.1        20) foss/2021a          31) networkx/2.5.1
- 10) OpenSSL/1.1        21) bzip2/1.0.8         32) GROMACS/2021.5
- 11) libevent/2.1.12    22) ncurses/6.2
+   Currently Loaded Modules:
+      1) GCCcore/11.2.0      9) hwloc/2.5.0       17) FlexiBLAS/3.0.4     25) SQLite/3.36
+      2) zlib/1.2.11        10) OpenSSL/1.1       18) FFTW/3.3.10         26) GMP/6.2.1
+      3) binutils/2.37      11) libevent/2.1.12   19) ScaLAPACK/2.1.0-fb  27) libffi/3.4.2
+      4) GCC/11.2.0         12) UCX/1.11.2        20) foss/2021b          28) Python/3.9.6
+      5) numactl/2.0.14     13) libfabric/1.13.2  21) bzip2/1.0.8         29) pybind11/2.7.1
+      6) XZ/5.2.5           14) PMIx/4.1.0        22) ncurses/6.2         30) SciPy-bundle/2021.10
+      7) libxml2/2.9.10     15) OpenMPI/4.1.1     23) libreadline/8.1     31) networkx/2.6.3
+      8) libpciaccess/0.16  16) OpenBLAS/0.3.18   24) Tcl/8.6.11          32) GROMACS/2021.5
 
+4. Operations With Modules
+--------------------------
 
 Purging Modules
 ~~~~~~~~~~~~~~~
@@ -396,6 +394,10 @@ The user can purge the loaded modules by executing
   
   module purge
   
+  
+Save and Restore Modules
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Often a user uses different environments for his/her processes. Hence, he/she needs to load and purge the loaded modules several times. An easy way to proceed is to save those module environments into a file, say <module_environment>, by using 
 
 .. code-block:: julia
@@ -408,6 +410,7 @@ Later, the environment can be reloaded using the command
 
   module restore <module_environment>
 
+
 Module Details
 ~~~~~~~~~~~~~~
 
@@ -415,37 +418,68 @@ To learn further details of a module, how to load it, and dependencies use
 
 .. code-block:: julia
 
-  module spider <module_name>
-
+  module spider <module_name>  
+  
 and to find detailed information of a module use
 
 .. code-block:: julia
 
   module spider <module_name/version>
-  
-e.g., ``intel/2021a``
+
+Let's check the information on GROMACS by using ``module spider GROMACS`` obtaining
 
 .. code-block:: julia
 
-   $ module spider intel/2021a
+   ------------------------------------------------------------------------------------------------------
+      GROMACS:
+   ------------------------------------------------------------------------------------------------------
+      Description:
+         GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
+         equations of motion for systems with hundreds to millions of particles. This is a CPU only
+         build, containing both MPI and threadMPI builds for both single and double precision. It also
+         contains the gmxapi extension for the single precision MPI build next to PLUMED.
 
-   -----------------------------------------------------------------------------------------------
-   intel: intel/2021a
-   -----------------------------------------------------------------------------------------------
-    Description:
-      Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
+      Versions:
+         GROMACS/2021.5-PLUMED-2.8.0
+         GROMACS/2021.5
 
-    This module can be loaded directly: module load intel/2021a
+   ------------------------------------------------------------------------------------------------------
+      For detailed information about a specific "GROMACS" package (including how to load the modules) use the 
+      module's full name.
+      Note that names that have a trailing (E) are extensions provided by other modules.
+      For example:
 
-    Help:
-      
-      Description
-      ===========
-      Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
+         $ module spider GROMACS/2021.5
+------------------------------------------------------------------------------------------------------
+
+and obtain details on the module by using ``module spider GROMACS/2021.5``
+
+.. code-block:: julia
+
+   ------------------------------------------------------------------------------------------------------
+      GROMACS: GROMACS/2021.5
+   ------------------------------------------------------------------------------------------------------
+      Description:
+         GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
+         equations of motion for systems with hundreds to millions of particles. This is a CPU only
+         build, containing both MPI and threadMPI builds for both single and double precision. It also
+         contains the gmxapi extension for the single precision MPI build. 
+
+      You will need to load all module(s) on any one of the lines below before the "GROMACS/2021.5" module is available to load.
+
+         GCC/11.2.0  OpenMPI/4.1.1
+         GCC/11.3.0  OpenMPI/4.1.4
+ 
+      ...
       
       More information
       ================
-       - Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain
+       - Homepage: https://www.gromacs.org
+      
+      
+      Included extensions
+      ===================
+      gmxapi-0.2.2.1
 
  
 2. List of Commonly Used commands
