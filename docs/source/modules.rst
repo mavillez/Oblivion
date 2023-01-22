@@ -4,8 +4,8 @@ Environment Modules
 There are several conflicting software packages installed in the Oblivion supercomputer. In order for the user to use the adequate software there is a need to set the paths for the binaries, libraries, manuals, and includes. Either the user sets these paths for each package or the system provides an easy way to set those paths. The latter is the preferable and makes use of environment modules. 
 
 
-1. Working with Modules
------------------------
+1. The Basics - Core Modules and Toolchains
+-------------------------------------------
 
 The user sets the software environment by loading the modules associated to the packages he/she needs to use. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
@@ -82,8 +82,9 @@ Toolchain intel includes the following software:
 - MPI implementation (Intel MPI)
 - BLAS, LAPACK and fourier transforms: Intel MKL
 
-Loading Modules
-~~~~~~~~~~~~~~~
+
+2. Loading Modules
+------------------
 
 Let us assume that the user wants to use software compiled with GCC-9.3.0. Hence, he loads the corresponding modules
 
