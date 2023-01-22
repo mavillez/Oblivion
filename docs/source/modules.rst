@@ -514,9 +514,9 @@ To list all the available modules the user can use the command ``module spider``
 
 .. code-block:: julia
 
-------------------------------------------------------------------------------------------------------
-The following is a list of the modules and extensions currently available:
-------------------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------
+      The following is a list of the modules and extensions currently available:
+   ------------------------------------------------------------------------------------------------------
   ABINIT: ABINIT/9.6.2
     ABINIT is a package whose main program allows one to find the total energy, charge density and
     electronic structure of systems made of electrons and nuclei (molecules and periodic solids)
