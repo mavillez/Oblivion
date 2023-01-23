@@ -27,8 +27,15 @@ Load the needed modules to create the working environment (:ref:`see the modules
     
     module load <module_name>
 
+3. Software folder
+------------------
 
-3. Compilation and Job Submission
+.. code-block:: console
+
+  cd /mnt/beegfs/apps/4.7.x/software
+  
+  
+4. Compilation and Job Submission
 ---------------------------------
 
 In the project directory compile the code and submit it for execution using a SLURM script
@@ -37,7 +44,7 @@ In the project directory compile the code and submit it for execution using a SL
 
   sbatch <script_name.sh>.
 
-A script example:
+A script example for runs with OpneMPI:
 
 .. code-block:: console
 
@@ -54,12 +61,14 @@ A script example:
   #SBATCH --exclusive
   #SBATCH --partition=debug
   
+  export PMIX_MCA_psec=native
+  
   srun ./code_executable
 
-In this script we are setting the number of MPI tasks (ntasks), the number of cores per task (cpus-per-task) and the number of tasks per CPU also referred as socket (ntasks-per-socket). So, this script imposes that 1 core executes 1 MPI task. The compute nodes are being used exclusively by this run (option exclusive), and the queue, which in SLURM is called partition, is the debug queue. Finally the code is executed using srun.
+In this script we are setting the number of MPI tasks (ntasks), the number of cores per task (cpus-per-task) and the number of tasks per CPU also referred as socket (ntasks-per-socket). So, this script imposes that 1 core executes 1 MPI task. The compute nodes are being used exclusively by this run (option exclusive), and the queue, which in SLURM is called partition, is the debug queue. Finally the code is executed using srun. 
 
 
-4. Available Resources and Jobs in the Queue
+5. Available Resources and Jobs in the Queue
 --------------------------------------------
 
 To see what compute nodes ara vailable use
@@ -69,14 +78,14 @@ To see what compute nodes ara vailable use
   $ sinfo
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-  debug        up 2-00:00:00     10  alloc cn[001-008,012-013]
-  debug        up 2-00:00:00     78   idle cn[009-011,014-058,063-088]
-  private*     up 3-00:00:00     10  alloc cn[001-008,012-013]
-  private*     up 3-00:00:00     78   idle cn[009-011,014-058,063-088]
-  medium       up 2-00:00:00     10  alloc cn[001-008,012-013]
-  medium       up 2-00:00:00     48   idle cn[009-011,014-058]
-  short        up 3-00:00:00      4  alloc cn[059-062]
-  short        up 3-00:00:00     26   idle cn[063-088]
+  private*     up 3-00:00:00     10  alloc cn[001-004,021-028,032-033]
+  private*     up 3-00:00:00     78   idle cn[005-020,029-031,034-088]
+  debug        up 2-00:00:00     10  alloc cn[001-004,021-028,032-033]
+  debug        up 2-00:00:00     78   idle cn[005-020,029-031,034-058]
+  medium       up 2-00:00:00     10  alloc cn[021-028,032-033]
+  medium       up 2-00:00:00     28   idle cn[029-031,034-058]
+  short        up 3-00:00:00      4  alloc cn[001-004]
+  short        up 3-00:00:00     16   idle cn[005-020]
   
   
 To check if the job is in the queue to run just execute
@@ -91,7 +100,7 @@ To check if the job is in the queue to run just execute
     16866     debug     job3  USER_NAME  R    5:54:21      8  cn[001-008]
 
 
-5. Consumed CPU time
+6. Consumed CPU time
 --------------------
 
 The user can always use sacct to see the CPU time used by the job by using, for example,
