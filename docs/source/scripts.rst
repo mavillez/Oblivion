@@ -48,8 +48,8 @@ This prevents the warning
   MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
 
 
-2. Scripts for OpenMPI compiled with GCC 
-----------------------------------------
+2. Scripts for OpenMPI + GCC
+----------------------------
 
 Example of a script without modules loading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
