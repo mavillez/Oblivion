@@ -52,29 +52,29 @@ After logging into the machine the user should execute the command ``module av``
 
 The list shows toolchains 
 
-- foss/2021b, foss/2022a, 
-- intel/2021b, intel/2022a
+- foss/2021b, foss/2022a;
+- intel/2021b, intel/2022a.
 
 and sub-toolchains 
 
-- gompi/2020a, gompi/2021b, gompi/2022a, 
-- intel-compilers/2021.4.0, intel-compilers/2022.1.0, 
-- iimpi/2021b, iimpi/2022a,
+- gompi/2020a, gompi/2021b, gompi/2022a; 
+- intel-compilers/2021.4.0, intel-compilers/2022.1.0;
+- iimpi/2021b, iimpi/2022a;
 - iompi/2022a.
 
 Toolchain foss includes the following software:
 
-- C, C++ and Fortran compilers: GCC
-- MPI implementation: OpenMPI
-- BLAS and LAPACK implementation: OpenBLAS
-- Parallel, distributed LAPACK implementation: ScaLAPACK
-- Fourier transforms: FFTW
+- C, C++ and Fortran compilers: GCC;
+- MPI implementation: OpenMPI;
+- BLAS and LAPACK implementation: OpenBLAS;
+- Parallel, distributed LAPACK implementation: ScaLAPACK;
+- Fourier transforms: FFTW.
 
 Toolchain intel includes the following software:
 
-- C, C++ and Fortran compilers (icc/icpc/ifort)
-- MPI implementation (Intel MPI)
-- BLAS, LAPACK and fourier transforms: Intel MKL
+- C, C++ and Fortran compilers (icc/icpc/ifort);
+- MPI implementation (Intel MPI);
+- BLAS, LAPACK and fourier transforms: Intel MKL.
 
 
 2. Loading Modules
