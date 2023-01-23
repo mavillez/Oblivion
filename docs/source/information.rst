@@ -11,17 +11,20 @@ User Information, Partition Quotas & Accounting
 * The users accounts associated to a project are closed 3 months after its completion. The accounts, project and data in the filesystems are removed at that time.
 
 
-2. Available Filesystems
-------------------------
+2. Available Filesystems & Storage Limits
+-----------------------------------------
 
 .. list-table:: 
 
   * - $HOME	
-    - Home directory for user
+    - Home directory for user 
+    - 10 GB
   * - $PROJECT	
     - Project directory related source code, binaries, etc.
+    - 10 TB → Can be increased upon demand
   * - $DATA	
     - Storage location for large data
+    - 100 TB → Can be increased upon demand
  
 
 3. Storage Limits per User and Project 
