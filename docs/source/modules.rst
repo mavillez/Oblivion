@@ -52,15 +52,15 @@ After logging into the machine the user should execute the command ``module av``
 
 The list shows toolchains 
 
-- foss/2021b, foss/2022a;
-- intel/2021b, intel/2022a.
-
+- foss: 2021b,2022a;
+- intel: 2021b, 2022a.
+ 
 and sub-toolchains 
 
-- gompi/2020a, gompi/2021b, gompi/2022a; 
-- intel-compilers/2021.4.0, intel-compilers/2022.1.0;
-- iimpi/2021b, iimpi/2022a;
-- iompi/2022a.
+- gompi: 2020a, 2021b, 2022a; 
+- intel-compilers: 2021.4.0, 2022.1.0;
+- iimpi: 2021b, 2022a;
+- iompi: 2022a.
 
 Toolchain foss includes the following software:
 
