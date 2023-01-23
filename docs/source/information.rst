@@ -6,7 +6,7 @@ User Information, Partition Quotas & Accounting
 
 * Accounts are set for users associated to a project. Each project can have several users. Users can have several projects
 
-* For Project extension contact the OBLIVION Support Team at support@oblivion.uevora.pt.
+* For project extension contact the OBLIVION Support Team at support@oblivion.uevora.pt.
 
 * The users accounts associated to a project are closed 3 months after its completion. The accounts, project and data in the filesystems are removed at that time.
 
