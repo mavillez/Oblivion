@@ -188,6 +188,7 @@ For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a scr
 
   srun gpaw python config_file.py input_file
 
+
 Do not use the following script or similar - you end up having error messages and not running the code
 
 .. code-block:: console
