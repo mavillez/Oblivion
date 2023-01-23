@@ -25,6 +25,7 @@ Contents
    modules.rst
    software.rst
    compilation.rst
+   scripts.rst
    management.rst
    responsibilities.rst
 
