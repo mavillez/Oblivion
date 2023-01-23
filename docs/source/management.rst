@@ -35,13 +35,13 @@ and execute ``squeue`` that gives the compute nodes in use and the jobs status. 
 Job Submission
 ~~~~~~~~~~~~~~
 
-The user submits the job to the system by using a SLURM script using the command
+The user submits the job to the system by using a script with the command
 
 .. code-block:: julia
   
   $ sbatch <slurm_script_name>
 
-The script can have the form
+The script can have the form (example for the case of using foss/2021b toolchain)
 
 .. code-block:: console
 
@@ -58,9 +58,30 @@ The script can have the form
   #SBATCH --exclusive
   #SBATCH --partition=debug
   
+  export PMIX_MCA_psec=native
+  
+  module purge
+  module load foss/2021b HDF/4.2.15
+  
   srun ./code_executable
 
 The script sets 1024 cores (``ntasks``), 1 MPI task per core (``cpus-per-task``), and 16 cores per CPU/Socket (``ntasks-per-socket``). The compute nodes are being used exclusively in this run (``exclusive``), and the queue, which in SLURM is called ``partition``, is ``debug``. The code is executed using srun.
+
+Request Specific Compute Nodes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Imagine the user wants to use compute nodes cn012 through cn022 in partition debug. Hence, in the script he/she adds the line ``#SBATCH --nodelist=cn[012-022]``.
+
+Running Interactive Jobs on Compute Nodes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The user can always request compute nodes to run jobs interactively by using, e.g.,
+
+.. code-block:: julia
+
+srun --account <PROJECTID> --job-name "InteractiveJob" --partition medium --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
+
+Here the user is asking a compute node in partition ``debug`` for 24 hours running 8 MPI tasks and using 1.5GB RAM per CPU core. After executing the command the user has access to a compute node.
 
 Job Information
 ~~~~~~~~~~~~~~~
