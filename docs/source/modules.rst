@@ -52,7 +52,7 @@ After logging into the machine the user should execute the command ``module av``
 
 The list shows toolchains 
 
-- foss: 2021b,2022a;
+- foss: 2021b, 2022a;
 - intel: 2021b, 2022a.
  
 and sub-toolchains 
