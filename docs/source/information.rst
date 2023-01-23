@@ -20,7 +20,7 @@ User Information, Partition Quotas & Accounting
     - Home directory for user 
     - 10 GB
   * - $PROJECT	
-    - Project directory related source code, binaries, etc.
+    - Project directory
     - 10 TB → Can be increased upon demand
   * - $DATA	
     - Storage location for large data
