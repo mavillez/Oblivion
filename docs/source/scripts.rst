@@ -1,5 +1,5 @@
-Sumission Scripts
-=================
+Sumission Scripts (Examples)
+============================
 
 The user needs to set the working environment before compiling the codes. That environment will be assumed by the system when job submisison is made using 
 
