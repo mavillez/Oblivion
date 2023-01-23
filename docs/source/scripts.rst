@@ -128,3 +128,78 @@ Example of a script with modules loading
   module load iimpi/2022a
 
   srun ./executable
+
+4. Scripts with Compilation and Modules Loading
+===============================================
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=benchmarks
+  #SBATCH --job-name=zeus
+  #SBATCH --output=zeus_%j.out
+  #SBATCH —-error=zeus_%j.error
+  #SBATCH --nodes=16
+  #SBATCH --ntasks=512
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=16
+  #SBATCH --exclusive
+  #SBATCH --partition=medium
+
+  export I_MPI_FABRICS=shm:ofi 
+  export FI_PROVIDER=tcp
+  export SLURM_MPI_TYPE=pmi2
+
+  module purge
+  module load iimpi/2022a
+
+  mpicc mpitest.c -o mpitest_exec
+
+  srun ./executable
+
+5. Scripts for GPAW
+===================
+
+For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=benchmarks
+  #SBATCH --job-name=vermi
+  #SBATCH --output=vermi_%j.out
+  #SBATCH --error=vermi_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=short
+
+  export PMIX_MCA_psec=native
+
+  module purge
+  module load foss/2021b GPAW/22.8.0
+
+  srun gpaw python config_file.py input_file
+
+Do not use the following script or similar - you end up having error messages and not running the code
+
+.. code-block:: console
+
+  #!/bin/bash
+
+  gpaw sbatch -- \
+  --time=00:40:00 \
+  --account=benchmarks \
+  --job-name=vermi \
+  --output=vermi_%j.out \
+  --error=vermi_%j.error \
+  --ntasks=180 \
+  --cpus-per-task=1 \
+  --ntasks-per-socket=18 \
+  --exclusive \
+  --partition=short \
+  config_file.py input_file
+
