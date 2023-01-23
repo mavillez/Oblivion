@@ -161,9 +161,9 @@ Now look for the paths:
 
   $ ls /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/
   
-   benchmarks  bin  binding  env  etc  include  lib  libfabric  licensing  man  modulefiles  test
+   benchmarks  bin  include  lib  man
 
-So, here we show all the listed folders. Lets set the paths to be used in the Makefile
+So, here we show some of the listed folders. Lets set the paths to be used in the Makefile
 
 .. code-block:: julia
 
