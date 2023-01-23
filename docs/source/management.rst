@@ -67,8 +67,8 @@ The script can have the form (example for the case of using foss/2021b toolchain
 
 The script sets 1024 cores (``ntasks``), 1 MPI task per core (``cpus-per-task``), and 16 cores per CPU/Socket (``ntasks-per-socket``). The compute nodes are being used exclusively in this run (``exclusive``), and the queue, which in SLURM is called ``partition``, is ``debug``. The code is executed using srun.
 
-Request Specific Compute Nodes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Request of Specific Compute Nodes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Imagine the user wants to use compute nodes cn012 through cn022 in partition debug. Hence, in the script he/she adds the line ``#SBATCH --nodelist=cn[012-022]``.
 
