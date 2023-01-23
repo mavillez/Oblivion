@@ -10,7 +10,7 @@ The user needs to set the working environment before compiling the codes. That e
 The scripts include all the needed information about the requested resources (cores, number of CPUs, memory, etc.,), computing time, and account to be charged. In addition the script can include compilation instructions, setup of system variables, loading modules, etc..
 
 1. Setting System Variables in the Scripts
-==========================================
+------------------------------------------
 
 In order to prevent anoying warnings during the course of run it is manadatory to include the following variables in the scripts.
 
@@ -49,7 +49,7 @@ This prevents the warning
 
 
 2. Scripts for OpenMPI compiled with GCC 
-========================================
+----------------------------------------
 
 Example of a script without modules loading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +103,7 @@ Example of a script with modules loading
   
 
 3. Script for Intel MPI 
-========================
+-----------------------
 
 Follows and example of a script to be used with Intel MPI and modules loading. Similarly scripts can be written without modules.
 
@@ -132,7 +132,7 @@ Follows and example of a script to be used with Intel MPI and modules loading. S
   srun ./executable
 
 4. Script with Compilation and Modules Loading
-==============================================
+----------------------------------------------
 
 Compilation instructions are allowed in a script and the path for the executable can be set.
 
@@ -163,7 +163,7 @@ Compilation instructions are allowed in a script and the path for the executable
   srun ./executable
 
 5. Script for GPAW
-==================
+------------------
 
 For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
 
