@@ -50,13 +50,7 @@ There are no backups for the filesystems. The user must download the data as soo
 6. Nodes Exclusivity
 --------------------
 
-User can set exclusivity of the compute nodes by using in the submission script 
-
-.. code-block:: julia
-
- #SBATCH --exclusive
-
-Otherwise the resources manager may also allocate the compute nodes to other jobs providing there are cores not being used.
+User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive``in the submission script. Otherwise the resources manager may also allocate the compute nodes to other jobs providing there are cores not being used.
 
 
 7. Partitions
