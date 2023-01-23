@@ -26,25 +26,14 @@ User Information, Partition Quotas & Accounting
     - Storage location for large data
     - 100 TB → Can be increased upon demand
  
+$DATA is exclusive for large projects. 
 
-3. Storage Limits per User and Project 
---------------------------------------
-
-.. list-table::
-
-  * - $HOME	
-    - 10 GB
-  * - $PROJECT	
-    - 10 TB → Can be increased upon demand
-  * - $DATA	
-    - 100 TB → Exclusive for large projects can be increased upon demand
-    
-4. Backups
+3. Backups
 ----------
 
 There are no backups for the filesystems. The user must download the data as soon as it is available.
 
-5. Scheduler & Prioritization
+4. Scheduler & Prioritization
 -----------------------------
 
 * Job scheduler: SLURM
@@ -52,12 +41,12 @@ There are no backups for the filesystems. The user must download the data as soo
 * Job prioritization:	fairshare, waiting time in queues, job size, QOS.
  
 
-6. Nodes Exclusivity
+5. Nodes Exclusivity
 --------------------
 
 User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive`` in the submission script. Otherwise the resources manager (SLURM) may also allocate the compute nodes to other jobs.
 
-7. Partitions
+6. Partitions
 -------------
 
 .. list-table::
@@ -74,7 +63,7 @@ User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive`` i
     - 58 compute nodes: cn[001-058]; Maxtime=48 hours
  
 
-8. Accounting
+7. Accounting
 -------------
 
 * CPU time is charged for wall-clock time, that is, for the time nodes are occupied.
