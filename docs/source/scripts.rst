@@ -102,8 +102,10 @@ Example of a script with modules loading
   srun ./executable
   
 
-3. Scripts for Intel MPI 
+3. Script for Intel MPI 
 ========================
+
+Follows and example of a script to be used with Intel MPI and modules loading. Similarly scripts can be written without modules.
 
 .. code-block:: console
 
@@ -129,8 +131,10 @@ Example of a script with modules loading
 
   srun ./executable
 
-4. Scripts with Compilation and Modules Loading
-===============================================
+4. Script with Compilation and Modules Loading
+==============================================
+
+Compilation instructions are allowed in a script and the path for the executable can be set.
 
 .. code-block:: console
 
@@ -158,8 +162,8 @@ Example of a script with modules loading
 
   srun ./executable
 
-5. Scripts for GPAW
-===================
+5. Script for GPAW
+==================
 
 For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
 
