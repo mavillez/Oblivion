@@ -26,7 +26,7 @@ User Information, Partition Quotas & Accounting
     - Storage location for large data
     - 100 TB → Can be increased upon demand
  
-$DATA is exclusive for large projects. 
+``$DATA`` is exclusive for large projects. 
 
 3. Backups
 ----------
