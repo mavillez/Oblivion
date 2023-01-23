@@ -476,7 +476,7 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
       gmxapi-0.2.2.1
 
  
-2. List of Commonly Used commands
+5. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
@@ -501,7 +501,7 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
     - Displays the list of saved modules environment
 
 
-3. Available Modules
+6. Available Modules
 --------------------
 
 To list all the available modules the user can use the command ``module spider`` obtaining
