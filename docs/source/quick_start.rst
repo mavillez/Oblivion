@@ -30,7 +30,7 @@ Load the needed modules to create the working environment (:ref:`see the modules
 3. Software folder
 ------------------
 
-The software directories is located at
+The software directories are located at
 
 .. code-block:: console
 
