@@ -41,10 +41,9 @@ This prevents the warnings due to Munge and PSEC similar to
   export FI_PROVIDER=tcp
   export SLURM_MPI_TYPE=pmi2
 
-This prevents the warnings 
+This prevents the warning 
 
 .. code-block:: console
-  
   
   MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
 
