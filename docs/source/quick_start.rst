@@ -66,7 +66,7 @@ In the project directory compile the code and submit it for execution using a SL
 
   sbatch <script_name.sh>.
 
-A script example for runs with OpneMPI:
+A script example for runs with OpneMPI compiled with GCC:
 
 .. code-block:: console
 
