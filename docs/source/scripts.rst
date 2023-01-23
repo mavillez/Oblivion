@@ -24,12 +24,14 @@ This prevents the warnings due to Munge and PSEC similar to
 
 .. code-block:: console
 
-   ------------------------------------------------
-   A requested component was not found, or was unable to be opened.  This means that this component is either not installed or is unable to be used on your system (…)
+   ----------------------------------------------------------------
+   A requested component was not found, or was unable to be opened.  
+   This means that this component is either not installed or is 
+   unable to be used on your system (…)
 
-  Host:      cn061
-  Framework: psec
-  Component: munge
+   Host:      cn061
+   Framework: psec
+   Component: munge
 
 * In scripts associated to Intel MPI include
 
