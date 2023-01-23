@@ -30,11 +30,33 @@ Load the needed modules to create the working environment (:ref:`see the modules
 3. Software folder
 ------------------
 
+The software directories is located at
+
 .. code-block:: console
 
-  cd /mnt/beegfs/apps/4.7.x/software
+    /mnt/beegfs/apps/4.7.x/software
   
+Using ``ls /mnt/beegfs/apps/4.7.x`` a list of all software directories is displayed
+
+.. code-block:: julia
+
+  ABINIT              Flye                   jbigkit        Meson                 Qhull
+  AmberTools          FMS                    JsonCpp        METIS                 Qt5
+  ANSYS_CFD           fontconfig             kim-api        mkl-service           QuantumESPRESSO
+  ant                 foss                   LAME           MPFR                  R
+  ANTLR               freetype               LAMMPS         mpi4py                re2c
+  archspec            FriBidi                LAPACK         MUMPS                 Rust
+  arpack-ng           futile                 libarchive     NASM                  ScaFaCoS
+  ArviZ               GCC                    libcerf        NCO                   ScaLAPACK
+  ASE                 GCCcore                libdap         ncurses               scikit-build
+  ATK                 GDAL                   libdrm         ncview                scikit-learn
+  at-spi2-atk         Gdk-Pixbuf             libepoxy       netCDF                SciPy-bundle
+  at-spi2-core        GEOS                   libevent       netcdf4-python        SCOTCH
+  attr                gettext                libfabric      netCDF-C++4           Siesta
+  Autoconf            Ghostscript            libffi         netCDF-Fortran        snappy
+  ...
   
+
 4. Compilation and Job Submission
 ---------------------------------
 
