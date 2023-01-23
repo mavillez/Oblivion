@@ -50,9 +50,14 @@ There are no backups for the filesystems. The user must download the data as soo
 6. Nodes Exclusivity
 --------------------
 
-Default exclusivity of compute nodes starts at 144 cores (4 compute nodes).
+User can set exclusivity of the compute nodes by using in the submission script 
 
-User can set exclusivity for the first 4 compute nodes.
+.. code-block:: julia
+
+ #SBATCH --exclusive
+
+Otherwise the resources manager may also allocate the compute nodes to other jobs providing there are cores not being used.
+
 
 7. Partitions
 -------------
