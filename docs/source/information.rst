@@ -1,12 +1,14 @@
 User Information, Partition Quotas & Accounting
 ===============================================
 
-1. User/Project
----------------
+1. Users & Projects
+-------------------
 
-* Accounts are set for users associated to a project. Each project can have several users.
+* Accounts are set for users associated to a project. Each project can have several users. Users can have several projects
 
-* The accounts are closed 3 months after completion of the project. The accounts, project and data in the filesystems are removed at that time.
+* For Project extension contact the OBLIVION Support Team at support@oblivion.uevora.pt.
+
+* The users accounts associated to a project are closed 3 months after its completion. The accounts, project and data in the filesystems are removed at that time.
 
 
 2. Available Filesystems
@@ -42,15 +44,15 @@ There are no backups for the filesystems. The user must download the data as soo
 5. Scheduler & Prioritization
 -----------------------------
 
-* Job scheduler	SLURM
+* Job scheduler: SLURM
 
-* Job prioritization	fairshare, waiting time in queues, job size
+* Job prioritization:	fairshare, waiting time in queues, job size, QOS.
  
 
 6. Nodes Exclusivity
 --------------------
 
-User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive`` in the submission script. Otherwise the resources manager may also allocate the compute nodes to other jobs providing there are cores not being used.
+User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive`` in the submission script. Otherwise the resources manager (SLURM) may also allocate the compute nodes to other jobs.
 
 7. Partitions
 -------------
