@@ -172,9 +172,9 @@ For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a scr
   #!/bin/bash
   #SBATCH --time=00-00:40:00
   #SBATCH --account=benchmarks
-  #SBATCH --job-name=vermi
-  #SBATCH --output=vermi_%j.out
-  #SBATCH --error=vermi_%j.error
+  #SBATCH --job-name=MY_JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
   #SBATCH --ntasks=180
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=18
@@ -186,8 +186,7 @@ For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a scr
   module purge
   module load foss/2021b GPAW/22.8.0
 
-  srun gpaw python config_file.py input_file
-
+  srun gpaw python calculation_script.py script_args
 
 Do not use the following script or similar - you end up having error messages and not running the code
 
@@ -208,3 +207,39 @@ Do not use the following script or similar - you end up having error messages an
   --partition=short \
   config_file.py input_file
 
+
+6. Script for Dalton
+--------------------
+
+For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=benchmarks
+  #SBATCH --job-name=MY_JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=medium
+
+  export PMIX_MCA_psec=native
+
+  export DALTON_LAUNCHER=srun
+  export DALTON_TMPDIR=`pwd`/temp
+  mkdir -p $DALTON_TMPDIR
+
+  module purge
+  module load foss/2021b Dalton/2020.0
+
+  input_file=example.dal
+  molecule_file=example.mol
+
+  dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
+  
+  
+We thank Prof. Dr. Alfredo Palace Carvalho, U. Évora, for providing the scripts for GPAW and Dalton.
