@@ -242,7 +242,7 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
   dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
   
   
-Acnowledgements
+Acknowledgements
 ---------------
 
 Scripts for GPAW and Dalton provided by Alfredo Palace Carvalho, U. Évora.
