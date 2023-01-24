@@ -245,4 +245,4 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
 Acknowledgements
 ---------------
 
-Scripts for GPAW and Dalton provided by Alfredo Palace Carvalho, U. Évora.
+Scripts for GPAW and Dalton were provided by Alfredo Palace Carvalho, U. Évora.
