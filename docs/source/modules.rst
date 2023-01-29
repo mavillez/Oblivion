@@ -220,7 +220,7 @@ and see what is available (``module av``)
 
 .. code-block:: julia
 
-   ------------------ /mnt/beegfs/apps/4.7.x/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 -------------------
+   ------------------ /mnt/beegfs/stack/mn02470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 -------------------
       ABINIT/9.6.2                       Libint/2.6.0-lmax-6-cp2k          TensorFlow/2.8.4
       ASE/3.22.1                         MDTraj/1.9.7                      Theano/1.1.2-PyMC
       AmberTools/22.3                    MUMPS/5.4.1-metis                 VTK/9.1.0
@@ -244,12 +244,12 @@ and see what is available (``module av``)
       IMB/2021.3                         SuperLU/5.3.0                     statsmodels/0.13.1
       LAMMPS/23Jun2022-kokkos            TELEMAC-MASCARET/8p3r1            xarray/0.20.1
 
-   ----------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCC/11.2.0 -----------------------
+   ----------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/11.2.0 -----------------------
       BLIS/0.8.1         GEOS/3.9.1       OpenBLAS/0.3.18        libxc/5.1.6  (D)
       Boost/1.77.0       GSL/2.7          OpenMPI/4.1.1   (L)    libxsmm/1.17
       FlexiBLAS/3.0.4    LAPACK/3.10.1    libxc/4.3.4
 
-   --------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCCcore/11.2.0 ---------------------
+   --------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/11.2.0 ---------------------
       ANTLR/2.7.7-Java-11                 Pillow/8.3.2                     intltool/0.51.0                         
       ATK/2.36.0                          PyYAML/5.4.1                     jbigkit/2.1                             
       Autoconf/2.71                       Python/2.7.18-bare               kim-api/2.3.0                           
@@ -277,7 +277,7 @@ Load foss/2021b (``module load foss/2021b``) and check what is available (``modu
 
 .. code-block:: julia
 
-   -------------------- /mnt/beegfs/apps/4.7.x/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 ---------------------
+   -------------------- /mnt/beegfs/stack/mn02470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 ---------------------
       ABINIT/9.6.2                       Libint/2.6.0-lmax-6-cp2k              TensorFlow/2.8.4
       ASE/3.22.1                         MDTraj/1.9.7                          Theano/1.1.2-PyMC
       AmberTools/22.3                    MUMPS/5.4.1-metis                     VTK/9.1.0
