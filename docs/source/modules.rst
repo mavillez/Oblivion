@@ -15,52 +15,40 @@ After logging into the machine the user should execute the command ``module av``
 
 .. code-block:: julia
 
-   ------------------------------ /mnt/beegfs/apps/4.7.x/modules/all/Core ------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b
-      GCC/9.3.0                     binutils/2.34              imkl/2021.4.0
-      GCC/11.2.0                    binutils/2.37              intel-compilers/2021.4.0
-      GCCcore/9.3.0                 flex/2.6.4          (D)    intel/2021b
-      GCCcore/11.2.0                foss/2021b                 ncurses/6.1
-      GPAW-setups/0.9.20000 (D)     gettext/0.20.1             ncurses/6.2              (D)
-      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0            (D)
-      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
-      OpenSSL/1.1           (D)     gompi/2021b
+   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
+   Bison/3.8.2                   ant/1.10.11-Java-11        iimpi/2021b                                  
+   GCC/9.3.0                     binutils/2.34              imkl/2021.4.0                                
+   GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
+   GCCcore/9.3.0                 flex/2.6.4                 intel/2021b                                  
+   GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
+   GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2              (D)                 
+   Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
+   M4/1.4.19                     gompi/2020a                zlib/1.2.11                                  
+   OpenSSL/1.1                   gompi/2021b         (D)                                                 
 
-   ------------------------------ /mnt/beegfs/apps/4.7.0/modules/all/Core ------------------------------
-      Bison/3.8.2                  flex/2.6.4                      intel/2022a   (D)
-      GCC/11.3.0            (D)    foss/2022a               (D)    iompi/2022a
-      GCCcore/11.3.0        (D)    gettext/0.20.1                  ncurses/6.1
-      GPAW-setups/0.9.20000        gettext/0.21                    ncurses/6.2
-      M4/1.4.19                    gompi/2022a              (D)    pkgconf/1.8.0
-      OpenSSL/1.1                  iimpi/2022a              (D)    zlib/1.2.11
-      binutils/2.34                imkl/2022.1.0            (D)    zlib/1.2.12   (D)
-      binutils/2.38         (D)    intel-compilers/2022.1.0 (D)
+   Where:
+      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
+      D:        Default Module
 
-   -------------------------------------- /usr/share/modulefiles ---------------------------------------
-      pmi/pmix-x86_64
+   If the avail list is too long consider trying:
 
-   ------------------------------- /usr/share/lmod/lmod/modulefiles/Core -------------------------------
-      lmod    settarg
+   "module --default avail" or "ml -d av" to just list the default modules.                                 
+   "module overview" or "ml ov" to display the number of modules for each name.                             
 
-      Where:
-         Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
-         D:        Default Module
-
-      Use "module spider" to find all possible modules and extensions.
-      Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+   Use "module spider" to find all possible modules and extensions.                                         
+   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".        
 
 
 The list shows toolchains 
 
-- foss: 2021b, 2022a;
-- intel: 2021b, 2022a.
+- foss: 2021b;
+- intel: 2021b.
  
 and sub-toolchains 
 
-- gompi: 2020a, 2021b, 2022a; 
-- intel-compilers: 2021.4.0, 2022.1.0;
-- iimpi: 2021b, 2022a;
-- iompi: 2022a.
+- gompi: 2020a, 2021b; 
+- intel-compilers: 2021.4.0;
+- iimpi: 2021b.
 
 Toolchain foss includes the following software:
 
@@ -103,33 +91,33 @@ Loading the module GCC/9.3.0 gives access to other modules that only now became 
 
 .. code-block:: julia
 
-   ----------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCC/9.3.0 ------------------------
+   ------------------------ /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/9.3.0 ------------------------
       OpenMPI/4.0.3
 
-   --------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCCcore/9.3.0 ----------------------
-      Autoconf/2.69          Perl/5.30.2      (D)    hwloc/2.2.0             ncurses/6.2        (D)
-      Automake/1.16.1        UCX/1.8.0               libevent/2.1.11         numactl/2.0.13
-      Autotools/20180311     XZ/5.2.5                libfabric/1.11.0        pkg-config/0.29.2
-      Bison/3.5.3            binutils/2.34    (L)    libpciaccess/0.16       xorg-macros/1.19.2
-      DB/18.1.32             expat/2.2.9             libreadline/8.0         zlib/1.2.11        (L)
-      M4/1.4.18              flex/2.6.4       (D)    libtool/2.4.6
-      PMIx/3.1.5             groff/1.22.4            libxml2/2.9.10
-      Perl/5.30.2-minimal    help2man/1.47.12        makeinfo/6.7-minimal
+   ---------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/9.3.0 ----------------------
+      Autoconf/2.69          Perl/5.30.2      (D)    hwloc/2.2.0             ncurses/6.2        (D)         
+      Automake/1.16.1        UCX/1.8.0               libevent/2.1.11         numactl/2.0.13                 
+      Autotools/20180311     XZ/5.2.5                libfabric/1.11.0        pkg-config/0.29.2              
+      Bison/3.5.3            binutils/2.34    (L)    libpciaccess/0.16       xorg-macros/1.19.2             
+      DB/18.1.32             expat/2.2.9             libreadline/8.0         zlib/1.2.11        (L,D)
+      M4/1.4.18              flex/2.6.4       (D)    libtool/2.4.6                                          
+      PMIx/3.1.5             groff/1.22.4            libxml2/2.9.10                                         
+      Perl/5.30.2-minimal    help2man/1.47.12        makeinfo/6.7-minimal                                   
 
-   ------------------------------ /mnt/beegfs/apps/4.7.x/modules/all/Core -------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b
-      GCC/9.3.0             (L)     binutils/2.34              imkl/2021.4.0
-      GCC/11.2.0                    binutils/2.37              intel-compilers/2021.4.0
-      GCCcore/9.3.0         (L)     flex/2.6.4                 intel/2021b
-      GCCcore/11.2.0                foss/2021b                 ncurses/6.1
-      GPAW-setups/0.9.20000 (D)     gettext/0.20.1             ncurses/6.2
-      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0            (D)
-      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
-      OpenSSL/1.1           (D)     gompi/2021b
+   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
+      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b                                  
+      GCC/9.3.0             (L)     binutils/2.34              imkl/2021.4.0                                
+      GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
+      GCCcore/9.3.0         (L)     flex/2.6.4                 intel/2021b                                  
+      GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
+      GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2                                  
+      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
+      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11                                  
+      OpenSSL/1.1                   gompi/2021b         (D)                                                 
 
-   L:  Module is loaded
-   D:  Default module
-
+   Where:
+     L:        Module is loaded
+     D:        Default Module
 
 Here one can see (from bottom to top) the core modules, general software compiled with GCC-9.3.0, and MPI API compiled with GCC-9.3.0 following the scheme core/compiler/MPI referred above.
 
@@ -150,14 +138,15 @@ Let us now use an enviromment based on GCC-11.2.0. Hence, load the module GCC/11
 .. code-block:: julia
 
    Inactive Modules:
-      1) OpenMPI/4.0.3     3) UCX/1.8.0       5) libevent/2.1.11      7) numactl/2.0.13
-      2) PMIx/3.1.5        4) hwloc/2.2.0     6) libfabric/1.11.0
+      1) OpenMPI/4.0.3     3) UCX/1.8.0       5) libevent/2.1.11      7) numactl/2.0.13               
+      2) PMIx/3.1.5        4) hwloc/2.2.0     6) libfabric/1.11.0                                     
 
-   Due to MODULEPATH changes, the following have been reloaded:
-      1) XZ/5.2.5     2) libpciaccess/0.16     3) libxml2/2.9.10     4) zlib/1.2.11
+   Due to MODULEPATH changes, the following have been reloaded:                                      
+      1) XZ/5.2.5     2) libpciaccess/0.16     3) libxml2/2.9.10     4) zlib/1.2.11                   
 
-   The following have been reloaded with a version change:
-      1) GCC/9.3.0 => GCC/11.2.0     2) GCCcore/9.3.0 => GCCcore/11.2.0     3) binutils/2.34 => binutils/2.37
+   The following have been reloaded with a version change:                                           
+      1) GCC/9.3.0 => GCC/11.2.0             3) binutils/2.34 => binutils/2.37                        
+      2) GCCcore/9.3.0 => GCCcore/11.2.0
 
 So, what happen? Basically the system is smart enough to understand that the dependences and core files in the previous environment are incompatible to GCC/11.2.0 and replaces or deactivates modules. Check the loaded modules with ``module list``
 
@@ -175,78 +164,35 @@ No longer have access to OpenMPI-4.0.3 and assocated frameworks. Let's check wha
 
 .. code-block:: julia
 
-   ----------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCC/11.2.0 -----------------------
-      BLIS/0.8.1         GEOS/3.9.1       OpenBLAS/0.3.18    libxc/5.1.6  (D)
-      Boost/1.77.0       GSL/2.7          OpenMPI/4.1.1      libxsmm/1.17
-      FlexiBLAS/3.0.4    LAPACK/3.10.1    libxc/4.3.4
+   --------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/11.2.0 ---------------------------
+      BLIS/0.8.1      FlexiBLAS/3.0.4    LAPACK/3.10.1      OpenMPI/4.1.1
+      Boost/1.77.0    GSL/2.7            OpenBLAS/0.3.18    libxc/5.1.6
 
-   --------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCCcore/11.2.0 ---------------------
-      ANTLR/2.7.7-Java-11                 Pillow/8.3.2                   libGLU/9.0.2
-      ATK/2.36.0                          PyYAML/5.4.1                   libarchive/3.5.1
-      Autoconf/2.71                       Python/2.7.18-bare             libcerf/1.17
-      Automake/1.16.4                     Python/3.9.6-bare              libdap/3.20.8
-      Autotools/20210726                  Python/3.9.6            (D)    libdrm/2.4.107
-      Bazel/4.2.2                         Qhull/2020.2                   libepoxy/1.5.8
-      Bison/3.7.6                         Qt5/5.15.2                     libevent/2.1.12
-      Brotli/1.0.9                        Rust/1.54.0                    libfabric/1.13.2
-      CMake/3.21.1                        SQLite/3.36                    libffi/3.4.2
-      CMake/3.22.1                 (D)    Szip/2.1.1                     libgd/2.3.3
-      DB/18.1.40                          Tcl/8.6.11                     libgeotiff/1.7.0
-      DBus/1.13.18                        Tk/8.6.11                      libgit2/1.1.1
-      Doxygen/1.9.1                       Tkinter/3.9.6                  libglvnd/1.3.3
-      Eigen/3.3.9                         Togl/2.0                       libiconv/1.16
-      FFmpeg/4.3.2                        UCX/1.11.2                     libjpeg-turbo/2.0.6
-      FLAC/1.3.3                          UDUNITS/2.2.28                 libogg/1.3.5
-      Flask/2.0.2                         UnZip/6.0                      libpciaccess/0.16          (L)
-      FriBidi/1.0.10                      Voro++/0.4.6                   libpng/1.6.37
-      GLPK/5.0                            X11/20210802                   libreadline/8.1
-      GLib/2.69.1                         XZ/5.2.5                (L)    libsndfile/1.0.31
-      GMP/6.2.1                           Xvfb/1.20.13                   libtirpc/1.3.2
-      GObject-Introspection/1.68.0        Yasm/1.3.0                     libtool/2.4.6
-      GTK3/3.24.31                        Zip/3.0                        libunwind/1.5.0
-      Gdk-Pixbuf/2.42.6                   archspec/0.1.3                 libvorbis/1.3.7
-      Ghostscript/9.54.0                  at-spi2-atk/2.38.0             libwebp/1.2.0
-      HDF/4.2.15                          at-spi2-core/2.40.3            libxml2/2.9.10             (L)
-      HarfBuzz/2.8.2                      attr/2.5.1                     libyaml/0.2.5
-      ICU/69.1                            binutils/2.37           (L)    lz4/1.9.3
-      ImageMagick/7.1.0-4                 bwidget/1.9.15                 make/4.3
-      JasPer/2.0.33                       bzip2/1.0.8                    ncurses/6.2                (D)
-      JsonCpp/1.9.4                       cURL/7.78.0                    nettle/3.7.3
-      LAME/3.100                          cairo/1.16.0                   nodejs/14.17.6
-      LLVM/12.0.1                         cppy/1.1.0                     nsync/1.24.0
-      LMDB/0.9.29                         dill/0.3.4                     numactl/2.0.14
-      LibTIFF/4.3.0                       double-conversion/3.1.5        pixman/0.40.0
-      LittleCMS/2.12                      expat/2.4.1                    pkg-config/0.29.2
-      Lua/5.4.3                           flatbuffers-python/2.0         pkgconf/1.8.0              (D)
-      M4/1.4.19                    (D)    flatbuffers/2.0.0              pkgconfig/1.5.5-python
-      METIS/5.1.0                         flex/2.6.4              (D)    protobuf-python/3.17.3
-      MPFR/4.1.0                          fontconfig/2.13.94             protobuf/3.17.3
-      Mako/1.1.4                          freetype/2.11.0                pybind11/2.7.1
-      Mesa/21.1.7                         gettext/0.21            (D)    re2c/2.2
-      Meson/0.58.2                        giflib/5.2.1                   scikit-build/0.11.1
-      NASM/2.15.05                        git/2.33.1-nodocs              snappy/1.1.9
-      NLopt/2.7.0                         gnuplot/5.4.2                  tbb/2020.3
-      NSPR/4.32                           gperf/3.1                      tqdm/4.62.3
-      NSS/3.69                            graphite2/1.3.14               typing-extensions/3.10.0.2
-      Ninja/1.10.2                        groff/1.22.4                   util-linux/2.37
-      OpenEXR/3.1.1                       gzip/1.10                      x264/20210613
-      PCRE/8.45                           help2man/1.48.3                x265/3.5
-      PCRE2/10.37                         hwloc/2.5.0                    xorg-macros/1.19.3
-      PMIx/4.1.0                          hypothesis/6.14.6              xxd/8.2.4220
-      PROJ/8.1.0                          intltool/0.51.0                zlib/1.2.11                (L)
-      Pango/1.48.8                        jbigkit/2.1                    zstd/1.5.0
-      Perl/5.34.0                         kim-api/2.3.0
+   ------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/11.2.0 -------------------------
+      ANTLR/2.7.7-Java-11                 Pillow/8.3.2                     intltool/0.51.0
+      ATK/2.36.0                          PyYAML/5.4.1                     jbigkit/2.1
+      Autoconf/2.71                       Python/2.7.18-bare               kim-api/2.3.0
+      Automake/1.16.4                     Python/3.9.6-bare                libGLU/9.0.2
+      Autotools/20210726                  Python/3.9.6            (D)      libarchive/3.5.1
+      Bazel/4.2.2                         Qhull/2020.2                     libcerf/1.17
+      Bison/3.7.6                         Qt5/5.15.2                       libdap/3.20.8
+      Brotli/1.0.9                        Rust/1.54.0                      libdrm/2.4.107
+      CMake/3.21.1                        SQLite/3.36                      libepoxy/1.5.8
+      CMake/3.22.1                 (D)    Szip/2.1.1                       libevent/2.1.12
+      DB/18.1.40                          Tcl/8.6.11                       libfabric/1.13.2
+      DBus/1.13.18                        Tk/8.6.11                        libffi/3.4.2
+      Doxygen/1.9.1                       Tkinter/3.9.6                    libgd/2.3.3
+      Eigen/3.3.9                         Togl/2.0                         libgeotiff/1.7.0
+      ...
 
-   ------------------------------ /mnt/beegfs/apps/4.7.x/modules/all/Core -------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11    iimpi/2021b
-      GCC/9.3.0                     binutils/2.34          imkl/2021.4.0
-      GCC/11.2.0            (L)     binutils/2.37          intel-compilers/2021.4.0
-      GCCcore/9.3.0                 flex/2.6.4             intel/2021b
-      GCCcore/11.2.0        (L)     foss/2021b             ncurses/6.1
-      GPAW-setups/0.9.20000 (D)     gettext/0.20.1         ncurses/6.2
-      Java/11.0.16          (11)    gettext/0.21           pkgconf/1.8.0
-      M4/1.4.19                     gompi/2020a            zlib/1.2.11
-      OpenSSL/1.1           (D)     gompi/2021b
+   ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
+      Bison/3.8.2           (D)      M4/1.4.19              gettext/0.20.1                  intel/2021b
+      GCC/9.3.0                      OpenSSL/1.1            gettext/0.21                    ncurses/6.1
+      GCC/11.2.0            (L,D)    ant/1.10.11-Java-11    gompi/2020a                     ncurses/6.2
+      GCCcore/9.3.0                  binutils/2.34          gompi/2021b              (D)    pkgconf/1.8.0
+      GCCcore/11.2.0        (L,D)    binutils/2.37          iimpi/2021b                     zlib/1.2.11
+      GPAW-setups/0.9.20000          flex/2.6.4             imkl/2021.4.0
+      Java/11.0.16          (11)     foss/2021b             intel-compilers/2021.4.0
 
    Where:
       L:        Module is loaded
@@ -304,13 +250,13 @@ and see what is available (``module av``)
       FlexiBLAS/3.0.4    LAPACK/3.10.1    libxc/4.3.4
 
    --------------------- /mnt/beegfs/apps/4.7.x/modules/all/Compiler/GCCcore/11.2.0 ---------------------
-      ANTLR/2.7.7-Java-11                 Pillow/8.3.2                   libGLU/9.0.2
-      ATK/2.36.0                          PyYAML/5.4.1                   libarchive/3.5.1
-      Autoconf/2.71                       Python/2.7.18-bare             libcerf/1.17
-      Automake/1.16.4                     Python/3.9.6-bare              libdap/3.20.8
-      Autotools/20210726                  Python/3.9.6            (D)    libdrm/2.4.107
-      Bazel/4.2.2                         Qhull/2020.2                   libepoxy/1.5.8
-   ...
+      ANTLR/2.7.7-Java-11                 Pillow/8.3.2                     intltool/0.51.0                         
+      ATK/2.36.0                          PyYAML/5.4.1                     jbigkit/2.1                             
+      Autoconf/2.71                       Python/2.7.18-bare               kim-api/2.3.0                           
+      Automake/1.16.4                     Python/3.9.6-bare                libGLU/9.0.2                            
+      Autotools/20210726                  Python/3.9.6            (D)      libarchive/3.5.1                        
+      Bazel/4.2.2                         Qhull/2020.2                     libcerf/1.17    
+      ...
 
 Now the user got access to all the software that was compiled against OpenMPI-4.1.1. The top row displays the modules for software compiled against OpenMPI, which in turn was compiled with GCC compiler (second row of modules). The third row displays the core modules associated to GCC/11.2.0.
 
@@ -318,16 +264,14 @@ All this work can be executed with just a single command by loading foss/2021b. 
 
 .. code-block:: julia
 
-   -------------------------------- /mnt/beegfs/apps/4.7.x/modules/all/Core ---------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b
-      GCC/9.3.0                     binutils/2.34              imkl/2021.4.0
-      GCC/11.2.0                    binutils/2.37              intel-compilers/2021.4.0
-      GCCcore/9.3.0                 flex/2.6.4          (D)    intel/2021b
-      GCCcore/11.2.0                foss/2021b                 ncurses/6.1
-      GPAW-setups/0.9.20000 (D)     gettext/0.20.1             ncurses/6.2              (D)
-      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0            (D)
-      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
-      OpenSSL/1.1           (D)     gompi/2021b
+   ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
+      Bison/3.8.2                   M4/1.4.19                  gettext/0.20.1                  intel/2021b         
+      GCC/9.3.0                     OpenSSL/1.1                gettext/0.21             (D)    ncurses/6.1         
+      GCC/11.2.0            (D)     ant/1.10.11-Java-11        gompi/2020a                     ncurses/6.2   (D)   
+      GCCcore/9.3.0                 binutils/2.34              gompi/2021b              (D)    pkgconf/1.8.0       
+      GCCcore/11.2.0        (D)     binutils/2.37       (D)    iimpi/2021b                     zlib/1.2.11         
+      GPAW-setups/0.9.20000         flex/2.6.4                 imkl/2021.4.0                                       
+      Java/11.0.16          (11)    foss/2021b                 intel-compilers/2021.4.0                            
 
 Load foss/2021b (``module load foss/2021b``) and check what is available (``module av``) getting
 
