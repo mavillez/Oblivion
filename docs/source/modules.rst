@@ -418,8 +418,8 @@ In the latter case the loaded modules, given by ``module list``, are
 4. Operations With Modules
 --------------------------
 
-Purging Modules
-~~~~~~~~~~~~~~~
+4.1 Purging Modules
+~~~~~~~~~~~~~~~~~~~
 
 The user can purge the loaded modules by executing 
 
@@ -428,8 +428,8 @@ The user can purge the loaded modules by executing
   module purge
   
   
-Save and Restore Modules
-~~~~~~~~~~~~~~~~~~~~~~~~
+4.2 Save and Restore Modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Often a user uses different environments for his/her processes. Hence, he/she needs to load and purge the loaded modules several times. An easy way to proceed is to save those module environments into a file, say <module_environment>, by using 
 
@@ -444,8 +444,8 @@ Later, the environment can be reloaded using the command
   module restore <module_environment>
 
 
-Module Details
-~~~~~~~~~~~~~~
+4.3 Module Details
+~~~~~~~~~~~~~~~~~~
 
 To learn further details of a module, how to load it, and dependencies use 
 
