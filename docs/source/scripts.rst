@@ -278,7 +278,7 @@ the list of modules to be loaded. Here is an example:
   
 Note in this example we included modules like TensorFlow, etc., but the user can add any modules he/she wishes. 
 
-Note also that ``TensorFlow/2.8.4`` is loaded and thus ``SciPy-bundle/2021.10``. This can be checked in the command line terminal by issuing the following commands:
+Note also that in this particular example when ``TensorFlow/2.8.4`` is loaded the same happens to ``SciPy-bundle/2021.10``. This can be checked in the command line terminal by issuing the following commands:
 
 .. code-block:: console
 
