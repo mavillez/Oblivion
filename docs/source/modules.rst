@@ -303,18 +303,24 @@ Similar procedure to what has been outlined above applies for modules using the 
 
 .. code-block:: julia
 
-   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
-   Bison/3.8.2                   ant/1.10.11-Java-11        iimpi/2021b                                  
-   GCC/9.3.0                     binutils/2.34              imkl/2021.4.0                                
-   GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
-   GCCcore/9.3.0                 flex/2.6.4                 intel/2021b                                  
-   GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
-   GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2              (D)                 
-   Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
-   M4/1.4.19                     gompi/2020a                zlib/1.2.11                                  
-   OpenSSL/1.1                   gompi/2021b         (D)                                                 
+  ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
+      Bison/3.8.2           (D)      M4/1.4.19              gettext/0.20.1                  intel/2021b
+      GCC/9.3.0                      OpenSSL/1.1            gettext/0.21                    ncurses/6.1
+      GCC/11.2.0            (L,D)    ant/1.10.11-Java-11    gompi/2020a                     ncurses/6.2
+      GCCcore/9.3.0                  binutils/2.34          gompi/2021b              (D)    pkgconf/1.8.0
+      GCCcore/11.2.0        (L,D)    binutils/2.37          iimpi/2021b                     zlib/1.2.11
+      GPAW-setups/0.9.20000          flex/2.6.4             imkl/2021.4.0
+      Java/11.0.16          (11)     foss/2021b             intel-compilers/2021.4.0
+      
+After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module list`` shows
 
-After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module av`` displays
+.. code-block:: julia
+
+   Currently Loaded Modules:
+      1) GCCcore/11.2.0   3) binutils/2.37              5) numactl/2.0.14   7) impi/2021.4.0   9) imkl-FFTW/2021.4.0
+      2) zlib/1.2.11      4) intel-compilers/2021.4.0   6) UCX/1.11.2       8) imkl/2021.4.0  10) intel/2021b
+
+and ``module av`` displays
 
 .. code-block:: julia
 
@@ -353,7 +359,7 @@ After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``modul
 On the top section the software compiled against Intel MPI (which is composed by MPICH compiled against the Intel compilers)
 is displayed followed by the software compiled with Intel C, C++ and Fortran compilers.
 
-The user can change to GCC based modules by issuing ``module load foss/2021b`` obtaining
+The user can change to GCC based modules, e.g., to the foss/2021b toochain, by issuing ``module load foss/2021b`` obtaining
 
 .. code-block:: julia
 
