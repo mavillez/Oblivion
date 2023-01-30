@@ -279,6 +279,7 @@ the list of modules to be loaded. Here is an example
 Note that ``TensorFlow/2.8.4`` is loaded and thus ``SciPy-bundle/2021.10``. This can be checked in the command line terminal by issuing the following commands:
 
 .. code-block:: console
+
    module purge
    module load foss/2021b TensorFlow/2.8.4
    module list
