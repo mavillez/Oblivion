@@ -68,6 +68,9 @@ Toolchain intel includes the following software:
 2. Loading Modules
 ------------------
 
+2.1 GCC Based Modules
+~~~~~~~~~~~~~~~~~~~~~
+
 Let us assume that the user wants to use software compiled with GCC-9.3.0. Hence, he loads the corresponding modules
 
 .. code-block:: julia
@@ -292,6 +295,90 @@ Load foss/2021b (``module load foss/2021b``) and check what is available (``modu
       
 It is the same obtained previously by loading GCC/11.2.0 and OpenMPI/4.1.1.
 
+
+2.2 Intel-Compilers Based Modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar procedure to what has been outlined above applies for modules using the Intel compilers, MKL, and MPI. At the entering level if the user executes ``module av`` obtains 
+
+.. code-block:: julia
+
+   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
+   Bison/3.8.2                   ant/1.10.11-Java-11        iimpi/2021b                                  
+   GCC/9.3.0                     binutils/2.34              imkl/2021.4.0                                
+   GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
+   GCCcore/9.3.0                 flex/2.6.4                 intel/2021b                                  
+   GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
+   GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2              (D)                 
+   Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
+   M4/1.4.19                     gompi/2020a                zlib/1.2.11                                  
+   OpenSSL/1.1                   gompi/2021b         (D)                                                 
+
+After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module av`` displays
+
+.. code-block:: julia
+
+   --------------------- /mnt/beegfs/stack/mn02470/modules/all/MPI/intel/2021.4.0/impi/2021.4.0 ----------------------
+      ABINIT/9.6.2          HDF5/1.12.1                 SCOTCH/6.1.2                mkl-service/2.3.0
+      ASE/3.22.1            HPL/2.3                     SPOTPY/1.5.14               ncview/2.1.8
+      AmberTools/21         Hypre/2.24.0                SciPy-bundle/2021.10        netCDF-C++4/4.3.1
+      ArviZ/0.11.4          IMB/2021.3                  Siesta/4.1.5                netCDF-Fortran/4.5.3
+      Bambi/0.7.1           Libint/2.6.0-lmax-6-cp2k    SimPEG/0.18.1               netCDF/4.8.1
+      Biopython/1.79        MDAnalysis/2.0.0            SuperLU/5.3.0               netcdf4-python/1.5.7
+      CGAL/4.14.3           MDTraj/1.9.7                Theano/1.1.2-PyMC           networkx/2.6.3
+      CP2K/8.2              MUMPS/5.4.1-metis           Valgrind/3.18.1             numba/0.54.1
+      ELPA/2021.05.001      NCO/5.0.3                   Wannier90/3.1.0             scikit-learn/1.0.1
+      ESMF/8.2.0            NWChem/7.0.2                futile/1.8.3                spglib-python/1.16.3
+      FDS/6.7.7             OSU-Micro-Benchmarks/5.8    h5py/3.6.0                  statsmodels/0.13.1
+      FFTW/3.3.10           PLUMED/2.8.0                imkl-FFTW/2021.4.0   (L)    worker/1.6.13
+      GDAL/3.3.2            PSolver/1.8.3               libGridXC/0.9.6             xarray/0.20.1
+      GEOS/3.9.1            ParMETIS/4.0.3              libvdwxc/0.4.0
+      GPAW/22.8.0           PyMC3/3.11.1                libxsmm/1.17
+      GlobalArrays/5.8.1    QuantumESPRESSO/7.0         matplotlib/3.4.3
+
+   -------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/intel/2021.4.0 --------------------------
+      Boost/1.77.0    Flye/2.9    GSL/2.7    impi/2021.4.0 (L)    libxc/5.1.6    xmlf90/1.5.4
+
+   -------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/11.2.0 --------------------------
+      ANTLR/2.7.7-Java-11                 Pillow/8.3.2                     intltool/0.51.0
+      ATK/2.36.0                          PyYAML/5.4.1                     jbigkit/2.1
+      Autoconf/2.71                       Python/2.7.18-bare               kim-api/2.3.0
+      Automake/1.16.4                     Python/3.9.6-bare                libGLU/9.0.2
+      Autotools/20210726                  Python/3.9.6            (D)      libarchive/3.5.1
+      Bazel/4.2.2                         Qhull/2020.2                     libcerf/1.17
+      Bison/3.7.6                         Qt5/5.15.2                       libdap/3.20.8
+      Brotli/1.0.9                        Rust/1.54.0                      libdrm/2.4.107
+      ...
+
+On the top section the software compiled against Intel MPI (which is composed by MPICH compiled against the Intel compilers)
+is displayed followed by the software compiled with Intel C, C++ and Fortran compilers.
+
+The user can change to GCC based modules by issuing ``module load foss/2021b`` obtaining
+
+.. code-block:: julia
+
+   Lmod is automatically replacing "intel-compilers/2021.4.0" with "GCC/11.2.0".
+   
+   Inactive Modules:
+      1) imkl-FFTW/2021.4.0     2) impi/2021.4.0
+
+and ``module list`` gives
+
+module list
+
+.. code-block:: julia
+
+   Currently Loaded Modules:
+      1) GCCcore/11.2.0   6) imkl/2021.4.0   11) libpciaccess/0.16  16) PMIx/4.1.0       21) ScaLAPACK/2.1.0-fb
+      2) zlib/1.2.11      7) intel/2021b     12) hwloc/2.5.0        17) OpenMPI/4.1.1    22) foss/2021b
+      3) binutils/2.37    8) GCC/11.2.0      13) OpenSSL/1.1        18) OpenBLAS/0.3.18
+      4) numactl/2.0.14   9) XZ/5.2.5        14) libevent/2.1.12    19) FlexiBLAS/3.0.4
+      5) UCX/1.11.2      10) libxml2/2.9.10  15) libfabric/1.13.2   20) FFTW/3.3.10
+
+   Inactive Modules:
+      1) impi/2021.4.0   2) imkl-FFTW/2021.4.0
+
+
 3. Loading a Particular Software
 --------------------------------
 
@@ -320,6 +407,7 @@ In the latter case the loaded modules, given by ``module list``, are
       6) XZ/5.2.5           14) PMIx/4.1.0        22) ncurses/6.2         30) SciPy-bundle/2021.10
       7) libxml2/2.9.10     15) OpenMPI/4.1.1     23) libreadline/8.1     31) networkx/2.6.3
       8) libpciaccess/0.16  16) OpenBLAS/0.3.18   24) Tcl/8.6.11          32) GROMACS/2021.5
+
 
 4. Operations With Modules
 --------------------------
