@@ -241,6 +241,40 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
 
   dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
   
+
+7. Including the modules path in the script
+-------------------------------------------
+
+The modules path, declared in the variable ``MODULEPATH``, is loaded into the user environment at login. 
+However, the user can add MODULEPATH into the batch script. This is useful when there are different software 
+stacks or there is a need to test different setups. 
+
+So, the user can add int othe script the following line ``export MODULEPATH=<PATH TO THE MODULES CORE>`` before 
+the list of modules to be loaded. Here is an example
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=zeus
+  #SBATCH --output=zeus_%j.out
+  #SBATCH —-error=zeus_%j.error
+  #SBATCH --nodes=16
+  #SBATCH --ntasks=512
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=16
+  #SBATCH --exclusive
+  #SBATCH --partition=medium
+
+  export PMIX_MCA_psec=native
+  export MODULEPATH=/mnt/beegfs/stack/mn02470/modules/all/Core 
+  
+  module purge
+  module load foss/2021b TensorFlow/2.8.4 scikit-learn/1.0.2 matplotlib/3.4.3
+
+  srun ./executable
+  
   
 Acknowledgements
 ---------------
