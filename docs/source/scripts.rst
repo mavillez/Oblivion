@@ -276,7 +276,7 @@ the list of modules to be loaded. Here is an example
 
   srun ./executable
   
-Note that ``TensorFlow/2.8.4`` is loaded and thus ``SciPy-bundle/2021.10``. This can be checked in the command line by issuing the following commands:
+Note that ``TensorFlow/2.8.4`` is loaded and thus ``SciPy-bundle/2021.10``. This can be checked in the command line terminal by issuing the following commands:
 
 .. code-block:: console
   module purge
