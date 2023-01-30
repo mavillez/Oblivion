@@ -271,9 +271,36 @@ the list of modules to be loaded. Here is an example
   export MODULEPATH=/mnt/beegfs/stack/mn02470/modules/all/Core 
   
   module purge
-  module load foss/2021b TensorFlow/2.8.4 scikit-learn/1.0.2 matplotlib/3.4.3
+  module load foss/2021b 
+  module load TensorFlow/2.8.4 scikit-learn/1.0.2 matplotlib/3.4.3
 
   srun ./executable
+  
+Note that ``TensorFlow/2.8.4`` is loaded and thus ``SciPy-bundle/2021.10``. You can check in your terminal by issuing the following commands:
+
+.. code-block:: console
+  module purge
+  module load foss/2021b TensorFlow/2.8.4
+  module list
+
+obtaining
+
+.. code-block:: console
+
+  Currently Loaded Modules:
+    1) GCCcore/11.2.0     14) PMIx/4.1.0          27) libffi/3.4.2             40) JsonCpp/1.9.4                   
+    2) zlib/1.2.11        15) OpenMPI/4.1.1       28) Python/3.9.6             41) NASM/2.15.05                    
+    3) binutils/2.37      16) OpenBLAS/0.3.18     29) pybind11/2.7.1           42) libjpeg-turbo/2.0.6             
+    4) GCC/11.2.0         17) FlexiBLAS/3.0.4     30) SciPy-bundle/2021.10     43) LMDB/0.9.29                     
+    5) numactl/2.0.14     18) FFTW/3.3.10         31) Szip/2.1.1               44) nsync/1.24.0                    
+    6) XZ/5.2.5           19) ScaLAPACK/2.1.0-fb  32) HDF5/1.12.1              45) protobuf/3.17.3                 
+    7) libxml2/2.9.10     20) foss/2021b          33) h5py/3.6.0               46) protobuf-python/3.17.3          
+    8) libpciaccess/0.16  21) bzip2/1.0.8         34) cURL/7.78.0              47) flatbuffers-python/2.0          
+    9) hwloc/2.5.0        22) ncurses/6.2         35) dill/0.3.4               48) libpng/1.6.37                   
+   10) OpenSSL/1.1        23) libreadline/8.1     36) double-conversion/3.1.5  49) snappy/1.1.9                    
+   11) libevent/2.1.12    24) Tcl/8.6.11          37) flatbuffers/2.0.0        50) networkx/2.6.3                  
+   12) UCX/1.11.2         25) SQLite/3.36         38) giflib/5.2.1             51) TensorFlow/2.8.4                
+   13) libfabric/1.13.2   26) GMP/6.2.1           39) ICU/69.1                                                    
   
   
 Acknowledgements
