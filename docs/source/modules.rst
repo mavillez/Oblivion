@@ -370,8 +370,6 @@ The user can change to GCC based modules, e.g., to the foss/2021b toochain, by i
 
 and ``module list`` gives
 
-module list
-
 .. code-block:: julia
 
    Currently Loaded Modules:
