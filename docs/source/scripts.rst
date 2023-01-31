@@ -1,9 +1,9 @@
-Sumission Scripts
-=================
+Submission Scripts
+==================
 
 The user needs to set the working environment before compiling the codes. That environment will be assumed by the system when job submisison is made using 
 
-.. code-block:: console
+.. code-block:: bash
 
   sbatch script_name.sh
   
@@ -131,8 +131,8 @@ Follows and example of a script to be used with Intel MPI and modules loading. S
 
   srun ./executable
 
-4. Script with Compilation and Modules Loading
-----------------------------------------------
+4. Software Compilation and Modules Loading in a Script
+-------------------------------------------------------
 
 Compilation instructions are allowed in a script and the path for the executable can be set.
 
@@ -163,8 +163,8 @@ Compilation instructions are allowed in a script and the path for the executable
   srun ./executable
 
 
-5. Modules Path in the Script
------------------------------
+5. Modules Path in a Script
+---------------------------
 
 The modules path, declared in the variable ``MODULEPATH``, is loaded into the user environment at login. 
 However, the user can add MODULEPATH into the batch script. This is useful when there are different software 
@@ -227,7 +227,7 @@ obtaining
    13) libfabric/1.13.2   26) GMP/6.2.1           39) ICU/69.1             
 
 
-6. Scripts for Specific software
+6. Scripts for Specific Software
 --------------------------------
 
 6.1 Dalton
