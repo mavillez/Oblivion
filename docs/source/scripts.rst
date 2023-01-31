@@ -35,7 +35,7 @@ This prevents the warnings due to Munge and PSEC similar to
 
 * In scripts associated to Intel MPI include
 
-.. code-block:: console
+.. code-block:: bash
 
   export I_MPI_FABRICS=shm:ofi 
   export FI_PROVIDER=tcp
