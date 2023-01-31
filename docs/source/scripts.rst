@@ -1,5 +1,5 @@
-Sumission Scripts (Examples)
-============================
+Sumission Scripts
+=================
 
 The user needs to set the working environment before compiling the codes. That environment will be assumed by the system when job submisison is made using 
 
@@ -54,7 +54,7 @@ This prevents the warning
 Example of a script without modules loading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
+.. code-block:: julia
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -162,7 +162,42 @@ Compilation instructions are allowed in a script and the path for the executable
 
   srun ./executable
 
-5. Script for GPAW
+
+5. Script for Dalton
+--------------------
+
+For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export PMIX_MCA_psec=native
+
+  export DALTON_LAUNCHER=srun
+  export DALTON_TMPDIR=`pwd`/temp
+  mkdir -p $DALTON_TMPDIR
+
+  module purge
+  module load foss/2021b Dalton/2020.0
+
+  input_file=example.dal
+  molecule_file=example.mol
+
+  dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
+
+
+6. Script for GPAW
 ------------------
 
 For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
@@ -208,41 +243,7 @@ Do not use the following script or similar - you end up having error messages an
   config_file.py input_file
 
 
-6. Script for Dalton
---------------------
-
-For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
-
-.. code-block:: console
-
-  #!/bin/bash
-  #SBATCH --time=00-00:40:00
-  #SBATCH --account=ACCOUNTID
-  #SBATCH --job-name=JOB_NAME
-  #SBATCH --output=%x_%j.out
-  #SBATCH --error=%x_%j.error
-  #SBATCH --ntasks=180
-  #SBATCH --cpus-per-task=1
-  #SBATCH --ntasks-per-socket=18
-  #SBATCH --exclusive
-  #SBATCH --partition=PARTITION
-
-  export PMIX_MCA_psec=native
-
-  export DALTON_LAUNCHER=srun
-  export DALTON_TMPDIR=`pwd`/temp
-  mkdir -p $DALTON_TMPDIR
-
-  module purge
-  module load foss/2021b Dalton/2020.0
-
-  input_file=example.dal
-  molecule_file=example.mol
-
-  dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
-
-
-6. Script for QuantumEspresso
+7. Script for QuantumEspresso
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 QuantumEspresso by default sets shared memory threads through OpenMP. Therefore, the user should control the 
@@ -272,7 +273,7 @@ use of threads in a compute node the script should include ``export OMP_NUM_THRE
   srun pw.x -i MY_INPUT.in
 
 
-7. Including the modules path in the script
+8. Including the modules path in the script
 -------------------------------------------
 
 The modules path, declared in the variable ``MODULEPATH``, is loaded into the user environment at login. 
