@@ -343,4 +343,4 @@ use of threads in a compute node the script should include ``export OMP_NUM_THRE
 Acknowledgements
 ---------------
 
-Scripts for Dalton, GPAW and QuantumEspresso were provided by Alfredo Palace Carvalho, U. Évora.
+The scripts for Dalton, GPAW and QuantumEspresso were provided by Alfredo Palace Carvalho, U. Évora.
