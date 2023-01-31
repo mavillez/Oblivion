@@ -16,13 +16,13 @@ In order to prevent anoying warnings during the course of run it is manadatory t
 
 * In Scripts associated to OpenMPI compiled with GCC include
 
-.. code-block:: console
+.. code-block:: bash
 
   export PMIX_MCA_psec=native
 
 This prevents the warnings due to Munge and PSEC similar to 
 
-.. code-block:: console
+.. code-block:: bash
 
    ----------------------------------------------------------------
    A requested component was not found, or was unable to be opened.  
@@ -43,7 +43,7 @@ This prevents the warnings due to Munge and PSEC similar to
 
 This prevents the warning 
 
-.. code-block:: console
+.. code-block:: bash
   
   MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
 
@@ -54,7 +54,7 @@ This prevents the warning
 Example of a script without modules loading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: julia
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -79,7 +79,7 @@ In this script we are setting the number of MPI tasks (ntasks), the number of co
 Example of a script with modules loading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -107,7 +107,7 @@ Example of a script with modules loading
 
 Follows and example of a script to be used with Intel MPI and modules loading. Similarly scripts can be written without modules.
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -136,7 +136,7 @@ Follows and example of a script to be used with Intel MPI and modules loading. S
 
 Compilation instructions are allowed in a script and the path for the executable can be set.
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -168,7 +168,7 @@ Compilation instructions are allowed in a script and the path for the executable
 
 For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -202,7 +202,7 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
 
 For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -225,7 +225,7 @@ For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a scr
 
 Do not use the following script or similar - you end up having error messages and not running the code
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
 
@@ -250,7 +250,7 @@ QuantumEspresso by default sets shared memory threads through OpenMP. Therefore,
 number of threads to be used by setting in the script the variable ``OMP_NUM_THREADS``. In order to prevent the
 use of threads in a compute node the script should include ``export OMP_NUM_THREADS=1``. Below is a script example.
 
-.. code-block:: console
+.. code-block:: bash
    
   #!/bin/bash
   #SBATCH --time=00-00:40:00
@@ -283,7 +283,7 @@ stacks or there is a need to test different setups.
 So, the user can add int othe script the following line ``export MODULEPATH=<PATH TO THE MODULES CORE>`` before 
 the list of modules to be loaded. Here is an example:
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
