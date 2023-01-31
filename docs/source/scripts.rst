@@ -51,8 +51,8 @@ This prevents the warning
 2. Scripts for OpenMPI + GCC
 ----------------------------
 
-Example of a script without modules loading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.1 Example of a script without modules loading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -76,8 +76,8 @@ Example of a script without modules loading
 In this script we are setting the number of MPI tasks (ntasks), the number of cores per task (cpus-per-task) and the number of tasks per CPU also referred as socket (ntasks-per-socket). So, this script imposes that 1 core executes 1 MPI task. The compute nodes are being used exclusively by this run (option exclusive), and the queue, which in SLURM is called partition, is the debug queue. Finally the code is executed using srun. 
 
 
-Example of a script with modules loading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.2 Example of a script with modules loading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -163,118 +163,8 @@ Compilation instructions are allowed in a script and the path for the executable
   srun ./executable
 
 
-5. Script for Dalton
---------------------
-
-For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
-
-.. code-block:: bash
-
-  #!/bin/bash
-  #SBATCH --time=00-00:40:00
-  #SBATCH --account=ACCOUNTID
-  #SBATCH --job-name=JOB_NAME
-  #SBATCH --output=%x_%j.out
-  #SBATCH --error=%x_%j.error
-  #SBATCH --ntasks=180
-  #SBATCH --cpus-per-task=1
-  #SBATCH --ntasks-per-socket=18
-  #SBATCH --exclusive
-  #SBATCH --partition=PARTITION
-
-  export PMIX_MCA_psec=native
-
-  export DALTON_LAUNCHER=srun
-  export DALTON_TMPDIR=`pwd`/temp
-  mkdir -p $DALTON_TMPDIR
-
-  module purge
-  module load foss/2021b Dalton/2020.0
-
-  input_file=example.dal
-  molecule_file=example.mol
-
-  dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
-
-
-6. Script for GPAW
-------------------
-
-For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
-
-.. code-block:: bash
-
-  #!/bin/bash
-  #SBATCH --time=00-00:40:00
-  #SBATCH --account=ACCOUNTID
-  #SBATCH --job-name=JOB_NAME
-  #SBATCH --output=%x_%j.out
-  #SBATCH --error=%x_%j.error
-  #SBATCH --ntasks=180
-  #SBATCH --cpus-per-task=1
-  #SBATCH --ntasks-per-socket=18
-  #SBATCH --exclusive
-  #SBATCH --partition=PARTITION
-
-  export PMIX_MCA_psec=native
-
-  module purge
-  module load foss/2021b GPAW/22.8.0
-
-  srun gpaw python calculation_script.py script_args
-
-Do not use the following script or similar - you end up having error messages and not running the code
-
-.. code-block:: bash
-
-  #!/bin/bash
-
-  gpaw sbatch -- \
-  --time=00:40:00 \
-  --account=ACCOUNTID \
-  --job-name=JOB_NAME \
-  --output=vermi_%j.out \
-  --error=vermi_%j.error \
-  --ntasks=180 \
-  --cpus-per-task=1 \
-  --ntasks-per-socket=18 \
-  --exclusive \
-  --partition=PARTITION \
-  config_file.py input_file
-
-
-7. Script for QuantumEspresso
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-QuantumEspresso by default sets shared memory threads through OpenMP. Therefore, the user should control the 
-number of threads to be used by setting in the script the variable ``OMP_NUM_THREADS``. In order to prevent the
-use of threads in a compute node the script should include ``export OMP_NUM_THREADS=1``. Below is a script example.
-
-.. code-block:: bash
-   
-  #!/bin/bash
-  #SBATCH --time=00-00:40:00
-  #SBATCH --account=ACCOUNTID
-  #SBATCH --job-name=JOB_NAME
-  #SBATCH --output=%x_%j.out
-  #SBATCH --error=%x_%j.error
-  #SBATCH --ntasks=180
-  #SBATCH --cpus-per-task=1
-  #SBATCH --ntasks-per-socket=18
-  #SBATCH --exclusive
-  #SBATCH --partition=PARTITION
-
-  export OMP_NUM_THREADS=1
-  export PMIX_MCA_psec=native
-
-  module purge
-  module load foss/2021b QuantumESPRESSO/7.0
-
-  srun pw.x -i MY_INPUT.in
-
-
-8. Including the modules path in the script
--------------------------------------------
+5. Modules Path in the Script
+-----------------------------
 
 The modules path, declared in the variable ``MODULEPATH``, is loaded into the user environment at login. 
 However, the user can add MODULEPATH into the batch script. This is useful when there are different software 
@@ -334,9 +224,122 @@ obtaining
    10) OpenSSL/1.1        23) libreadline/8.1     36) double-conversion/3.1.5  49) snappy/1.1.9                    
    11) libevent/2.1.12    24) Tcl/8.6.11          37) flatbuffers/2.0.0        50) networkx/2.6.3                  
    12) UCX/1.11.2         25) SQLite/3.36         38) giflib/5.2.1             51) TensorFlow/2.8.4                
-   13) libfabric/1.13.2   26) GMP/6.2.1           39) ICU/69.1                                                    
-  
-  
+   13) libfabric/1.13.2   26) GMP/6.2.1           39) ICU/69.1             
+
+
+6. Scripts for Specific software
+--------------------------------
+
+6.1 Dalton
+~~~~~~~~~~
+
+For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use a script similar to the following
+
+.. code-block:: bash
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export PMIX_MCA_psec=native
+
+  export DALTON_LAUNCHER=srun
+  export DALTON_TMPDIR=`pwd`/temp
+  mkdir -p $DALTON_TMPDIR
+
+  module purge
+  module load foss/2021b Dalton/2020.0
+
+  input_file=example.dal
+  molecule_file=example.mol
+
+  dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
+
+
+6.2 GPAW
+~~~~~~~~
+
+For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a script similar to the following
+
+.. code-block:: bash
+
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export PMIX_MCA_psec=native
+
+  module purge
+  module load foss/2021b GPAW/22.8.0
+
+  srun gpaw python calculation_script.py script_args
+
+Do not use the following script or similar - you end up having error messages and not running the code
+
+.. code-block:: bash
+
+  #!/bin/bash
+
+  gpaw sbatch -- \
+  --time=00:40:00 \
+  --account=ACCOUNTID \
+  --job-name=JOB_NAME \
+  --output=vermi_%j.out \
+  --error=vermi_%j.error \
+  --ntasks=180 \
+  --cpus-per-task=1 \
+  --ntasks-per-socket=18 \
+  --exclusive \
+  --partition=PARTITION \
+  config_file.py input_file
+
+
+6.3 QuantumEspresso
+~~~~~~~~~~~~~~~~~~~
+
+QuantumEspresso by default sets shared memory threads through OpenMP. Therefore, the user should control the 
+number of threads to be used by setting in the script the variable ``OMP_NUM_THREADS``. In order to prevent the
+use of threads in a compute node the script should include ``export OMP_NUM_THREADS=1``. Below is a script example.
+
+.. code-block:: bash
+   
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export OMP_NUM_THREADS=1
+  export PMIX_MCA_psec=native
+
+  module purge
+  module load foss/2021b QuantumESPRESSO/7.0
+
+  srun pw.x -i MY_INPUT.in
+
+
 Acknowledgements
 ---------------
 
