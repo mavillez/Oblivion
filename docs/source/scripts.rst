@@ -58,8 +58,8 @@ Example of a script without modules loading
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=zeus
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=zeus_%j.out
   #SBATCH —-error=zeus_%j.error
   #SBATCH --nodes=16
@@ -67,7 +67,7 @@ Example of a script without modules loading
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=16
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export PMIX_MCA_psec=native
 
@@ -83,8 +83,8 @@ Example of a script with modules loading
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=zeus
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=zeus_%j.out
   #SBATCH —-error=zeus_%j.error
   #SBATCH --nodes=16
@@ -92,7 +92,7 @@ Example of a script with modules loading
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=16
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export PMIX_MCA_psec=native
 
@@ -111,8 +111,8 @@ Follows and example of a script to be used with Intel MPI and modules loading. S
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=zeus
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=zeus_%j.out
   #SBATCH —-error=zeus_%j.error
   #SBATCH --nodes=16
@@ -120,7 +120,7 @@ Follows and example of a script to be used with Intel MPI and modules loading. S
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=16
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export I_MPI_FABRICS=shm:ofi 
   export FI_PROVIDER=tcp
@@ -140,8 +140,8 @@ Compilation instructions are allowed in a script and the path for the executable
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=zeus
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=zeus_%j.out
   #SBATCH —-error=zeus_%j.error
   #SBATCH --nodes=16
@@ -149,7 +149,7 @@ Compilation instructions are allowed in a script and the path for the executable
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=16
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export I_MPI_FABRICS=shm:ofi 
   export FI_PROVIDER=tcp
@@ -171,15 +171,15 @@ For GPAW compiled with GCC and OpenMPI and found in the foss toolchain use a scr
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=MY_JOB_NAME
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=%x_%j.out
   #SBATCH --error=%x_%j.error
   #SBATCH --ntasks=180
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=18
   #SBATCH --exclusive
-  #SBATCH --partition=short
+  #SBATCH --partition=PARTITION
 
   export PMIX_MCA_psec=native
 
@@ -196,15 +196,15 @@ Do not use the following script or similar - you end up having error messages an
 
   gpaw sbatch -- \
   --time=00:40:00 \
-  --account=benchmarks \
-  --job-name=vermi \
+  --account=ACCOUNTID \
+  --job-name=JOB_NAME \
   --output=vermi_%j.out \
   --error=vermi_%j.error \
   --ntasks=180 \
   --cpus-per-task=1 \
   --ntasks-per-socket=18 \
   --exclusive \
-  --partition=short \
+  --partition=PARTITION \
   config_file.py input_file
 
 
@@ -217,15 +217,15 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
 
   #!/bin/bash
   #SBATCH --time=00-00:40:00
-  #SBATCH --account=benchmarks
-  #SBATCH --job-name=MY_JOB_NAME
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
   #SBATCH --output=%x_%j.out
   #SBATCH --error=%x_%j.error
   #SBATCH --ntasks=180
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=18
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export PMIX_MCA_psec=native
 
@@ -240,7 +240,37 @@ For Dalton compiled with GCC and OpenMPI and available in the foss toolchain use
   molecule_file=example.mol
 
   dalton -t ${DALTON_TMPDIR} ${input_file} ${molecule_file}
-  
+
+
+6. Script for QuantumEspresso
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+QuantumEspresso by default sets shared memory threads through OpenMP. Therefore, the user should control the 
+number of threads to be used by setting in the script the variable ``OMP_NUM_THREADS``. In order to prevent the
+use of threads in a compute node the script should include ``export OMP_NUM_THREADS=1``. Below is a script example.
+
+.. code-block:: console
+   
+  #!/bin/bash
+  #SBATCH --time=00-00:40:00
+  #SBATCH --account=ACCOUNTID
+  #SBATCH --job-name=JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export OMP_NUM_THREADS=1
+  export PMIX_MCA_psec=native
+
+  module purge
+  module load foss/2021b QuantumESPRESSO/7.0
+
+  srun pw.x -i MY_INPUT.in
+
 
 7. Including the modules path in the script
 -------------------------------------------
@@ -265,7 +295,7 @@ the list of modules to be loaded. Here is an example:
   #SBATCH --cpus-per-task=1
   #SBATCH --ntasks-per-socket=16
   #SBATCH --exclusive
-  #SBATCH --partition=medium
+  #SBATCH --partition=PARTITION
 
   export PMIX_MCA_psec=native
   export MODULEPATH=/mnt/beegfs/stack/mn02470/modules/all/Core 
@@ -309,4 +339,4 @@ obtaining
 Acknowledgements
 ---------------
 
-Scripts for GPAW and Dalton were provided by Alfredo Palace Carvalho, U. Évora.
+Scripts for Dalton, GPAW and QuantumEspresso were provided by Alfredo Palace Carvalho, U. Évora.
