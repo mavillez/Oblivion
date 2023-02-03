@@ -581,4 +581,4 @@ To list all the available modules the user can use the command ``module spider``
     simulations, with either explicit water or generalized Born solvent models.
 
 
-For the full list of installed modules se `Installed Software`_.
+For the full list of installed modules see :ref:`installed software <`Installed Software`_>`:.
