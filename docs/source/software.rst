@@ -1,6 +1,9 @@
+.. _Installed Software:
+
 Installed Software
 ==================
 
+Reference `Installed Software`_
 
 .. code-block:: julia
 
