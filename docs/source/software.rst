@@ -10,9 +10,15 @@ Installed Software
     within Density Functional Theory (DFT), using pseudopotentials and a planewave or wavelet
     basis. 
 
+  ANSYS_CFD: ANSYS_CFD/2021R1, ANSYS_CFD/2022R2
+    ANSYS computational fluid dynamics (CFD) simulation software allows you to predict, with
+    confidence, the impact of fluid flows on your product throughout design and manufacturing as
+    well as during end use. ANSYS renowned CFD analysis tools include the widely used and
+    well-validated ANSYS Fluent and ANSYS CFX.
+
   ANTLR: ANTLR/2.7.7-Java-11
-    ANTLR, ANother Tool for Language Recognition, (formerly PCCTS) is a language tool that
-    provides a framework for constructing recognizers, compilers, and translators from grammatical
+    ANTLR, ANother Tool for Language Recognition, (formerly PCCTS) is a language tool that provides
+    a framework for constructing recognizers, compilers, and translators from grammatical
     descriptions containing Java, C#, C++, or Python actions.
 
   ASE: ASE/3.22.1
@@ -36,9 +42,9 @@ Installed Software
   Autoconf: Autoconf/2.69, Autoconf/2.71
     Autoconf is an extensible package of M4 macros that produce shell scripts to automatically
     configure software source code packages. These scripts can adapt the packages to many kinds of
-    UNIX-like systems without manual user intervention. Autoconf creates a configuration script
-    for a package from a template file that lists the operating system features that the package
-    can use, in the form of M4 macro calls. 
+    UNIX-like systems without manual user intervention. Autoconf creates a configuration script for
+    a package from a template file that lists the operating system features that the package can
+    use, in the form of M4 macro calls. 
 
   Automake: Automake/1.16.1, Automake/1.16.4
     Automake: GNU Standards-compliant Makefile generator
@@ -47,8 +53,8 @@ Installed Software
     This bundle collect the standard GNU build tools: Autoconf, Automake and libtool 
 
   BLIS: BLIS/0.8.1
-    BLIS is a portable software framework for instantiating high-performance BLAS-like dense
-    linear algebra libraries.
+    BLIS is a portable software framework for instantiating high-performance BLAS-like dense linear
+    algebra libraries.
 
   Bambi: Bambi/0.7.1
     Bambi is a high-level Bayesian model-building interface written in Python. It works with the
@@ -60,9 +66,9 @@ Installed Software
     of Google's software.
 
   Biopython: Biopython/1.79
-    Biopython is a set of freely available tools for biological computation written in Python by
-    an international team of developers. It is a distributed collaborative effort to develop
-    Python libraries and applications which address the needs of current and future work in
+    Biopython is a set of freely available tools for biological computation written in Python by an
+    international team of developers. It is a distributed collaborative effort to develop Python
+    libraries and applications which address the needs of current and future work in
     bioinformatics. 
 
   Bison: Bison/3.5.3, Bison/3.7.6, Bison/3.8.2
@@ -76,8 +82,8 @@ Installed Software
     Brotli is a generic-purpose lossless compression algorithm that compresses data using a
     combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context
     modeling, with a compression ratio comparable to the best currently available general-purpose
-    compression methods. It is similar in speed with deflate but offers more dense compression.
-    The specification of the Brotli Compressed Data Format is defined in RFC 7932.
+    compression methods. It is similar in speed with deflate but offers more dense compression. The
+    specification of the Brotli Compressed Data Format is defined in RFC 7932.
 
   CGAL: CGAL/4.14.3
     The goal of the CGAL Open Source Project is to provide easy access to efficient and reliable
@@ -104,8 +110,8 @@ Installed Software
     applications and daemons on demand when their services are needed. 
 
   Dalton: Dalton/2020.0
-    The Dalton code is a powerful tool for a wide range of molecular properties at different
-    levels of theory. Any published work arising from use of one of the Dalton2016 programs must
+    The Dalton code is a powerful tool for a wide range of molecular properties at different levels
+    of theory. Any published work arising from use of one of the Dalton2016 programs must
     acknowledge that by a proper reference, https://www.daltonprogram.org/www/citation.html.
 
   Doxygen: Doxygen/1.9.1
@@ -164,10 +170,10 @@ Installed Software
     Ada, as well as libraries for these languages (libstdc++, libgcj,...).
 
   GDAL: GDAL/3.3.2
-    GDAL is a translator library for raster geospatial data formats that is released under an
-    X/MIT style Open Source license by the Open Source Geospatial Foundation. As a library, it
-    presents a single abstract data model to the calling application for all supported formats. It
-    also comes with a variety of useful commandline utilities for data translation and processing.
+    GDAL is a translator library for raster geospatial data formats that is released under an X/MIT
+    style Open Source license by the Open Source Geospatial Foundation. As a library, it presents a
+    single abstract data model to the calling application for all supported formats. It also comes
+    with a variety of useful commandline utilities for data translation and processing.
 
   GEOS: GEOS/3.9.1
     GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS)
@@ -192,8 +198,8 @@ Installed Software
 
   GPAW-setups: GPAW-setups/0.9.20000
     PAW setup for the GPAW Density Functional Theory package. Users can install setups manually
-    using 'gpaw install-data' or use setups from this package. The versions of GPAW and
-    GPAW-setups can be intermixed.
+    using 'gpaw install-data' or use setups from this package. The versions of GPAW and GPAW-setups
+    can be intermixed.
 
   GROMACS: GROMACS/2021.5-PLUMED-2.8.0, GROMACS/2021.5
     GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
@@ -213,9 +219,9 @@ Installed Software
     details of drawing and device interaction. 
 
   Gdk-Pixbuf: Gdk-Pixbuf/2.42.6
-    The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation. It is used by
-    GTK+ 2 and GTK+ 3 to load and manipulate images. In the past it was distributed as part of
-    GTK+ 2 but it was split off into a separate package in preparation for the change to GTK+ 3. 
+    The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation. It is used by GTK+
+    2 and GTK+ 3 to load and manipulate images. In the past it was distributed as part of GTK+ 2
+    but it was split off into a separate package in preparation for the change to GTK+ 3. 
 
   GlobalArrays: GlobalArrays/5.8.1
     Global Arrays (GA) is a Partitioned Global Address Space (PGAS) programming model
@@ -231,8 +237,8 @@ Installed Software
 
   HPL: HPL/2.3
     HPL is a software package that solves a (random) dense linear system in double precision (64
-    bits) arithmetic on distributed-memory computers. It can thus be regarded as a portable as
-    well as freely available implementation of the High Performance Computing Linpack Benchmark.
+    bits) arithmetic on distributed-memory computers. It can thus be regarded as a portable as well
+    as freely available implementation of the High Performance Computing Linpack Benchmark.
 
   HarfBuzz: HarfBuzz/2.8.2
     HarfBuzz is an OpenType text shaping engine.
@@ -284,22 +290,22 @@ Installed Software
     designed to be easy to modify or extend with new functionality. 
 
   LAPACK: LAPACK/3.10.1
-    LAPACK is written in Fortran90 and provides routines for solving systems of simultaneous
-    linear equations, least-squares solutions of linear systems of equations, eigenvalue problems,
-    and singular value problems.
+    LAPACK is written in Fortran90 and provides routines for solving systems of simultaneous linear
+    equations, least-squares solutions of linear systems of equations, eigenvalue problems, and
+    singular value problems.
 
   LLVM: LLVM/12.0.1
     The LLVM Core libraries provide a modern source- and target-independent optimizer, along with
     code generation support for many popular CPUs (as well as some less common ones!) These
     libraries are built around a well specified code representation known as the LLVM intermediate
-    representation ("LLVM IR"). The LLVM Core libraries are well documented, and it is
-    particularly easy to invent your own language (or port an existing compiler) to use LLVM as an
-    optimizer and code generator.
+    representation ("LLVM IR"). The LLVM Core libraries are well documented, and it is particularly
+    easy to invent your own language (or port an existing compiler) to use LLVM as an optimizer and
+    code generator.
 
   LMDB: LMDB/0.9.29
     LMDB is a fast, memory-efficient database. With memory-mapped files, it has the read
-    performance of a pure in-memory database while retaining the persistence of standard
-    disk-based databases.
+    performance of a pure in-memory database while retaining the persistence of standard disk-based
+    databases.
 
   LibTIFF: LibTIFF/4.3.0
     tiff: Library and tools for reading and writing TIFF data files
@@ -323,8 +329,8 @@ Installed Software
     commands, doing arithmetic, etc.
 
   MDAnalysis: MDAnalysis/2.0.0
-    MDAnalysis is an object-oriented Python library to analyze trajectories from molecular
-    dynamics (MD) simulations in many popular formats.
+    MDAnalysis is an object-oriented Python library to analyze trajectories from molecular dynamics
+    (MD) simulations in many popular formats.
 
   MDTraj: MDTraj/1.9.7
     Read, write and analyze MD trajectories with only a few lines of Python code.
@@ -336,8 +342,8 @@ Installed Software
     partitioning schemes. 
 
   MPFR: MPFR/4.1.0
-    The MPFR library is a C library for multiple-precision floating-point computations with
-    correct rounding. 
+    The MPFR library is a C library for multiple-precision floating-point computations with correct
+    rounding. 
 
   MUMPS: MUMPS/5.4.1-metis
     A parallel sparse direct solver
@@ -361,13 +367,27 @@ Installed Software
     The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats, including
     DAP, HDF4, and HDF5.
 
+  NLopt: NLopt/2.7.0
+    NLopt is a free/open-source library for nonlinear optimization, providing a common interface
+    for a number of different free optimization routines available online as well as original
+    implementations of various other algorithms. 
+
   NSPR: NSPR/4.32
-    Netscape Portable Runtime (NSPR) provides a platform-neutral API for system level and
-    libc-like functions.
+    Netscape Portable Runtime (NSPR) provides a platform-neutral API for system level and libc-like
+    functions.
 
   NSS: NSS/3.69
     Network Security Services (NSS) is a set of libraries designed to support cross-platform
     development of security-enabled client and server applications.
+
+  NWChem: NWChem/7.0.2
+    NWChem aims to provide its users with computational chemistry tools that are scalable both in
+    their ability to treat large scientific computational chemistry problems efficiently, and in
+    their use of available parallel computing resources from high-performance parallel
+    supercomputers to conventional workstation clusters. NWChem software can handle: biomolecules,
+    nanostructures, and solid-state; from quantum to classical, and all combinations; Gaussian
+    basis functions or plane-waves; scaling from one to thousands of processors; properties and
+    relativity.
 
   Ninja: Ninja/1.10.2
     Ninja is a small build system with a focus on speed.
@@ -388,8 +408,8 @@ Installed Software
   OpenCV: OpenCV/4.5.5-contrib
     OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine
     learning software library. OpenCV was built to provide a common infrastructure for computer
-    vision applications and to accelerate the use of machine perception in the commercial
-    products. Includes extra modules for OpenCV from the contrib repository.
+    vision applications and to accelerate the use of machine perception in the commercial products.
+    Includes extra modules for OpenCV from the contrib repository.
 
   OpenEXR: OpenEXR/3.1.1
     OpenEXR is a high dynamic-range (HDR) image file format developed by Industrial Light & Magic
@@ -404,11 +424,11 @@ Installed Software
     The Open MPI Project is an open source MPI-3 implementation.
 
   OpenPGM: OpenPGM/5.2.122
-    OpenPGM is an open source implementation of the Pragmatic General Multicast (PGM)
-    specification in RFC 3208 available at www.ietf.org. PGM is a reliable and scalable multicast
-    protocol that enables receivers to detect loss, request retransmission of lost data, or notify
-    an application of unrecoverable loss. PGM is a receiver-reliable protocol, which means the
-    receiver is responsible for ensuring all data is received, absolving the sender of reception
+    OpenPGM is an open source implementation of the Pragmatic General Multicast (PGM) specification
+    in RFC 3208 available at www.ietf.org. PGM is a reliable and scalable multicast protocol that
+    enables receivers to detect loss, request retransmission of lost data, or notify an application
+    of unrecoverable loss. PGM is a receiver-reliable protocol, which means the receiver is
+    responsible for ensuring all data is received, absolving the sender of reception
     responsibility. 
 
   OpenSSL: OpenSSL/1.1
@@ -418,25 +438,25 @@ Installed Software
     cryptography library. 
 
   PCRE: PCRE/8.45
-    The PCRE library is a set of functions that implement regular expression pattern matching
-    using the same syntax and semantics as Perl 5. 
+    The PCRE library is a set of functions that implement regular expression pattern matching using
+    the same syntax and semantics as Perl 5. 
 
   PCRE2: PCRE2/10.37
-    The PCRE library is a set of functions that implement regular expression pattern matching
-    using the same syntax and semantics as Perl 5. 
+    The PCRE library is a set of functions that implement regular expression pattern matching using
+    the same syntax and semantics as Perl 5. 
 
   PLUMED: PLUMED/2.8.0
     PLUMED is an open source library for free energy calculations in molecular systems which works
-    together with some of the most popular molecular dynamics engines. Free energy calculations
-    can be performed as a function of many order parameters with a particular focus on biological
+    together with some of the most popular molecular dynamics engines. Free energy calculations can
+    be performed as a function of many order parameters with a particular focus on biological
     problems, using state of the art methods such as metadynamics, umbrella sampling and
     Jarzynski-equation based steered MD. The software, written in C++, can be easily interfaced
     with both fortran and C/C++ codes. 
 
   PMIx: PMIx/3.1.5, PMIx/4.1.0
     Process Management for Exascale Environments PMI Exascale (PMIx) represents an attempt to
-    provide an extended version of the PMI standard specifically designed to support clusters up
-    to and including exascale sizes. The overall objective of the project is not to branch the
+    provide an extended version of the PMI standard specifically designed to support clusters up to
+    and including exascale sizes. The overall objective of the project is not to branch the
     existing pseudo-standard definitions - in fact, PMIx fully supports both of the existing PMI-1
     and PMI-2 APIs - but rather to (a) augment and extend those APIs to eliminate some current
     restrictions that impact scalability, and (b) provide a reference implementation of the
@@ -451,9 +471,9 @@ Installed Software
 
   Pango: Pango/1.48.8
     Pango is a library for laying out and rendering of text, with an emphasis on
-    internationalization. Pango can be used anywhere that text layout is needed, though most of
-    the work on Pango so far has been done in the context of the GTK+ widget toolkit. Pango forms
-    the core of text and font handling for GTK+-2.x.
+    internationalization. Pango can be used anywhere that text layout is needed, though most of the
+    work on Pango so far has been done in the context of the GTK+ widget toolkit. Pango forms the
+    core of text and font handling for GTK+-2.x.
 
   ParMETIS: ParMETIS/4.0.3
     ParMETIS is an MPI-based parallel library that implements a variety of algorithms for
@@ -489,18 +509,18 @@ Installed Software
     more effectively.
 
   Qhull: Qhull/2020.2
-    Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace
-    intersection about a point, furthest-site Delaunay triangulation, and furthest-site Voronoi
-    diagram. The source code runs in 2-d, 3-d, 4-d, and higher dimensions. Qhull implements the
-    Quickhull algorithm for computing the convex hull. 
+    Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace intersection
+    about a point, furthest-site Delaunay triangulation, and furthest-site Voronoi diagram. The
+    source code runs in 2-d, 3-d, 4-d, and higher dimensions. Qhull implements the Quickhull
+    algorithm for computing the convex hull. 
 
   Qt5: Qt5/5.15.2
     Qt is a comprehensive cross-platform C++ application framework.
 
   QuantumESPRESSO: QuantumESPRESSO/7.0
-    Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure
-    calculations and materials modeling at the nanoscale. It is based on density-functional
-    theory, plane waves, and pseudopotentials (both norm-conserving and ultrasoft). 
+    Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations
+    and materials modeling at the nanoscale. It is based on density-functional theory, plane waves,
+    and pseudopotentials (both norm-conserving and ultrasoft). 
 
   Rust: Rust/1.54.0
     Rust is a systems programming language that runs blazingly fast, prevents segfaults, and
@@ -530,8 +550,8 @@ Installed Software
 
   Siesta: Siesta/4.1.5
     SIESTA is both a method and its computer program implementation, to perform efficient
-    electronic structure calculations and ab initio molecular dynamics simulations of molecules
-    and solids.
+    electronic structure calculations and ab initio molecular dynamics simulations of molecules and
+    solids.
 
   SimPEG: SimPEG/0.18.1
     An open source Python package for simulation and gradient based parameter estimation in
@@ -565,9 +585,8 @@ Installed Software
     expressions involving multi-dimensional arrays efficiently.
 
   Tk: Tk/8.6.11
-    Tk is an open source, cross-platform widget toolchain that provides a library of basic
-    elements for building a graphical user interface (GUI) in many different programming
-    languages.
+    Tk is an open source, cross-platform widget toolchain that provides a library of basic elements
+    for building a graphical user interface (GUI) in many different programming languages.
 
   Tkinter: Tkinter/3.9.6
     Tkinter module, built with the Python buildsystem
@@ -585,10 +604,10 @@ Installed Software
     measurement.
 
   UnZip: UnZip/6.0
-    UnZip is an extraction utility for archives compressed in .zip format (also called
-    "zipfiles"). Although highly compatible both with PKWARE's PKZIP and PKUNZIP utilities for
-    MS-DOS and with Info-ZIP's own Zip program, our primary objectives have been portability and
-    non-MSDOS functionality.
+    UnZip is an extraction utility for archives compressed in .zip format (also called "zipfiles").
+    Although highly compatible both with PKWARE's PKZIP and PKUNZIP utilities for MS-DOS and with
+    Info-ZIP's own Zip program, our primary objectives have been portability and non-MSDOS
+    functionality.
 
   VTK: VTK/9.1.0
     The Visualization Toolkit (VTK) is an open-source, freely available software system for 3D
@@ -616,10 +635,10 @@ Installed Software
 
   XCrySDen: XCrySDen/1.6.2
     XCrySDen is a crystalline and molecular structure visualisation program aiming at display of
-    isosurfaces and contours, which can be superimposed on crystalline structures and
-    interactively rotated and manipulated. It also possesses some tools for analysis of properties
-    in reciprocal space such as interactive selection of k-paths in the Brillouin zone for the
-    band-structure plots, and visualisation of Fermi surfaces. 
+    isosurfaces and contours, which can be superimposed on crystalline structures and interactively
+    rotated and manipulated. It also possesses some tools for analysis of properties in reciprocal
+    space such as interactive selection of k-paths in the Brillouin zone for the band-structure
+    plots, and visualisation of Fermi surfaces. 
 
   XZ: XZ/5.2.5
     xz: XZ utilities
@@ -670,17 +689,17 @@ Installed Software
     namespaces.
 
   bzip2: bzip2/1.0.8
-    bzip2 is a freely available, patent free, high-quality data compressor. It typically
-    compresses files to within 10% to 15% of the best available techniques (the PPM family of
-    statistical compressors), whilst being around twice as fast at compression and six times
-    faster at decompression. 
+    bzip2 is a freely available, patent free, high-quality data compressor. It typically compresses
+    files to within 10% to 15% of the best available techniques (the PPM family of statistical
+    compressors), whilst being around twice as fast at compression and six times faster at
+    decompression. 
 
   cURL: cURL/7.78.0
-    libcurl is a free and easy-to-use client-side URL transfer library, supporting DICT, FILE,
-    FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP,
-    SMTP, SMTPS, Telnet and TFTP. libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP
-    uploading, HTTP form based upload, proxies, cookies, user+password authentication (Basic,
-    Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling and more. 
+    libcurl is a free and easy-to-use client-side URL transfer library, supporting DICT, FILE, FTP,
+    FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP,
+    SMTPS, Telnet and TFTP. libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading,
+    HTTP form based upload, proxies, cookies, user+password authentication (Basic, Digest, NTLM,
+    Negotiate, Kerberos), file transfer resume, http proxy tunneling and more. 
 
   cairo: cairo/1.16.0
     Cairo is a 2D graphics library with support for multiple output devices. Currently supported
@@ -689,9 +708,9 @@ Installed Software
     OS/2, and DirectFB
 
   cppy: cppy/1.1.0
-    A small C++ header library which makes it easier to write Python extension modules. The
-    primary feature is a PyObject smart pointer which automatically handles reference counting and
-    provides convenience methods for performing common object operations.
+    A small C++ header library which makes it easier to write Python extension modules. The primary
+    feature is a PyObject smart pointer which automatically handles reference counting and provides
+    convenience methods for performing common object operations.
 
   dill: dill/0.3.4
     dill extends python's pickle module for serializing and de-serializing python objects to the
@@ -704,8 +723,8 @@ Installed Software
 
   expat: expat/2.2.9, expat/2.4.1
     Expat is an XML parser library written in C. It is a stream-oriented parser in which an
-    application registers handlers for things the parser might find in the XML document (like
-    start tags) 
+    application registers handlers for things the parser might find in the XML document (like start
+    tags) 
 
   flatbuffers: flatbuffers/2.0.0
     FlatBuffers: Memory Efficient Serialization Library
@@ -732,14 +751,14 @@ Installed Software
     generation tools, and many other products as well. 
 
   futile: futile/1.8.3
-    The FUTILE project (Fortran Utilities for the Treatment of Innermost Level of Executables) is
-    a set of modules and wrapper that encapsulate the most common low-level operations of a
-    Fortran code. 
+    The FUTILE project (Fortran Utilities for the Treatment of Innermost Level of Executables) is a
+    set of modules and wrapper that encapsulate the most common low-level operations of a Fortran
+    code. 
 
   gettext: gettext/0.20.1, gettext/0.21
     GNU 'gettext' is an important step for the GNU Translation Project, as it is an asset on which
-    we may build many other steps. This package offers to programmers, translators, and even
-    users, a well integrated set of tools and documentation
+    we may build many other steps. This package offers to programmers, translators, and even users,
+    a well integrated set of tools and documentation
 
   giflib: giflib/5.2.1
     giflib is a library for reading and writing gif images. It is API and ABI compatible with
@@ -756,10 +775,10 @@ Installed Software
     GNU Compiler Collection (GCC) based compiler toolchain, including OpenMPI for MPI support.
 
   gperf: gperf/3.1
-    GNU gperf is a perfect hash function generator. For a given list of strings, it produces a
-    hash function and hash table, in form of C or C++ code, for looking up a value depending on
-    the input string. The hash function is perfect, which means that the hash table has no
-    collisions, and the hash table lookup needs a single string comparison only. 
+    GNU gperf is a perfect hash function generator. For a given list of strings, it produces a hash
+    function and hash table, in form of C or C++ code, for looking up a value depending on the
+    input string. The hash function is perfect, which means that the hash table has no collisions,
+    and the hash table lookup needs a single string comparison only. 
 
   graphite2: graphite2/1.3.14
     Graphite is a "smart font" system developed specifically to handle the complexities of
@@ -782,13 +801,13 @@ Installed Software
     commands.
 
   hwloc: hwloc/2.2.0, hwloc/2.5.0
-    The Portable Hardware Locality (hwloc) software package provides a portable abstraction
-    (across OS, versions, architectures, ...) of the hierarchical topology of modern
-    architectures, including NUMA memory nodes, sockets, shared caches, cores and simultaneous
-    multithreading. It also gathers various system attributes such as cache and memory information
-    as well as the locality of I/O devices such as network interfaces, InfiniBand HCAs or GPUs. It
-    primarily aims at helping applications with gathering information about modern computing
-    hardware so as to exploit it accordingly and efficiently. 
+    The Portable Hardware Locality (hwloc) software package provides a portable abstraction (across
+    OS, versions, architectures, ...) of the hierarchical topology of modern architectures,
+    including NUMA memory nodes, sockets, shared caches, cores and simultaneous multithreading. It
+    also gathers various system attributes such as cache and memory information as well as the
+    locality of I/O devices such as network interfaces, InfiniBand HCAs or GPUs. It primarily aims
+    at helping applications with gathering information about modern computing hardware so as to
+    exploit it accordingly and efficiently. 
 
   hypothesis: hypothesis/6.14.6
     Hypothesis is an advanced testing library for Python. It lets you write tests which are
@@ -824,10 +843,10 @@ Installed Software
   kim-api: kim-api/2.3.0
     Open Knowledgebase of Interatomic Models. KIM is an API and OpenKIM is a collection of
     interatomic models (potentials) for atomistic simulations. This is a library that can be used
-    by simulation programs to get access to the models in the OpenKIM database. This EasyBuild
-    only installs the API, the models can be installed with the package openkim-models, or the
-    user can install them manually by running kim-api-collections-management install user
-    MODELNAME or kim-api-collections-management install user OpenKIM to install them all. 
+    by simulation programs to get access to the models in the OpenKIM database. This EasyBuild only
+    installs the API, the models can be installed with the package openkim-models, or the user can
+    install them manually by running kim-api-collections-management install user MODELNAME or
+    kim-api-collections-management install user OpenKIM to install them all. 
 
   libGLU: libGLU/9.0.2
     The OpenGL Utility Library (GLU) is a computer graphics library for OpenGL. 
@@ -859,10 +878,9 @@ Installed Software
     support callbacks due to signals or regular timeouts. 
 
   libfabric: libfabric/1.11.0, libfabric/1.13.2
-    Libfabric is a core component of OFI. It is the library that defines and exports the
-    user-space API of OFI, and is typically the only software that applications deal with
-    directly. It works in conjunction with provider libraries, which are often integrated directly
-    into libfabric. 
+    Libfabric is a core component of OFI. It is the library that defines and exports the user-space
+    API of OFI, and is typically the only software that applications deal with directly. It works
+    in conjunction with provider libraries, which are often integrated directly into libfabric. 
 
   libffi: libffi/3.4.2
     The libffi library provides a portable, high level programming interface to various calling
@@ -883,8 +901,8 @@ Installed Software
     Libiconv converts from one character encoding to another through Unicode conversion
 
   libjpeg-turbo: libjpeg-turbo/2.0.6
-    libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline
-    JPEG compression and decompression. libjpeg is a library that implements JPEG image encoding,
+    libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG
+    compression and decompression. libjpeg is a library that implements JPEG image encoding,
     decoding and transcoding. 
 
   libpciaccess: libpciaccess/0.16
@@ -896,9 +914,9 @@ Installed Software
   libreadline: libreadline/8.0, libreadline/8.1
     The GNU Readline library provides a set of functions for use by applications that allow users
     to edit command lines as they are typed in. Both Emacs and vi editing modes are available. The
-    Readline library includes additional functions to maintain a list of previously-entered
-    command lines, to recall and perhaps reedit those lines, and perform csh-like history
-    expansion on previous commands. 
+    Readline library includes additional functions to maintain a list of previously-entered command
+    lines, to recall and perhaps reedit those lines, and perform csh-like history expansion on
+    previous commands. 
 
   libsodium: libsodium/1.0.18
     Sodium is a modern, easy-to-use software library for encryption, decryption, signatures,
@@ -914,14 +932,14 @@ Installed Software
   libunwind: libunwind/1.5.0
     The primary goal of libunwind is to define a portable and efficient C programming interface
     (API) to determine the call-chain of a program. The API additionally provides the means to
-    manipulate the preserved (callee-saved) state of each call-frame and to resume execution at
-    any point in the call-chain (non-local goto). The API supports both local (same-process) and
-    remote (across-process) operation. As such, the API is useful in a number of applications
+    manipulate the preserved (callee-saved) state of each call-frame and to resume execution at any
+    point in the call-chain (non-local goto). The API supports both local (same-process) and remote
+    (across-process) operation. As such, the API is useful in a number of applications
 
   libvdwxc: libvdwxc/0.4.0
-    libvdwxc is a general library for evaluating energy and potential for exchange-correlation
-    (XC) functionals from the vdW-DF family that can be used with various of density functional
-    theory (DFT) codes.
+    libvdwxc is a general library for evaluating energy and potential for exchange-correlation (XC)
+    functionals from the vdW-DF family that can be used with various of density functional theory
+    (DFT) codes.
 
   libwebp: libwebp/1.2.0
     WebP is a modern image format that provides superior lossless and lossy compression for images
@@ -930,8 +948,7 @@ Installed Software
 
   libxc: libxc/5.1.6
     Libxc is a library of exchange-correlation functionals for density-functional theory. The aim
-    is to provide a portable, well tested and reliable set of exchange and correlation
-    functionals.
+    is to provide a portable, well tested and reliable set of exchange and correlation functionals.
 
   libxml2: libxml2/2.9.10
     Libxml2 is the XML C parser and toolchain developed for the Gnome project (but usable outside
@@ -977,8 +994,8 @@ Installed Software
   ncview: ncview/2.1.8
     Ncview is a visual browser for netCDF format files. Typically you would use ncview to get a
     quick and easy, push-button look at your netCDF files. You can view simple movies of the data,
-    view along various dimensions, take a look at the actual data values, change color maps,
-    invert the data, etc.
+    view along various dimensions, take a look at the actual data values, change color maps, invert
+    the data, etc.
 
   netCDF: netCDF/4.8.1
     NetCDF (network Common Data Form) is a set of software libraries and machine-independent data
@@ -1010,19 +1027,19 @@ Installed Software
 
   numba: numba/0.54.1
     Numba is an Open Source NumPy-aware optimizing compiler for Python sponsored by Continuum
-    Analytics, Inc. It uses the remarkable LLVM compiler infrastructure to compile Python syntax
-    to machine code.
+    Analytics, Inc. It uses the remarkable LLVM compiler infrastructure to compile Python syntax to
+    machine code.
 
   pixman: pixman/0.40.0
-    Pixman is a low-level software library for pixel manipulation, providing features such as
-    image compositing and trapezoid rasterization. Important users of pixman are the cairo
-    graphics library and the X server. 
+    Pixman is a low-level software library for pixel manipulation, providing features such as image
+    compositing and trapezoid rasterization. Important users of pixman are the cairo graphics
+    library and the X server. 
 
   pkg-config: pkg-config/0.29.2
-    pkg-config is a helper tool used when compiling applications and libraries. It helps you
-    insert the correct compiler options on the command line so an application can use gcc -o test
-    test.c `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on
-    where to find glib (or other libraries). 
+    pkg-config is a helper tool used when compiling applications and libraries. It helps you insert
+    the correct compiler options on the command line so an application can use gcc -o test test.c
+    `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on where to
+    find glib (or other libraries). 
 
   pkgconf: pkgconf/1.8.0
     pkgconf is a program which helps to configure compiler and linker flags for development
@@ -1124,9 +1141,9 @@ Installed Software
     hexdumps of binary files.
 
   zlib: zlib/1.2.11
-    zlib is designed to be a free, general-purpose, legally unencumbered -- that is, not covered
-    by any patents -- lossless data-compression library for use on virtually any computer hardware
-    and operating system.
+    zlib is designed to be a free, general-purpose, legally unencumbered -- that is, not covered by
+    any patents -- lossless data-compression library for use on virtually any computer hardware and
+    operating system.
 
   zstd: zstd/1.5.0
     Zstandard is a real-time compression algorithm, providing high compression ratios. It offers a
