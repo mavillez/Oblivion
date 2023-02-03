@@ -559,26 +559,6 @@ To list all the available modules the user can use the command ``module spider``
     confidence, the impact of fluid flows on your product throughout design and manufacturing as
     well as during end use. ANSYS renowned CFD analysis tools include the widely used and
     well-validated ANSYS Fluent and ANSYS CFX.
-
-  ANTLR: ANTLR/2.7.7-Java-11
-    ANTLR, ANother Tool for Language Recognition, (formerly PCCTS) is a language tool that provides
-    a framework for constructing recognizers, compilers, and translators from grammatical
-    descriptions containing Java, C#, C++, or Python actions.
-
-  ASE: ASE/3.22.1
-    ASE is a python package providing an open source Atomic Simulation Environment in the Python
-    scripting language. From version 3.20.1 we also include the ase-ext package, it contains
-    optional reimplementations in C of functions in ASE. ASE uses it automatically when installed.
-
-  ATK: ATK/2.36.0
-    ATK provides the set of accessibility interfaces that are implemented by other toolkits and
-    applications. Using the ATK interfaces, accessibility tools have full access to view and
-    control running applications. 
-
-  AmberTools: AmberTools/21, AmberTools/22.3
-    AmberTools consists of several independently developed packages that work well by themselves,
-    and with Amber itself. The suite can also be used to carry out complete molecular dynamics
-    simulations, with either explicit water or generalized Born solvent models.
-
+  ...
 
 For the full list of installed modules see the :ref:`installed software section <Installed Software>`.
