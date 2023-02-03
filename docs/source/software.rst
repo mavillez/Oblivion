@@ -3,8 +3,6 @@
 Installed Software
 ==================
 
-Reference `Installed Software`_
-
 .. code-block:: julia
 
   ABINIT: ABINIT/9.6.2
