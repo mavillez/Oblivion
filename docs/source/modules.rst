@@ -15,17 +15,18 @@ After logging into the machine the user should execute the command ``module av``
 
 .. code-block:: julia
 
-   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
-   Bison/3.8.2                   ant/1.10.11-Java-11        iimpi/2021b                                  
-   GCC/9.3.0                     binutils/2.34              imkl/2021.4.0                                
-   GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
-   GCCcore/9.3.0                 flex/2.6.4                 intel/2021b                                  
-   GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
-   GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2              (D)                 
-   Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
-   M4/1.4.19                     gompi/2020a                zlib/1.2.11                                  
-   OpenSSL/1.1                   gompi/2021b         (D)                                                 
-
+   ---------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core ----------------------------
+      ANSYS_CFD/2021R1              OpenSSL/1.1                iimpi/2021b
+      ANSYS_CFD/2022R2      (D)     ant/1.10.11-Java-11        imkl/2021.4.0
+      Bison/3.8.2                   binutils/2.34              intel-compilers/2021.4.0
+      GCC/9.3.0                     binutils/2.37       (D)    intel/2021b
+      GCC/11.2.0            (D)     flex/2.6.4                 ncurses/6.1
+      GCCcore/9.3.0                 foss/2021b                 ncurses/6.2              (D)
+      GCCcore/11.2.0        (D)     gettext/0.20.1             pkgconf/1.8.0
+      GPAW-setups/0.9.20000         gettext/0.21        (D)    zlib/1.2.11
+      Java/11.0.16          (11)    gompi/2020a
+      M4/1.4.19                     gompi/2021b         (D)
+                                               
    Where:
       Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
       D:        Default Module
@@ -94,10 +95,10 @@ Loading the module GCC/9.3.0 gives access to other modules that only now became 
 
 .. code-block:: julia
 
-   ------------------------ /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/9.3.0 ------------------------
+   ------------------------ /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/9.3.0 -------------------
       OpenMPI/4.0.3
 
-   ---------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/9.3.0 ----------------------
+   ---------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/9.3.0 -----------------
       Autoconf/2.69          Perl/5.30.2      (D)    hwloc/2.2.0             ncurses/6.2        (D)         
       Automake/1.16.1        UCX/1.8.0               libevent/2.1.11         numactl/2.0.13                 
       Autotools/20180311     XZ/5.2.5                libfabric/1.11.0        pkg-config/0.29.2              
@@ -107,16 +108,17 @@ Loading the module GCC/9.3.0 gives access to other modules that only now became 
       PMIx/3.1.5             groff/1.22.4            libxml2/2.9.10                                         
       Perl/5.30.2-minimal    help2man/1.47.12        makeinfo/6.7-minimal                                   
 
-   ------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b                                  
-      GCC/9.3.0             (L)     binutils/2.34              imkl/2021.4.0                                
-      GCC/11.2.0            (D)     binutils/2.37       (D)    intel-compilers/2021.4.0                     
-      GCCcore/9.3.0         (L)     flex/2.6.4                 intel/2021b                                  
-      GCCcore/11.2.0        (D)     foss/2021b                 ncurses/6.1                                  
-      GPAW-setups/0.9.20000         gettext/0.20.1             ncurses/6.2                                  
-      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0                                
-      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11                                  
-      OpenSSL/1.1                   gompi/2021b         (D)                                                 
+   ---------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------
+      ANSYS_CFD/2021R1              OpenSSL/1.1                iimpi/2021b
+      ANSYS_CFD/2022R2      (D)     ant/1.10.11-Java-11        imkl/2021.4.0
+      Bison/3.8.2                   binutils/2.34              intel-compilers/2021.4.0
+      GCC/9.3.0                     binutils/2.37       (D)    intel/2021b
+      GCC/11.2.0            (D)     flex/2.6.4                 ncurses/6.1
+      GCCcore/9.3.0                 foss/2021b                 ncurses/6.2              (D)
+      GCCcore/11.2.0        (D)     gettext/0.20.1             pkgconf/1.8.0
+      GPAW-setups/0.9.20000         gettext/0.21        (D)    zlib/1.2.11
+      Java/11.0.16          (11)    gompi/2020a
+      M4/1.4.19                     gompi/2021b         (D)                                          
 
    Where:
      L:        Module is loaded
@@ -167,11 +169,11 @@ No longer have access to OpenMPI-4.0.3 and assocated frameworks. Let's check wha
 
 .. code-block:: julia
 
-   --------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/11.2.0 ----------------------------
+   --------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCC/11.2.0 ---------------
       BLIS/0.8.1      FlexiBLAS/3.0.4 (L)    GSL/2.7          OpenBLAS/0.3.18 (L)    libxc/5.1.6                    
       Boost/1.77.0    GEOS/3.9.1             LAPACK/3.10.1    OpenMPI/4.1.1   (L)    libxsmm/1.17        
 
-   ------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/11.2.0 -------------------------
+   ------------------------- /mnt/beegfs/stack/mn02470/modules/all/Compiler/GCCcore/11.2.0 -------------
       ANTLR/2.7.7-Java-11                 Pillow/8.3.2                     intltool/0.51.0
       ATK/2.36.0                          PyYAML/5.4.1                     jbigkit/2.1
       Autoconf/2.71                       Python/2.7.18-bare               kim-api/2.3.0
@@ -188,15 +190,18 @@ No longer have access to OpenMPI-4.0.3 and assocated frameworks. Let's check wha
       Eigen/3.3.9                         Togl/2.0                         libgeotiff/1.7.0
       ...
 
-   ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
-      Bison/3.8.2           (D)      M4/1.4.19              gettext/0.20.1                  intel/2021b
-      GCC/9.3.0                      OpenSSL/1.1            gettext/0.21                    ncurses/6.1
-      GCC/11.2.0            (L,D)    ant/1.10.11-Java-11    gompi/2020a                     ncurses/6.2
-      GCCcore/9.3.0                  binutils/2.34          gompi/2021b              (D)    pkgconf/1.8.0
-      GCCcore/11.2.0        (L,D)    binutils/2.37          iimpi/2021b                     zlib/1.2.11
-      GPAW-setups/0.9.20000          flex/2.6.4             imkl/2021.4.0
-      Java/11.0.16          (11)     foss/2021b             intel-compilers/2021.4.0
-
+   ---------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------
+      ANSYS_CFD/2021R1              OpenSSL/1.1                iimpi/2021b
+      ANSYS_CFD/2022R2      (D)     ant/1.10.11-Java-11        imkl/2021.4.0
+      Bison/3.8.2                   binutils/2.34              intel-compilers/2021.4.0
+      GCC/9.3.0                     binutils/2.37       (D)    intel/2021b
+      GCC/11.2.0            (D)     flex/2.6.4                 ncurses/6.1
+      GCCcore/9.3.0                 foss/2021b                 ncurses/6.2              (D)
+      GCCcore/11.2.0        (D)     gettext/0.20.1             pkgconf/1.8.0
+      GPAW-setups/0.9.20000         gettext/0.21        (D)    zlib/1.2.11
+      Java/11.0.16          (11)    gompi/2020a
+      M4/1.4.19                     gompi/2021b         (D)
+      
    Where:
       L:        Module is loaded
       D:        Default Module
@@ -268,20 +273,23 @@ All this work can be executed with just a single command by loading foss/2021b. 
 
 .. code-block:: julia
 
-   ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
-      Bison/3.8.2                   M4/1.4.19                  gettext/0.20.1                  intel/2021b         
-      GCC/9.3.0                     OpenSSL/1.1                gettext/0.21             (D)    ncurses/6.1         
-      GCC/11.2.0            (D)     ant/1.10.11-Java-11        gompi/2020a                     ncurses/6.2   (D)   
-      GCCcore/9.3.0                 binutils/2.34              gompi/2021b              (D)    pkgconf/1.8.0       
-      GCCcore/11.2.0        (D)     binutils/2.37       (D)    iimpi/2021b                     zlib/1.2.11         
-      GPAW-setups/0.9.20000         flex/2.6.4                 imkl/2021.4.0                                       
-      Java/11.0.16          (11)    foss/2021b                 intel-compilers/2021.4.0                            
+   ---------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------
+      ANSYS_CFD/2021R1              OpenSSL/1.1                iimpi/2021b
+      ANSYS_CFD/2022R2      (D)     ant/1.10.11-Java-11        imkl/2021.4.0
+      Bison/3.8.2                   binutils/2.34              intel-compilers/2021.4.0
+      GCC/9.3.0                     binutils/2.37       (D)    intel/2021b
+      GCC/11.2.0            (D)     flex/2.6.4                 ncurses/6.1
+      GCCcore/9.3.0                 foss/2021b                 ncurses/6.2              (D)
+      GCCcore/11.2.0        (D)     gettext/0.20.1             pkgconf/1.8.0
+      GPAW-setups/0.9.20000         gettext/0.21        (D)    zlib/1.2.11
+      Java/11.0.16          (11)    gompi/2020a
+      M4/1.4.19                     gompi/2021b         (D)                    
 
 Load foss/2021b (``module load foss/2021b``) and check what is available (``module av``) getting
 
 .. code-block:: julia
 
-   ----------------------- /mnt/beegfs/stack/mn02470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 -----------------------
+   ----------------------- /mnt/beegfs/stack/mn02470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 ----------
       ABINIT/9.6.2                       MDAnalysis/2.0.0                      Theano/1.1.2-PyMC                    
       ASE/3.22.1                         MDTraj/1.9.7                          VTK/9.1.0                            
       AmberTools/22.3                    MUMPS/5.4.1-metis                     Valgrind/3.18.1                      
@@ -303,14 +311,17 @@ Similar procedure to what has been outlined above applies for modules using the 
 
 .. code-block:: julia
 
-  ---------------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------------
-      Bison/3.8.2           (D)      M4/1.4.19              gettext/0.20.1                  intel/2021b
-      GCC/9.3.0                      OpenSSL/1.1            gettext/0.21                    ncurses/6.1
-      GCC/11.2.0            (L,D)    ant/1.10.11-Java-11    gompi/2020a                     ncurses/6.2
-      GCCcore/9.3.0                  binutils/2.34          gompi/2021b              (D)    pkgconf/1.8.0
-      GCCcore/11.2.0        (L,D)    binutils/2.37          iimpi/2021b                     zlib/1.2.11
-      GPAW-setups/0.9.20000          flex/2.6.4             imkl/2021.4.0
-      Java/11.0.16          (11)     foss/2021b             intel-compilers/2021.4.0
+    ---------------------------- /mnt/beegfs/stack/mn02470/modules/all/Core -----------------------------
+      ANSYS_CFD/2021R1              OpenSSL/1.1                iimpi/2021b
+      ANSYS_CFD/2022R2      (D)     ant/1.10.11-Java-11        imkl/2021.4.0
+      Bison/3.8.2                   binutils/2.34              intel-compilers/2021.4.0
+      GCC/9.3.0                     binutils/2.37       (D)    intel/2021b
+      GCC/11.2.0            (D)     flex/2.6.4                 ncurses/6.1
+      GCCcore/9.3.0                 foss/2021b                 ncurses/6.2              (D)
+      GCCcore/11.2.0        (D)     gettext/0.20.1             pkgconf/1.8.0
+      GPAW-setups/0.9.20000         gettext/0.21        (D)    zlib/1.2.11
+      Java/11.0.16          (11)    gompi/2020a
+      M4/1.4.19                     gompi/2021b         (D)
       
 After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module list`` shows
 
