@@ -372,7 +372,7 @@ Running the Vienna Ab-initio Simulation Package (VASP) requires some considerati
 
 where vasp_std and vasp_ncl denote the standard and non-collinear (including spin-orbit, etc.) versions, respectively.
 
-If VASP is compiled also with HDF5 then the script must also include ``module load HDF5/1.12.1``.
+If VASP is compiled with HDF5 then the script must also include ``module load HDF5/1.12.1``.
 
 Using VASP compiled against Intel compilers requires the use of all cores in a socket for the solution to converge. 
 
