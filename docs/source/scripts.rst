@@ -377,6 +377,6 @@ Using VASP compiled against Intel compilers requires the use of all cores in a s
 Acknowledgements
 ---------------
 
-Alfredo Palace Carvalho provided the scripts for Dalton, GPAW and QuantumEspresso.
-Estelina Lora da Silva provided the script for VASP.
-José Coutinho, not only provided the scripts, but is investigating the compilation modes and use of VASP with foss/2021b and Intel compilers.
+Alfredo Palace Carvalho (U. Évora & HPC Chair of the U. Évora) provided the scripts for Dalton, GPAW and QuantumEspresso.
+Estelina Lora da Silva (U. Porto & HPC Chair of the U. Évora)provided the script for VASP.
+José Coutinho (U. Aveiro), not only provided the scripts, but is investigating the compilation modes and use of VASP with foss/2021b and Intel compilers.
