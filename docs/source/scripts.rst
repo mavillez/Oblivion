@@ -380,4 +380,4 @@ Acknowledgements
 
 Alfredo Palace Carvalho provided the scripts for Dalton, GPAW and QuantumEspresso.
 Estelina Lora da Silva provided the script for VASP.
-José Coutinho, not only provided the scripts, but has investigated the compilation modes and use of VASP with foss/2021b and Intel compilers.
+José Coutinho, not only provided the scripts, but is investigating the compilation modes and use of VASP with foss/2021b and Intel compilers.
