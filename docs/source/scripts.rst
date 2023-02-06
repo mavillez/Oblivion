@@ -343,7 +343,7 @@ use of threads in a compute node the script should include ``export OMP_NUM_THRE
 6.4 VASP
 ~~~~~~~~
 
-Running the Vienna Ab-initio Simulation Package (VASP) requires some consideration in the number of cores to be used as well as on the shared memory threads (through OpenMP) to take into account. Similarly to QuantumEspresso one has to include in the script ``export OMP_NUM_THREADS=1``. Another issue relates to the the use of part or all cores available per socket. Below is a script to run VASP compiled against OpenMPI and OpenBLAS, Scalapack, HDF5, etc..
+Running the Vienna Ab-initio Simulation Package (VASP) requires some consideration in the number of cores to be used as well as on the shared memory threads (through OpenMP) to take into account. Similarly to QuantumEspresso one has to include in the script ``export OMP_NUM_THREADS=1``. Another issue relates to the the use of part or all cores available per socket. Below is a script to run VASP compiled against OpenMPI and OpenBLAS, Scalapack, etc..
 
 .. code-block:: bash
 
@@ -371,6 +371,8 @@ Running the Vienna Ab-initio Simulation Package (VASP) requires some considerati
   #srun vasp_std
 
 where vasp_std and vasp_ncl denote the standard and non-collinear (including spin-orbit, etc.) versions, respectively.
+
+If VASP is compiled also with HDF5 then the script must also include ``module load HDF5/1.12.1``.
 
 Using VASP compiled against Intel compilers requires the use of all cores in a socket for the solution to converge. 
 
