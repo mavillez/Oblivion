@@ -366,12 +366,11 @@ Running the Vienna Ab-initio Simulation Package (VASP) requires some considerati
   module load foss/2021b
 
   export PMIX_MCA_psec=native
-  export MODULEPATH=/mnt/beegfs/stack/mn02470/modules/all/Core
-
+  
   srun vasp_ncl 
   #srun vasp_std
 
-where vasp_std and vasp_ncl denote the standard and non-collinear (including spin-orbit, etc.) versions, respectively. 
+where vasp_std and vasp_ncl denote the standard and non-collinear (including spin-orbit, etc.) versions, respectively.
 
 Using VASP compiled against Intel compilers requires the use of all cores in a socket for the solution to converge. 
 
