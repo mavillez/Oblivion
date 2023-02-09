@@ -373,7 +373,7 @@ use of threads in a compute node the script should include ``export OMP_NUM_THRE
   srun pw.x -i MY_INPUT.in
 
 
-6.4 VASP
+6.5 VASP
 ~~~~~~~~
 
 Running the Vienna Ab-initio Simulation Package (VASP) requires some consideration in the number of cores to be used as well as on the shared memory threads (through OpenMP) to take into account. Similarly to QuantumEspresso one has to include in the script ``export OMP_NUM_THREADS=1``. Another issue relates to the the use of part or all cores available per socket. Below is a script to run VASP compiled against OpenMPI and OpenBLAS, Scalapack, etc..
@@ -412,6 +412,6 @@ Using VASP compiled against Intel compilers requires the use of all cores in a s
 Acknowledgements
 ---------------
 
-Alfredo Palace Carvalho (U. Évora & HPC Chair) provided the scripts for Dalton, GPAW, and QuantumEspresso.
+Alfredo Palace Carvalho (U. Évora & HPC Chair) provided the scripts for Dalton, GPAW, GROMACS, and QuantumEspresso.
 Estelina Lora da Silva (U. Porto & HPC Chair) provided the script for VASP.
 José Coutinho (U. Aveiro), not only provided the scripts, but is investigating the compilation modes and use of VASP with foss/2021b and Intel compilers.
