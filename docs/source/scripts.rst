@@ -309,8 +309,41 @@ Do not use the following script or similar - you end up having error messages an
   --partition=PARTITION \
   config_file.py input_file
 
+6.3 GROMACS
+~~~~~~~~~~~
 
-6.3 QuantumEspresso
+Below is a script example to run GROMACS/2021.5, installed under the foss/2021b toolchain in OBLIVION.
+
+
+.. code-block:: bash
+
+  #!/bin/bash
+  #SBATCH --time=01:00:00
+  #SBATCH --account=MY_ACCOUNT
+  #SBATCH --job-name=MY_JOB_NAME
+  #SBATCH --output=%x_%j.out
+  #SBATCH --error=%x_%j.error
+  #SBATCH --ntasks=180
+  #SBATCH --cpus-per-task=1
+  #SBATCH --ntasks-per-socket=18
+  #SBATCH --exclusive
+  #SBATCH --partition=PARTITION
+
+  export PMIX_MCA_psec=native
+
+  module purge
+  module load foss/2021b GROMACS/2021.5
+
+  # Run all needed preparation steps like 'gmx grompp ...'
+
+  srun gmx_mpi mdrun -ntomp 1 -v -deffnm MY_JOB_NAME
+
+Note that a 1 MPI task per core is set (actually this is the default), using 18 cores per CPU, hence 36 per 
+compute node. As can be seen in the script no call to ``mpirun`` is needed - all processes distribution is 
+managed by ``srun``.
+
+
+6.4 QuantumEspresso
 ~~~~~~~~~~~~~~~~~~~
 
 QuantumEspresso by default sets shared memory threads through OpenMP. Therefore, the user should control the 
