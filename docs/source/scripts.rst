@@ -312,7 +312,7 @@ Do not use the following script or similar - you end up having error messages an
 6.3 GROMACS
 ~~~~~~~~~~~
 
-Below is a script example to run GROMACS/2021.5, installed under the foss/2021b toolchain in OBLIVION.
+Below is a script example to run GROMACS/2021.5 which, in OBLIVION, is installed under the foss/2021b toolchain.
 
 
 .. code-block:: bash
@@ -339,8 +339,8 @@ Below is a script example to run GROMACS/2021.5, installed under the foss/2021b 
   srun gmx_mpi mdrun -ntomp 1 -v -deffnm MY_JOB_NAME
 
 Note that a 1 MPI task per core is set (actually this is the default), using 18 cores per CPU, hence 36 per 
-compute node. As can be seen in the script no call to ``mpirun`` is needed - all processes distribution is 
-managed by ``srun``.
+compute node and 5 compute nodes. As can be seen in the script no call to ``mpirun`` is made - all processes 
+distribution is managed by ``srun``.
 
 
 6.4 QuantumEspresso
