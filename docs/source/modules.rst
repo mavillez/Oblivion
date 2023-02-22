@@ -3,15 +3,48 @@ Environment Modules
 
 There are several conflicting software packages installed in the Oblivion supercomputer. In order for the user to use the adequate software there is a need to set the paths for the binaries, libraries, manuals, and includes. Either the user sets these paths for each package or the system provides an easy way to set those paths. The latter is the preferable and makes use of environment modules. 
 
+1. Toolchains
+-------------
 
-1. The Basics - Core Modules and Toolchains
--------------------------------------------
+Toolchain is a pack of compiler(s)and libraries bundled together to provide a specific functionality, e.g.,running applications using a MPI distribution compiled against GCC (toolchain gompi) or Intel compilers (toolchain iimpi) or use linear algebra libraries with a MPI API compiled with GCC (toolchain foss), just to name a few.
+
+Toolchain foss includes the following software:
+
+- C, C++ and Fortran compilers: GCC;
+- MPI implementation: OpenMPI;
+- OpenBLAS and LAPACK implementation: FlexiBLAS;
+- Parallel, distributed LAPACK implementation: ScaLAPACK;
+- Fourier transforms: FFTW.
+
+Toolchain intel includes the following software:
+
+- C, C++ and Fortran compilers (icc/icpc/ifort);
+- GCC as a base for the Intel compilers;
+- MPI implementation (Intel MPI);
+- BLAS, LAPACK and FFTW: Intel MKL.
+
+Sub-toolchains gompi and iimpi include GCC + OpenMPI and Intel compilers + Intel MPI (MPICH), respectively.
+
+Installed in OBLIVION are, as of 2022.02.23, the toolchains
+
+- foss: 2021b, 2022a;
+- intel: 2021b, 2022a.
+ 
+and sub-toolchains 
+
+- gompi: 2020a, 2021b, 2022a; 
+- iimpi: 2021b, 2022a;
+- intel-compilers: 2021.4.0, 2021.6.0.
+
+
+2. Core Modules
+---------------
 
 The user sets the software environment by loading the modules associated to the packages he/she needs to use. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
 Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler and a MPI API.
 
-After logging into the machine the user should execute the command ``module av`` (av for available) obtaining the list of core modules:
+After logging into the machine the user should execute the command ``module av`` (av for available) obtaining the list of core modules (including the toolchains and sub-toolchains):
 
 .. code-block:: julia
 
@@ -40,37 +73,10 @@ After logging into the machine the user should execute the command ``module av``
    Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".        
 
 
-The list shows toolchains 
-
-- foss: 2021b;
-- intel: 2021b.
- 
-and sub-toolchains 
-
-- gompi: 2020a, 2021b; 
-- intel-compilers: 2021.4.0;
-- iimpi: 2021b.
-
-Toolchain foss includes the following software:
-
-- C, C++ and Fortran compilers: GCC;
-- MPI implementation: OpenMPI;
-- OpenBLAS and LAPACK implementation: FlexiBLAS;
-- Parallel, distributed LAPACK implementation: ScaLAPACK;
-- Fourier transforms: FFTW.
-
-Toolchain intel includes the following software:
-
-- C, C++ and Fortran compilers (icc/icpc/ifort);
-- GCC as a base for the Intel compilers;
-- MPI implementation (Intel MPI);
-- BLAS, LAPACK and FFTW: Intel MKL.
-
-
-2. Loading Modules
+3. Loading Modules
 ------------------
 
-2.1 GCC Based Modules
+3.1 GCC Based Modules
 ~~~~~~~~~~~~~~~~~~~~~
 
 Let us assume that the user wants to use software compiled with GCC-9.3.0. Hence, he loads the corresponding modules
@@ -305,7 +311,7 @@ Load foss/2021b (``module load foss/2021b``) and check what is available (``modu
 It is the same obtained previously by loading GCC/11.2.0 and OpenMPI/4.1.1.
 
 
-2.2 Intel-Compilers Based Modules
+3.2 Intel-Compilers Based Modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar procedure to what has been outlined above applies for modules using the Intel compilers, MKL, and MPI. At the entering level if the user executes ``module av`` obtains 
@@ -395,7 +401,7 @@ and ``module list`` gives
       1) impi/2021.4.0   2) imkl-FFTW/2021.4.0
 
 
-3. Loading a Particular Software
+4. Loading a Particular Software
 --------------------------------
 
 The user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.8.4`` after loading foss/2021b he/she executes the command
@@ -425,10 +431,10 @@ In the latter case the loaded modules, given by ``module list``, are
       8) libpciaccess/0.16  16) OpenBLAS/0.3.18   24) Tcl/8.6.11          32) GROMACS/2021.5
 
 
-4. Operations With Modules
+5. Operations With Modules
 --------------------------
 
-4.1 Purging Modules
+5.1 Purging Modules
 ~~~~~~~~~~~~~~~~~~~
 
 The user can purge the loaded modules by executing 
@@ -438,7 +444,7 @@ The user can purge the loaded modules by executing
   module purge
   
   
-4.2 Save and Restore Modules
+5.2 Save and Restore Modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Often a user uses different environments for his/her processes. Hence, he/she needs to load and purge the loaded modules several times. An easy way to proceed is to save those module environments into a file, say <module_environment>, by using 
@@ -454,7 +460,7 @@ Later, the environment can be reloaded using the command
   module restore <module_environment>
 
 
-4.3 Module Details
+5.3 Module Details
 ~~~~~~~~~~~~~~~~~~
 
 To learn further details of a module, how to load it, and dependencies use 
@@ -525,7 +531,7 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
       gmxapi-0.2.2.1
 
  
-5. List of Commonly Used commands
+6. List of Commonly Used commands
 ---------------------------------
 
 .. list-table::
@@ -550,7 +556,7 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
     - Displays the list of saved modules environment
 
 
-6. Available Modules
+7. Available Modules
 --------------------
 
 To list all the available modules the user can use the command ``module spider`` obtaining
