@@ -55,7 +55,7 @@ Toolchain foss includes the following software:
 
 - C, C++ and Fortran compilers: GCC;
 - MPI implementation: OpenMPI;
-- BLAS and LAPACK implementation: OpenBLAS;
+- OpenBLAS and LAPACK implementation: FlexiBLAS;
 - Parallel, distributed LAPACK implementation: ScaLAPACK;
 - Fourier transforms: FFTW.
 
