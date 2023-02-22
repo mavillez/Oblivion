@@ -64,7 +64,7 @@ Toolchain intel includes the following software:
 - C, C++ and Fortran compilers (icc/icpc/ifort);
 - GCC as a base for the Intel compilers;
 - MPI implementation (Intel MPI);
-- BLAS, LAPACK and fourier transforms: Intel MKL.
+- BLAS, LAPACK and FFTW: Intel MKL.
 
 
 2. Loading Modules
