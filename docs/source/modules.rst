@@ -293,26 +293,7 @@ The user got access to all the software that was compiled against OpenMPI-4.1.1 
 3.2 Loading the foss toolchain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Accessing the software modules made available by loading GCC/11.2.0 and OpenMPI/4.1.1 can be done by just loading foss/2021b with the penalty of loading extra modules like BLIS, FFTW, FlexiBLAS, OpenBLAS, ScaLAPACK. So, let's check it. Start with a ``module purge`` followed with ``module av`` getting (again)
-
-.. code-block:: julia
-
-   ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ----------------------------------
-     ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b
-     ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)
-     Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b
-     Bison/3.8.2           (D)     ant/1.10.11-Java-11             imkl/2021.4.0
-     FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0
-     GCC/9.3.0                     binutils/2.37                   intel/2021b
-     GCC/11.2.0            (L)     binutils/2.38            (D)    ncurses/6.1
-     GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2
-     GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0
-     GCCcore/11.2.0        (L)     foss/2022a               (D)    zlib/1.2.11
-     GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)
-     GPAW-setups/0.9.20000         gettext/0.21
-     Java/11.0.16          (11)    gompi/2020a
-
-Load foss/2021b (``module load foss/2021b``). Check what modules were loaded (``module list``)
+Accessing the software modules made available by loading GCC/11.2.0 and OpenMPI/4.1.1 can be done by just loading foss/2021b with the penalty of loading extra modules like BLIS, FFTW, FlexiBLAS, OpenBLAS, ScaLAPACK. So, let's check it. Start with ``module purge`` followed by ``module load foss/2021b`` and ``module list`` obtaining
 
 .. code-block:: julia
 
@@ -323,7 +304,7 @@ Load foss/2021b (``module load foss/2021b``). Check what modules were loaded (``
      4) GCC/11.2.0       9) hwloc/2.5.0        14) PMIx/4.1.0        19) ScaLAPACK/2.1.0-fb
      5) numactl/2.0.14  10) OpenSSL/1.1        15) OpenMPI/4.1.1     20) foss/2021b
 
-and what is available (``module av``) getting
+The available modules are (use ``module av``)
 
 .. code-block:: julia
 
@@ -358,7 +339,7 @@ Changing to foss/2022a leads to (after using ``module load foss/2022a``)
      6) PMIx/4.1.0 => PMIx/4.1.2                    13) libxml2/2.9.10 => libxml2/2.9.13                  
      7) ScaLAPACK/2.1.0-fb => ScaLAPACK/2.2.0-fb    14) zlib/1.2.11 => zlib/1.2.12             
 
-So, among others, GCC/11.2.0 and OpenMPI/4.1.1 were replaced by GCC/11.3.0 and OpenMPI/4.1.4, respectively. The loaded and available modules are, respectively,
+So, among others, GCC/11.2.0 and OpenMPI/4.1.1 were replaced by GCC/11.3.0 and OpenMPI/4.1.4, respectively. The loaded and available modules are
 
 .. code-block:: julia
 
