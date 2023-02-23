@@ -1,20 +1,10 @@
 Software Compilation Using MPI
 ==============================
 
-In order to compile a software several steps must be carried out by the user:
-
-#. Set the work environment by loading modules
-#. Determine the software paths (compiler, libraries, includes, etc)
-#. Adjust the Makefile
-#. Compile the software
-
 1. Work Enviroment
 ------------------
 
-To set the work environment the user must load the needed modules. To do that start by using `module av` to see the provided modules. 
-In OBLIVION the modules are set in a hierarchical structure and thus the user must start by loading the core modules or toolchains.
-
-Say that the user wants to compile his/her software with Intel MPI. First executes `module av` obtaining
+To set the work environment the user must load the needed modules. To do that start by using ``module av`` to see the available modules:
 
 .. code-block:: julia
 
@@ -37,25 +27,72 @@ Say that the user wants to compile his/her software with Intel MPI. First execut
       Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
       D:        Default Module
 
-Load Intel MPI toolchain by executing
+In OBLIVION the modules are set in a hierarchical naming structure (Core/Compiler/MPI) and thus the user must start by loading the core modules or toolchains, e.g., load OpenMPI compiled with GCC (``module load GCC/11.2.0`` + ``module load OpenMPI/4.1.1``), load OpenMPI compiled with Intel compilers or load Intel MPI (``module load iimpi/2021b`` or ``module load intel/2021b``).
 
-.. code-block:: julia
 
-  module load iimpi/2021b
-  
-Check the loaded modules using ``module list``
+2. Intel MPI
+------------
+
+2.1 Loading intel and iimpi toolchains
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Load Intel MPI sub-toolchain by executing ``module load iimpi/2021b`` and check the loaded modules using ``module list``
 
 .. code-block:: julia
 
   Currently Loaded Modules:
-     1) GCCcore/11.2.0   3) binutils/2.37              5) numactl/2.0.14   7) impi/2021.4.0
-     2) zlib/1.2.11      4) intel-compilers/2021.4.0   6) UCX/1.11.2       8) iimpi/2021b
+    1) GCCcore/11.2.0   3) binutils/2.37              5) numactl/2.0.14   7) impi/2021.4.0
+    2) zlib/1.2.11      4) intel-compilers/2021.4.0   6) UCX/1.11.2       8) iimpi/2021b
 
 
-2. MPIIFORT Vs. MPIF90
-----------------------
+The intel/2021b toolchain includes, among others, the Intel MPI and MKL distributions. Using ``module load intel/2021b`` followed with ``module list`` one obtains
 
-When installing Intel MPI the user gets two flavours: MPI compiled with GCC and MPI compiled with Intel Compilers. First lets get the binaries location
+.. code-block:: julia
+  
+  Currently Loaded Modules:
+    1) GCCcore/11.2.0   4) intel-compilers/2021.4.0   7) impi/2021.4.0       10) intel/2021b
+    2) zlib/1.2.11      5) numactl/2.0.14             8) imkl/2021.4.0
+    3) binutils/2.37    6) UCX/1.11.2                 9) imkl-FFTW/2021.4.0
+
+In both cases the available modules are the same (check with ``module av``):
+
+.. code-block:: julia
+
+  -------------- /mnt/beegfs/stack/cn01470/modules/all/MPI/intel/2021.4.0/impi/2021.4.0 ---------------
+    ABINIT/9.6.2                MUMPS/5.4.1-metis                 ecCodes/2.24.2
+    ASE/3.22.1                  NCO/5.0.3                         futile/1.8.3
+    AmberTools/21               NWChem/7.0.2                      h5py/3.6.0
+    ArviZ/0.11.4                OSU-Micro-Benchmarks/5.8          imkl-FFTW/2021.4.0   (L)
+    Bambi/0.7.1                 OpenMolcas/22.10                  libGridXC/0.9.6
+    Biopython/1.79              PLUMED/2.8.0                      libvdwxc/0.4.0
+    CGAL/4.14.3                 PSolver/1.8.3                     libxsmm/1.17
+    CP2K/8.2                    ParMETIS/4.0.3                    matplotlib/3.4.3
+    ELPA/2021.05.001            PnetCDF/1.12.3                    mkl-service/2.3.0
+    ESMF/8.2.0                  PyMC3/3.11.1                      ncview/2.1.8
+    FDS/6.7.7                   QuantumESPRESSO/7.0               netCDF-C++4/4.3.1
+    FFTW/3.3.10                 SCOTCH/6.1.2                      netCDF-Fortran/4.5.3
+    FMS/2022.02                 SPOTPY/1.5.14                     netCDF/4.8.1
+    GDAL/3.3.2                  ScaFaCoS/1.0.1                    netcdf4-python/1.5.7
+    GEOS/3.9.1                  SciPy-bundle/2021.10              networkx/2.6.3
+    GPAW/22.8.0                 Siesta/4.1.5                      numba/0.54.1
+    GlobalArrays/5.8.1          SimPEG/0.18.1                     scikit-bio/0.5.7
+    HDF5/1.12.1                 SuiteSparse/5.10.1-METIS-5.1.0    scikit-learn/1.0.1
+    HPL/2.3                     SuperLU/5.3.0                     spglib-python/1.16.3
+    Hypre/2.24.0                Theano/1.1.2-PyMC                 statsmodels/0.13.1
+    IMB/2021.3                  VTK/9.1.0                         worker/1.6.13
+    Libint/2.6.0-lmax-6-cp2k    Valgrind/3.18.1                   xarray/0.20.1
+    MDAnalysis/2.0.0            Wannier90/3.1.0
+    MDTraj/1.9.7                XCrySDen/1.6.2
+
+  ------------------- /mnt/beegfs/stack/cn01470/modules/all/Compiler/intel/2021.4.0 -------------------
+    BLIS/0.9.0      DFT-D3/3.2.0    GSL/2.7          NLopt/2.7.0   (D)    libxc/5.1.6
+    Boost/1.77.0    Flye/2.9        LAPACK/3.10.1    impi/2021.4.0 (L)    xmlf90/1.5.4
+
+
+2.2 MPIIFORT Vs. MPIF90
+~~~~~~~~~~~~~~~~~~~~~~~
+
+With Intel MPI the user gets two flavours: MPI compiled with GCC and MPI compiled with Intel compilers. First lets get the binaries location
 
 .. code-block:: julia
 
