@@ -18,30 +18,24 @@ Say that the user wants to compile his/her software with Intel MPI. First execut
 
 .. code-block:: julia
 
-   ------------------------------ /mnt/beegfs/apps/4.7.x/modules/all/Core ------------------------------
-      Bison/3.8.2           (D)     ant/1.10.11-Java-11        iimpi/2021b
-      GCC/9.3.0                     binutils/2.34              imkl/2021.4.0
-      GCC/11.2.0                    binutils/2.37              intel-compilers/2021.4.0
-      GCCcore/9.3.0                 flex/2.6.4          (D)    intel/2021b
-      GCCcore/11.2.0                foss/2021b                 ncurses/6.1
-      GPAW-setups/0.9.20000 (D)     gettext/0.20.1             ncurses/6.2              (D)
-      Java/11.0.16          (11)    gettext/0.21        (D)    pkgconf/1.8.0            (D)
-      M4/1.4.19             (D)     gompi/2020a                zlib/1.2.11
-      OpenSSL/1.1           (D)     gompi/2021b
+  ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core -----------------------
+    ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b                                   
+    ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)                  
+    Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b                                   
+    Bison/3.8.2                   ant/1.10.11-Java-11             imkl/2021.4.0                                 
+    FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0                      
+    GCC/9.3.0                     binutils/2.37                   intel/2021b                                   
+    GCC/11.2.0                    binutils/2.38            (D)    ncurses/6.1                                   
+    GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2              (D)                  
+    GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0                                 
+    GCCcore/11.2.0                foss/2022a               (D)    zlib/1.2.11                                   
+    GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)                  
+    GPAW-setups/0.9.20000         gettext/0.21             (D)                                                  
+    Java/11.0.16          (11)    gompi/2020a
 
-   -------------------------------------- /usr/share/modulefiles ---------------------------------------
-      pmi/pmix-x86_64
-
-   ------------------------------- /usr/share/lmod/lmod/modulefiles/Core -------------------------------
-      lmod    settarg
-
-      Where:
-         Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
-         D:        Default Module
-
-      Use "module spider" to find all possible modules and extensions.
-      Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
-
+   Where:
+      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
+      D:        Default Module
 
 Load Intel MPI toolchain by executing
 
@@ -67,13 +61,13 @@ When installing Intel MPI the user gets two flavours: MPI compiled with GCC and 
 
   $ which mpif90
 
-  /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
+  /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
   
 Now lets see the content of the bin folder:
 
 .. code-block:: julia
 
-   $ ls -1 /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/
+   $ ls -1 /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/
   
    ⋮  
    mpicc
@@ -98,7 +92,7 @@ To check this just type
 
 .. code-block:: julia
 
-  $ less /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
+  $ less /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
 
 obtaining
 
@@ -115,7 +109,7 @@ and
 
 .. code-block:: julia
 
-  $ less /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
+  $ less /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
 
 obtaining
 
@@ -153,13 +147,13 @@ Lets find the PATHs for binary, libraries and include. So, first lets determine 
 
   $ which mpiifort
   
-  /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
+  /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
   
 Now look for the paths:
 
 .. code-block:: julia
 
-  $ ls /mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/
+  $ ls /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/
   
    benchmarks  bin  include  lib  man
 
@@ -167,9 +161,9 @@ So, here we show some of the listed folders. Lets set the paths to be used in th
 
 .. code-block:: julia
 
-  MPI_BIN=/mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin
-  MPI_LIB=/mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/lib
-  MPI_INC=/mnt/beegfs/apps/4.7.x/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/include
+  MPI_BIN=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin
+  MPI_LIB=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/lib
+  MPI_INC=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/include
   
 3. Makefile
 -----------
@@ -188,7 +182,7 @@ Here is an example for two setups in OBLIVION. In the header of the Makefile add
   #SYSTYPE="marenostrum_impi"
 
   ifeq ($(SYSTYPE),"oblivion_impi_intel")
-  SOFTWARE=/mnt/beegfs/apps/4.7.x/software
+  SOFTWARE=/mnt/beegfs/stack/cn01470/software
   MPI_VER=/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0
   MPI_BIN=${SOFTWARE}/${MPI_VER}/bin
   MPI_LIB=${SOFTWARE}/${MPI_VER}/lib
@@ -198,7 +192,7 @@ Here is an example for two setups in OBLIVION. In the header of the Makefile add
   endif
   
   ifeq ($(SYSTYPE),"oblivion_impi_gcc")
-  SOFTWARE=/mnt/beegfs/apps/4.7.x/software
+  SOFTWARE=/mnt/beegfs/stack/cn01470/software
   MPI_VER=/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0
   MPI_BIN=${SOFTWARE}/${MPI_VER}/bin
   MPI_LIB=${SOFTWARE}/${MPI_VER}/lib
