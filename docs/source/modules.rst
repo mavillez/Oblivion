@@ -290,8 +290,8 @@ and see what is available (``module av``)
 
 The user got access to all the software that was compiled against OpenMPI-4.1.1 (top row), which in turn was compiled with GCC compiler (second row of modules). The third row displays the core modules associated to GCC/11.2.0.
 
-3.2 Loading the foss toolchain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.2 Foss Toolchain
+~~~~~~~~~~~~~~~~~~
 
 Accessing the software modules made available by loading GCC/11.2.0 and OpenMPI/4.1.1 can be done by just loading foss/2021b with the penalty of loading extra modules like BLIS, FFTW, FlexiBLAS, OpenBLAS, ScaLAPACK. So, let's check it. Start with ``module purge`` followed by ``module load foss/2021b`` and ``module list`` obtaining
 
