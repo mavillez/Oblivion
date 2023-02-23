@@ -603,7 +603,7 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
       gmxapi-0.2.2.1
 
  
-6. List of Commonly Used commands
+6. List of Commonly Used Commands
 ---------------------------------
 
 .. list-table::
