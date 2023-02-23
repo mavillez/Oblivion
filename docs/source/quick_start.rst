@@ -34,26 +34,28 @@ The software directories are located at
 
 .. code-block:: console
 
-    /mnt/beegfs/apps/4.7.x/software
+    /mnt/beegfs/stack/cn01470/software
   
-Using ``ls /mnt/beegfs/apps/4.7.x`` a list of all software directories is displayed
+Using ``ls /mnt/beegfs/stack/cn01470/software`` a list of all software directories is displayed
 
 .. code-block:: julia
 
-  ABINIT              Flye                   jbigkit        Meson                 Qhull
-  AmberTools          FMS                    JsonCpp        METIS                 Qt5
-  ANSYS_CFD           fontconfig             kim-api        mkl-service           QuantumESPRESSO
-  ant                 foss                   LAME           MPFR                  R
-  ANTLR               freetype               LAMMPS         mpi4py                re2c
-  archspec            FriBidi                LAPACK         MUMPS                 Rust
-  arpack-ng           futile                 libarchive     NASM                  ScaFaCoS
-  ArviZ               GCC                    libcerf        NCO                   ScaLAPACK
-  ASE                 GCCcore                libdap         ncurses               scikit-build
-  ATK                 GDAL                   libdrm         ncview                scikit-learn
-  at-spi2-atk         Gdk-Pixbuf             libepoxy       netCDF                SciPy-bundle
-  at-spi2-core        GEOS                   libevent       netcdf4-python        SCOTCH
-  attr                gettext                libfabric      netCDF-C++4           Siesta
-  Autoconf            Ghostscript            libffi         netCDF-Fortran        snappy
+  ABINIT              FlexiBLAS              Julia          NCO                   re2c
+  AmberTools          Flye                   kim-api        ncurses               Rust
+  Anaconda3           FMS                    LAME           ncview                SAMtools
+  ANSYS_CFD           fontconfig             LAMMPS         netCDF                ScaFaCoS
+  ant                 foss                   LAPACK         netcdf4-python        ScaLAPACK
+  ANTLR               freetype               libarchive     netCDF-C++4           scikit-bio
+  archspec            FriBidi                libcerf        netCDF-Fortran        scikit-build
+  arpack-ng           futile                 libdap         nettle                scikit-learn
+  Arrow               GATK                   libdrm         networkx              SciPy-bundle
+  ArviZ               GCC                    libepoxy       Ninja                 SCOTCH
+  ASE                 GCCcore                libevent       NLopt                 Siesta
+  ATK                 GDAL                   libfabric      nodejs                SimPEG
+  at-spi2-atk         Gdk-Pixbuf             libffi         NSPR                  snakemake
+  at-spi2-core        GEOS                   libFLAME       NSS                   snappy
+  attr                gettext                libgd          nsync                 spglib-python
+  Autoconf            Ghostscript            libgeotiff     numactl               SPOTPY
   ...
   
 
@@ -100,17 +102,25 @@ To see what compute nodes ara vailable use
   $ sinfo
 
   PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-  private*     up 3-00:00:00     10  alloc cn[001-004,021-028,032-033]
-  private*     up 3-00:00:00     78   idle cn[005-020,029-031,034-088]
-  debug        up 2-00:00:00     10  alloc cn[001-004,021-028,032-033]
-  debug        up 2-00:00:00     78   idle cn[005-020,029-031,034-058]
-  medium       up 2-00:00:00     10  alloc cn[021-028,032-033]
-  medium       up 2-00:00:00     28   idle cn[029-031,034-058]
-  short        up 3-00:00:00      4  alloc cn[001-004]
-  short        up 3-00:00:00     16   idle cn[005-020]
+  private*     up 3-00:00:00      2  down* cn[076,080]
+  private*     up 3-00:00:00      2    mix cn[025,030]
+  private*     up 3-00:00:00     12  alloc cn[013-018,021,023,026-029]
+  private*     up 3-00:00:00     71   idle cn[002-012,019-020,022,024,031-075,077-079,081-088]
+  private*     up 3-00:00:00      1   down cn001
+  debug        up 2-00:00:00      2    mix cn[025,030]
+  debug        up 2-00:00:00     12  alloc cn[013-018,021,023,026-029]
+  debug        up 2-00:00:00     43   idle cn[002-012,019-020,022,024,031-058]
+  debug        up 2-00:00:00      1   down cn001
+  short        up 3-00:00:00      6  alloc cn[013-018]
+  short        up 3-00:00:00     13   idle cn[002-012,019-020]
+  short        up 3-00:00:00      1   down cn001
+  medium       up 2-00:00:00      2    mix cn[025,030]
+  medium       up 2-00:00:00      6  alloc cn[021,023,026-029]
+  medium       up 2-00:00:00     30   idle cn[022,024,031-058]
+
+To learn the meaning of states down, mix, alloc, and idle read the manual pages by issuing the command ``man sinfo``. 
   
-  
-To check if the job is in the queue to run just execute
+To check if a job is in the queue to run just execute
 
 .. code-block:: console
 
