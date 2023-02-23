@@ -6,7 +6,7 @@ Quick Start
 
 After logged in the user finds himself in his home directory. Change to the project directory
 
-.. code-block:: console
+.. code-block:: julia
 
   cd /mnt/beegfs/projects/PROJECT_ID/USER_NAME
   
@@ -17,13 +17,13 @@ where PROJECT_ID is the project folder and USER_NAME is the user's username.
 
 Check the available modules in the machine by using
 
-.. code-block:: console
+.. code-block:: julia
 
   module av
   
 Load the needed modules to create the working environment (:ref:`see the modules section<Environment Modules>`)
       
-.. code-block:: console  
+.. code-block:: julia
     
     module load <module_name>
 
@@ -32,7 +32,7 @@ Load the needed modules to create the working environment (:ref:`see the modules
 
 The software directories are located at
 
-.. code-block:: console
+.. code-block:: julia
 
     /mnt/beegfs/stack/cn01470/software
   
@@ -64,13 +64,13 @@ Using ``ls /mnt/beegfs/stack/cn01470/software`` a list of all software directori
 
 In the project directory compile the code and submit it for execution using a SLURM script
 
-.. code-block:: console
+.. code-block:: julia
 
   sbatch <script_name.sh>.
 
 A script example for runs with OpneMPI compiled with GCC:
 
-.. code-block:: console
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --time=00:40:00
