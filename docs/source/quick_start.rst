@@ -70,7 +70,7 @@ In the project directory compile the code and submit it for execution using a SL
 
 A script example for runs with OpneMPI compiled with GCC:
 
-.. code-block:: bash
+.. code-block:: julia
 
   #!/bin/bash
   #SBATCH --time=00:40:00
@@ -122,7 +122,7 @@ To learn the meaning of states down, mix, alloc, and idle read the manual pages 
   
 To check if a job is in the queue to run just execute
 
-.. code-block:: console
+.. code-block:: julia
 
   $ squeue | grep USER_NAME
  
@@ -137,7 +137,7 @@ To check if a job is in the queue to run just execute
 
 The user can always use sacct to see the CPU time used by the job by using, for example,
 
-.. code-block:: console
+.. code-block:: julia
  
   $ sacct --format=JobIdRaw,User,Partition,Submit,Start,Elapsed,AllocCPUS,CPUTime,CPUTimeRaw,MaxRSS,State,NodeList -S 2021-02-01 -E 2021-02-02
 
@@ -153,6 +153,6 @@ The user can always use sacct to see the CPU time used by the job by using, for 
 
 For more information on the command sacct options at the terminal execute
 
-.. code-block:: console
+.. code-block:: julia
 
   man sacct
