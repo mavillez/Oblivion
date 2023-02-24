@@ -28,13 +28,13 @@ Sub-toolchains gompi and iimpi include GCC + OpenMPI and Intel compilers + Intel
 Installed in OBLIVION are, as of 2022.02.23, the toolchains
 
 - foss: 2021b, 2022a;
-- intel: 2021b, 2022a.
+- intel: 2021b.
  
 and sub-toolchains 
 
 - gompi: 2020a, 2021b, 2022a; 
-- iimpi: 2021b, 2022a;
-- intel-compilers: 2021.4.0, 2021.6.0.
+- iimpi: 2021b;
+- intel-compilers: 2021.4.0.
 
 
 2. Core Modules
