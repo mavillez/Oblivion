@@ -5,7 +5,7 @@ Installed Software
 
 .. code-block:: julia
 
-  ABINIT: ABINIT/9.6.2
+    ABINIT: ABINIT/9.6.2
     ABINIT is a package whose main program allows one to find the total energy, charge density
     and electronic structure of systems made of electrons and nuclei (molecules and periodic
     solids) within Density Functional Theory (DFT), using pseudopotentials and a planewave or
@@ -683,6 +683,9 @@ Installed Software
     Tcl (Tool Command Language) is a very powerful but easy to learn dynamic programming
     language, suitable for a very wide range of uses, including web and desktop applications,
     networking, administration, testing and many more. 
+
+  TensorFlow: TensorFlow/2.8.4
+    An open-source software library for Machine Intelligence
 
   Theano: Theano/1.1.2-PyMC
     Theano is a Python library that allows you to define, optimize, and evaluate mathematical
