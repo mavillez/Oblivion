@@ -615,6 +615,10 @@ Installed Software
   R: R/4.1.2
     R is a free software environment for statistical computing and graphics.
 
+  R-bundle-Bioconductor: R-bundle-Bioconductor/3.14-R-4.1.2
+    Bioconductor provides tools for the analysis and coprehension of high-throughput genomic
+    data.
+
   RE2: RE2/2022-02-01
     RE2 is a fast, safe, thread-friendly alternative to backtracking regular expression engines
     like those used in PCRE, Perl, and Python. It is a C++ library. 
@@ -789,6 +793,9 @@ Installed Software
   arpack-ng: arpack-ng/3.8.0
     ARPACK is a collection of Fortran77 subroutines designed to solve large scale eigenvalue
     problems.
+
+  arrow-R: arrow-R/6.0.0.2-R-4.1.2
+    R interface to the Apache Arrow C++ library
 
   at-spi2-atk: at-spi2-atk/2.38.0
     AT-SPI 2 toolkit bridge
@@ -1111,6 +1118,9 @@ Installed Software
   libyaml: libyaml/0.2.5
     LibYAML is a YAML parser and emitter written in C.
 
+  lmod: lmod
+    Lmod: An Environment Module System
+
   lz4: lz4/1.9.3
     LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core. It
     features an extremely fast decoder, with speed in multiple GB/s per core.
@@ -1214,6 +1224,8 @@ Installed Software
   pkgconfig: pkgconfig/1.5.5-python
     pkgconfig is a Python module to interface with the pkg-config command line tool
 
+  pmi: pmi/pmix-x86_64
+
   protobuf: protobuf/3.17.3
     Google Protocol Buffers
 
@@ -1252,6 +1264,10 @@ Installed Software
     versatile tools for data mining and analysis in any field of science and engineering. It
     strives to be simple and efficient, accessible to everybody, and reusable in various
     contexts.
+
+  settarg: settarg
+    The settarg module provides a way to connect the loaded modules with your build system by
+    setting environment variables. 
 
   snakemake: snakemake/6.10.0
     The Snakemake workflow management system is a tool to create reproducible and scalable data
@@ -1327,3 +1343,4 @@ Installed Software
     a very wide range of compression/speed trade-off, while being backed by a very fast decoder.
     It also offers a special mode for small data, called dictionary compression, and can create
     dictionaries from any sample set.
+
