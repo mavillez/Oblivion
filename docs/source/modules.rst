@@ -243,33 +243,34 @@ and see what is available (``module av``)
 .. code-block:: julia
 
    ---------------------- /mnt/beegfs/stack/cn01470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 ----------------------
-     ABINIT/9.6.2                       MUMPS/5.4.1-metis                 Valgrind/3.18.1
-     ASE/3.22.1                         MultiQC/1.12                      Wannier90/3.1.0
-     AmberTools/22.3                    NCO/5.0.3                         XCrySDen/1.6.2
-     Arrow/6.0.0                        ORCA/5.0.3                        arpack-ng/3.8.0
-     ArviZ/0.11.4                       OSU-Micro-Benchmarks/5.7.1        ecCodes/2.24.2
-     Bambi/0.7.1                        OpenCV/4.5.5-contrib              futile/1.8.3
-     Biopython/1.79                     OpenFOAM/v2112                    h5py/3.6.0
-     CGAL/4.14.3                        PLUMED/2.8.0                      imkl-FFTW/2021.4.0
-     CP2K/8.2                           PSolver/1.8.3                     libGridXC/0.9.6
-     Dalton/2020.0                      ParMETIS/4.0.3                    libvdwxc/0.4.0
-     ELPA/2021.05.001                   ParaView/5.9.1-mpi                matplotlib/3.4.3
-     ESMF/8.2.0                         PnetCDF/1.12.3                    ncview/2.1.8
-     FFTW/3.3.10                        PyMC3/3.11.1                      netCDF-C++4/4.3.1
-     FMS/2022.02                        QuantumESPRESSO/7.0               netCDF-Fortran/4.5.3
-     GDAL/3.3.2                         R/4.1.2                           netCDF/4.8.1
-     GPAW/22.8.0                        SCOTCH/6.1.2                      netcdf4-python/1.5.7
-     GROMACS/2021.5-PLUMED-2.8.0        SPOTPY/1.5.14                     networkx/2.6.3
-     GROMACS/2021.5              (D)    ScaFaCoS/1.0.1                    numba/0.54.1
-     HDF/4.2.15                  (D)    ScaLAPACK/2.1.0-fb                scikit-bio/0.5.7
-     HDF5/1.12.1                        SciPy-bundle/2021.10              scikit-learn/1.0.2
-     HPL/2.3                            Siesta/4.1.5                      snakemake/6.10.0
-     Hypre/2.24.0                       SimPEG/0.18.1                     spglib-python/1.16.3
-     IMB/2021.3                         SuiteSparse/5.10.1-METIS-5.1.0    statsmodels/0.13.1
-     LAMMPS/23Jun2022-kokkos            SuperLU/5.3.0                     worker/1.6.12
-     Libint/2.6.0-lmax-6-cp2k           TELEMAC-MASCARET/8p3r1            xarray/0.20.1
-     MDAnalysis/2.0.0                   Theano/1.1.2-PyMC
-     MDTraj/1.9.7                       VTK/9.1.0
+     ABINIT/9.6.2                       MultiQC/1.12                              Valgrind/3.18.1
+     ASE/3.22.1                         NCO/5.0.3                                 Wannier90/3.1.0
+     AmberTools/22.3                    ORCA/5.0.3                                XCrySDen/1.6.2
+     Arrow/6.0.0                        OSU-Micro-Benchmarks/5.7.1                arpack-ng/3.8.0
+     ArviZ/0.11.4                       OpenCV/4.5.5-contrib                      arrow-R/6.0.0.2-R-4.1.2
+     Bambi/0.7.1                        OpenFOAM/v2112                            ecCodes/2.24.2
+     Biopython/1.79                     PLUMED/2.8.0                              futile/1.8.3
+     CGAL/4.14.3                        PSolver/1.8.3                             h5py/3.6.0
+     CP2K/8.2                           ParMETIS/4.0.3                            imkl-FFTW/2021.4.0
+     Dalton/2020.0                      ParaView/5.9.1-mpi                        libGridXC/0.9.6
+     ELPA/2021.05.001                   PnetCDF/1.12.3                            libvdwxc/0.4.0
+     ESMF/8.2.0                         PyMC3/3.11.1                              matplotlib/3.4.3
+     FFTW/3.3.10                 (L)    QuantumESPRESSO/7.0                       ncview/2.1.8
+     FMS/2022.02                        R-bundle-Bioconductor/3.14-R-4.1.2        netCDF-C++4/4.3.1
+     GDAL/3.3.2                         R/4.1.2                                   netCDF-Fortran/4.5.3
+     GPAW/22.8.0                        SCOTCH/6.1.2                              netCDF/4.8.1
+     GROMACS/2021.5-PLUMED-2.8.0        SPOTPY/1.5.14                             netcdf4-python/1.5.7
+     GROMACS/2021.5              (D)    ScaFaCoS/1.0.1                            networkx/2.6.3
+     HDF/4.2.15                  (D)    ScaLAPACK/2.1.0-fb                 (L)    numba/0.54.1
+     HDF5/1.12.1                        SciPy-bundle/2021.10                      scikit-bio/0.5.7
+     HPL/2.3                            Siesta/4.1.5                              scikit-learn/1.0.2
+     Hypre/2.24.0                       SimPEG/0.18.1                             snakemake/6.10.0
+     IMB/2021.3                         SuiteSparse/5.10.1-METIS-5.1.0            spglib-python/1.16.3
+     LAMMPS/23Jun2022-kokkos            SuperLU/5.3.0                             statsmodels/0.13.1
+     Libint/2.6.0-lmax-6-cp2k           TELEMAC-MASCARET/8p3r1                    worker/1.6.12
+     MDAnalysis/2.0.0                   TensorFlow/2.8.4                          xarray/0.20.1
+     MDTraj/1.9.7                       Theano/1.1.2-PyMC
+     MUMPS/5.4.1-metis                  VTK/9.1.0
 
    -------------------------- /mnt/beegfs/stack/cn01470/modules/all/Compiler/GCC/11.2.0 ---------------------------
      BEDTools/2.30.0    FlexiBLAS/3.0.4    LAPACK/3.10.1          SAMtools/1.16.1    pybedtools/0.8.2
@@ -309,16 +310,16 @@ The available modules are (use ``module av``)
 .. code-block:: julia
 
    ---------------------- /mnt/beegfs/stack/cn01470/modules/all/MPI/GCC/11.2.0/OpenMPI/4.1.1 ----------------------
-     ABINIT/9.6.2                       MUMPS/5.4.1-metis                 Valgrind/3.18.1
-     ASE/3.22.1                         MultiQC/1.12                      Wannier90/3.1.0
-     AmberTools/22.3                    NCO/5.0.3                         XCrySDen/1.6.2
-     Arrow/6.0.0                        ORCA/5.0.3                        arpack-ng/3.8.0
-     ArviZ/0.11.4                       OSU-Micro-Benchmarks/5.7.1        ecCodes/2.24.2
-     Bambi/0.7.1                        OpenCV/4.5.5-contrib              futile/1.8.3
-     Biopython/1.79                     OpenFOAM/v2112                    h5py/3.6.0
-     CGAL/4.14.3                        PLUMED/2.8.0                      imkl-FFTW/2021.4.0
-     CP2K/8.2                           PSolver/1.8.3                     libGridXC/0.9.6
-     Dalton/2020.0                      ParMETIS/4.0.3                    libvdwxc/0.4.0
+     ABINIT/9.6.2                       MultiQC/1.12                              Valgrind/3.18.1
+     ASE/3.22.1                         NCO/5.0.3                                 Wannier90/3.1.0
+     AmberTools/22.3                    ORCA/5.0.3                                XCrySDen/1.6.2
+     Arrow/6.0.0                        OSU-Micro-Benchmarks/5.7.1                arpack-ng/3.8.0
+     ArviZ/0.11.4                       OpenCV/4.5.5-contrib                      arrow-R/6.0.0.2-R-4.1.2
+     Bambi/0.7.1                        OpenFOAM/v2112                            ecCodes/2.24.2
+     Biopython/1.79                     PLUMED/2.8.0                              futile/1.8.3
+     CGAL/4.14.3                        PSolver/1.8.3                             h5py/3.6.0
+     CP2K/8.2                           ParMETIS/4.0.3                            imkl-FFTW/2021.4.0
+     Dalton/2020.0                      ParaView/5.9.1-mpi                        libGridXC/0.9.6
      ...
       
 It is the same obtained previously by loading GCC/11.2.0 and OpenMPI/4.1.1.
