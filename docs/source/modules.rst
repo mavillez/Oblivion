@@ -28,13 +28,13 @@ Sub-toolchains gompi and iimpi include GCC + OpenMPI and Intel compilers + Intel
 Installed in OBLIVION are, as of 2022.02.23, the toolchains
 
 - foss: 2021b, 2022a;
-- intel: 2021b.
+- intel: 2021b, 2022a.
  
 and sub-toolchains 
 
-- gompi: 2020a, 2021b, 2022a; 
-- iimpi: 2021b;
-- intel-compilers: 2021.4.0.
+- gompi: 2020a, 2021b, 2022a;
+- iimpi: 2021b; 2022a;
+- intel-compilers: 2021.4.0, 2021.6.0.
 
 
 2. Core Modules
@@ -48,20 +48,21 @@ After logging into the machine the user should execute the command ``module av``
 
 .. code-block:: julia
 
-  ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core -----------------------
-    ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b                                   
-    ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)                  
-    Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b                                   
-    Bison/3.8.2                   ant/1.10.11-Java-11             imkl/2021.4.0                                 
-    FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0                      
-    GCC/9.3.0                     binutils/2.37                   intel/2021b                                   
-    GCC/11.2.0                    binutils/2.38            (D)    ncurses/6.1                                   
-    GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2              (D)                  
-    GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0                                 
-    GCCcore/11.2.0                foss/2022a               (D)    zlib/1.2.11                                   
-    GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)                  
-    GPAW-setups/0.9.20000         gettext/0.21             (D)                                                  
-    Java/11.0.16          (11)    gompi/2020a
+  ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
+    ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
+    ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
+    Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
+    Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
+    FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
+    GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
+    GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
+    GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
+    GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
+    GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
+    GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
+    GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
+    Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
+    Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
 
    Where:
       Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
@@ -114,20 +115,22 @@ Loading the module GCC/9.3.0 gives access to other modules that only now became 
     NASM/2.14.02          expat/2.2.9                libtirpc/1.2.6                                             
     PMIx/3.1.5            flex/2.6.4          (D)    libtool/2.4.6                                              
 
-  ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core -----------------------
-    ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b                                   
-    ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)                  
-    Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b                                   
-    Bison/3.8.2                   ant/1.10.11-Java-11             imkl/2021.4.0                                 
-    FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0                      
-    GCC/9.3.0                     binutils/2.37                   intel/2021b                                   
-    GCC/11.2.0                    binutils/2.38            (D)    ncurses/6.1                                   
-    GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2              (D)                  
-    GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0                                 
-    GCCcore/11.2.0                foss/2022a               (D)    zlib/1.2.11                                   
-    GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)                  
-    GPAW-setups/0.9.20000         gettext/0.21             (D)                                                  
-    Java/11.0.16          (11)    gompi/2020a
+  ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
+    ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
+    ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
+    Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
+    Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
+    FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
+    GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
+    GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
+    GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
+    GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
+    GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
+    GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
+    GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
+    Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
+    Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
+
 
 
 Here one can see (from bottom to top) general software compiled with GCC-9.3.0, and MPI API compiled with GCC-9.3.0 following the scheme core/compiler/MPI referred above.
@@ -201,20 +204,22 @@ No longer have access to OpenMPI-4.0.3 and associated frameworks. Let's check wh
      FLAC/1.3.3                          Togl/2.0                       libpciaccess/0.16          (L)
      ...
 
-   ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ----------------------------------
-     ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b
-     ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)
-     Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b
-     Bison/3.8.2           (D)     ant/1.10.11-Java-11             imkl/2021.4.0
-     FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0
-     GCC/9.3.0                     binutils/2.37                   intel/2021b
-     GCC/11.2.0            (L)     binutils/2.38            (D)    ncurses/6.1
-     GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2
-     GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0
-     GCCcore/11.2.0        (L)     foss/2022a               (D)    zlib/1.2.11
-     GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)
-     GPAW-setups/0.9.20000         gettext/0.21
-     Java/11.0.16          (11)    gompi/2020a
+   ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
+     ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
+     ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
+     Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
+     Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
+     FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
+     GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
+     GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
+     GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
+     GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
+     GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
+     GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
+     GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
+     Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
+     Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
+
       
     Where:
       L:        Module is loaded
@@ -384,20 +389,22 @@ Similar procedure to what has been outlined above applies for software using the
 
 .. code-block:: julia
 
-   ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ----------------------------------
-     ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b
-     ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)
-     Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b
-     Bison/3.8.2           (D)     ant/1.10.11-Java-11             imkl/2021.4.0
-     FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0
-     GCC/9.3.0                     binutils/2.37                   intel/2021b
-     GCC/11.2.0            (L)     binutils/2.38            (D)    ncurses/6.1
-     GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2
-     GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0
-     GCCcore/11.2.0        (L)     foss/2022a               (D)    zlib/1.2.11
-     GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)
-     GPAW-setups/0.9.20000         gettext/0.21
-     Java/11.0.16          (11)    gompi/2020a
+   ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
+     ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
+     ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
+     Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
+     Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
+     FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
+     GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
+     GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
+     GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
+     GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
+     GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
+     GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
+     GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
+     Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
+     Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
+
       
 After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module list`` shows
 
