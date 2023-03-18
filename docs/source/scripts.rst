@@ -12,7 +12,7 @@ The scripts include all the needed information about the requested resources (co
 1. Setting System Variables in the Scripts
 ------------------------------------------
 
-In order to prevent anoying warnings during the course of run it is manadatory to include the following variables in the scripts.
+In order to prevent annoying warnings during the course of run it is mandatory to include the following variables in the scripts.
 
 * In Scripts associated to OpenMPI compiled with GCC include
 
