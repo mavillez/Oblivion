@@ -6,6 +6,9 @@ There are several conflicting software packages installed in the Oblivion superc
 1. Toolchains
 -------------
 
+1.1 Definitions
+~~~~~~~~~~~~~~~
+
 Toolchain is a pack of compiler(s)and libraries bundled together to provide a specific functionality, say, running applications using a MPI distribution compiled against GCC (toolchain gompi) or Intel compilers (toolchain iimpi) or use linear algebra libraries with a MPI API compiled with GCC (toolchain foss).
 
 **Toolchain foss includes the following software:**
@@ -30,8 +33,8 @@ Toolchain is a pack of compiler(s)and libraries bundled together to provide a sp
 - iimpi (Intel compilers + Intel MPI (MPICH))
 - imkl (Intel Math Kernel Library) 
 
-
-**In OBLIVION are installed the following toolchains and sub-toolchains:** 
+1.2 Toolchains and Sub-toolchains installed in OBLIVION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Toolchains:
 
