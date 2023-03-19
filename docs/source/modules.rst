@@ -470,7 +470,7 @@ and the available modules are (``module av``)
  
 Most of the software, as can be seen in the top and middle rows, are similar to that available in foss/2022a, but was compiled with a dofferent version of GCC (11.2.0) and OpenMPI (4.1.1).
 
-So, the user just should use the toolchain that suits better his needs. **There is a catch**, though, there are software that can be available in one toolchain but not in the other, e.g., PyTorch, torchvision, torchsampler, are available in foss/2022a but not in foss/2021b.
+So, the user just should use the toolchain that suits better his needs. **There is a catch**, though, there are software that can be available in one toolchain but not in the other, e.g., PyTorch, PyTorch-Lightning, torchvision, torchsampler, tensorboard, etc., are available in foss/2022a but not in foss/2021b.
 
 
 3.3 Intel-Compilers Based Modules
