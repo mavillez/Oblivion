@@ -480,22 +480,25 @@ Similar procedure to what has been outlined above applies for software using the
 
 .. code-block:: julia
 
-   ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
-     ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
-     ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
-     Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
-     Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
-     FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
-     GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
-     GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
-     GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
-     GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
-     GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
-     GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
-     GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
-     Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
-     Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
+  ----------------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Core ------------------------------------
+    ANSYS_CFD/2021R1                 OpenSSL/1.1                iimpi/2021b
+    ANSYS_CFD/2022R2         (D)     ant/1.10.11-Java-11        iimpi/2022a              (D)
+    Anaconda3/2022.05                ant/1.10.12-Java-11 (D)    imkl/2021.4.0
+    Bison/3.8.2                      binutils/2.34              imkl/2022.1.0            (D)
+    FastQC/0.11.9-Java-11            binutils/2.37              intel-compilers/2021.4.0
+    GCC/9.3.0                        binutils/2.38       (D)    intel-compilers/2022.1.0 (D)
+    GCC/11.2.0                       flex/2.6.4                 intel/2021b
+    GCC/11.3.0               (D)     foss/2020a                 intel/2022a              (D)
+    GCCcore/9.3.0                    foss/2021b                 iompi/2021b
+    GCCcore/11.2.0                   foss/2022a          (D)    ncurses/6.1
+    GCCcore/11.3.0           (D)     gettext/0.20.1             ncurses/6.2              (D)
+    GPAW-setups/0.9.20000            gettext/0.21        (D)    pkgconf/1.8.0
+    Java/11.0.16             (11)    gompi/2020a                pplacer/1.1.alpha19
+    Julia/1.8.5-linux-x86_64         gompi/2021b                zlib/1.2.11
+    M4/1.4.19                        gompi/2022a         (D)    zlib/1.2.12              (D)
 
+   Where:
+    D:        Default Module
       
 After loading intel/2021b or iimpi/2021b (``module load intel/2021b`` or ``module load iimpi/2021b``) ``module list`` shows
 
@@ -509,83 +512,157 @@ and ``module av`` displays
 
 .. code-block:: julia
 
-   --------------------- /mnt/beegfs/stack/cn01470/modules/all/MPI/intel/2021.4.0/impi/2021.4.0 ----------------------
-     ABINIT/9.6.2          HPL/2.3                     SPOTPY/1.5.14                         libxsmm/1.17
-     ASE/3.22.1            Hypre/2.24.0                ScaFaCoS/1.0.1                        matplotlib/3.4.3
-     AmberTools/21         IMB/2021.3                  SciPy-bundle/2021.10                  mkl-service/2.3.0
-     ArviZ/0.11.4          Libint/2.6.0-lmax-6-cp2k    Siesta/4.1.5                          ncview/2.1.8
-     Bambi/0.7.1           MDAnalysis/2.0.0            SimPEG/0.18.1                         netCDF-C++4/4.3.1
-     Biopython/1.79        MDTraj/1.9.7                SuiteSparse/5.10.1-METIS-5.1.0        netCDF-Fortran/4.5.3
-     CGAL/4.14.3           MUMPS/5.4.1-metis           SuperLU/5.3.0                         netCDF/4.8.1
-     CP2K/8.2              NCO/5.0.3                   Theano/1.1.2-PyMC                     netcdf4-python/1.5.7
-     ELPA/2021.05.001      NWChem/7.0.2                VTK/9.1.0                             networkx/2.6.3
-     ESMF/8.2.0            OSU-Micro-Benchmarks/5.8    Valgrind/3.18.1                       numba/0.54.1
-     FDS/6.7.7             OpenMolcas/22.10            Wannier90/3.1.0                       scikit-bio/0.5.7
-     FFTW/3.3.10           PLUMED/2.8.0                XCrySDen/1.6.2                        scikit-learn/1.0.1
-     FMS/2022.02           PSolver/1.8.3               ecCodes/2.24.2                        spglib-python/1.16.3
-     GDAL/3.3.2            ParMETIS/4.0.3              futile/1.8.3                          statsmodels/0.13.1
-     GEOS/3.9.1            PnetCDF/1.12.3              h5py/3.6.0                            worker/1.6.13
-     GPAW/22.8.0           PyMC3/3.11.1                imkl-FFTW/2021.4.0             (L)    xarray/0.20.1
-     GlobalArrays/5.8.1    QuantumESPRESSO/7.0         libGridXC/0.9.6
-     HDF5/1.12.1           SCOTCH/6.1.2                libvdwxc/0.4.0
+  -------------------- /mnt/beegfs/apps/cn01470x/modules/all/MPI/intel/2021.4.0/impi/2021.4.0 ---------------------
+    ABINIT/9.6.2          HMMER/3.3.2                 SPOTPY/1.5.14                         libvdwxc/0.4.0
+    ASE/3.22.1            HPL/2.3                     ScaFaCoS/1.0.1                        libxsmm/1.17
+    AmberTools/21         Hypre/2.24.0                SciPy-bundle/2021.10                  loompy/3.0.7
+    ArviZ/0.11.4          IMB/2021.3                  Siesta/4.1.5                          matplotlib/3.4.3
+    BDBag/1.6.3           Libint/2.6.0-lmax-6-cp2k    SimPEG/0.18.1                         mkl-service/2.3.0
+    Bambi/0.7.1           MDAnalysis/2.0.0            SuiteSparse/5.10.1-METIS-5.1.0        ncview/2.1.8
+    Biopython/1.79        MDTraj/1.9.7                SuperLU/5.3.0                         netCDF-C++4/4.3.1
+    CGAL/4.14.3           MUMPS/5.4.1-metis           Theano/1.1.2-PyMC                     netCDF-Fortran/4.5.3
+    CP2K/8.2              NCO/5.0.3                   VTK/9.1.0                             netCDF/4.8.1
+    ELPA/2021.05.001      NWChem/7.0.2                Valgrind/3.18.1                       netcdf4-python/1.5.7
+    ESMF/8.2.0            OSU-Micro-Benchmarks/5.8    Wannier90/3.1.0                       networkx/2.6.3
+    FDS/6.7.7             OpenMolcas/22.10            XCrySDen/1.6.2                        numba/0.54.1
+    FFTW/3.3.10           PLUMED/2.8.0                YAXT/0.9.2                            scikit-bio/0.5.7
+    FMS/2022.02           PSolver/1.8.3               astropy/5.1.1                         scikit-learn/1.0.1
+    GDAL/3.3.2            ParMETIS/4.0.3              buildenv/default                      spglib-python/1.16.3
+    GEOS/3.9.1            PnetCDF/1.12.3              ecCodes/2.24.2                        statsmodels/0.13.1
+    GPAW/22.8.0           PyMC3/3.11.1                futile/1.8.3                          worker/1.6.13
+    GTDB-Tk/2.0.0         QuantumESPRESSO/7.0         h5py/3.6.0                            xarray/0.20.1
+    GlobalArrays/5.8.1    SCOTCH/6.1.2                imkl-FFTW/2021.4.0             (L)
+    HDF5/1.12.1           SISSO/3.1-20220324          libGridXC/0.9.6
 
-   -------------------------- /mnt/beegfs/stack/cn01470/modules/all/Compiler/intel/2021.4.0 --------------------------
-     BLIS/0.9.0      DFT-D3/3.2.0    GSL/2.7          NLopt/2.7.0   (D)    libxc/5.1.6
-     Boost/1.77.0    Flye/2.9        LAPACK/3.10.1    impi/2021.4.0 (L)    xmlf90/1.5.4
+  ------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Compiler/intel/2021.4.0 -------------------------
+    BLIS/0.9.0      FastANI/1.33    LAPACK/3.10.1        OpenMPI/4.1.1        xmlf90/1.5.4
+    Boost/1.77.0    Flye/2.9        Mash/2.3             impi/2021.4.0 (L)
+    DFT-D3/3.2.0    GSL/2.7         NLopt/2.7.0   (D)    libxc/5.1.6
 
-   -------------------------- /mnt/beegfs/stack/cn01470/modules/all/Compiler/GCCcore/11.2.0 --------------------------
-     ANTLR/2.7.7-Java-11                 Perl/5.34.0                    libGLU/9.0.2
-     ATK/2.36.0                          Pillow/8.3.2                   libarchive/3.5.1
-     Autoconf/2.71                       PyYAML/5.4.1                   libcerf/1.17
-     Automake/1.16.4                     Python/2.7.18-bare             libdap/3.20.8
-     Autotools/20210726                  Python/3.9.6-bare              libdrm/2.4.107
-     Bazel/4.2.2                         Python/3.9.6            (D)    libepoxy/1.5.8
-     ...
+  ------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Compiler/GCCcore/11.2.0 -------------------------
+    ANTLR/2.7.7-Java-11                 PCRE2/10.37                    hypothesis/6.14.6
+    ATK/2.36.0                          PDT/3.25.1                     intltool/0.51.0
+    Autoconf/2.71                       PMIx/4.1.0                     jbigkit/2.1
+    Automake/1.16.4                     PROJ/8.1.0                     kim-api/2.3.0
+    Autotools/20210726                  Pango/1.48.8                   libGLU/9.0.2
+    Bazel/4.2.2                         Perl/5.34.0-minimal            libarchive/3.5.1
+    Bison/3.7.6                         Perl/5.34.0             (D)    libcerf/1.17
+    Brotli/1.0.9                        Pillow/8.3.2                   libdap/3.20.8
+    CMake/3.21.1                        PyYAML/5.4.1                   libdrm/2.4.107
+    CMake/3.22.1                 (D)    Python/2.7.18-bare             libepoxy/1.5.8
+    CapnProto/0.9.1                     Python/3.9.6-bare              libevent/2.1.12
+    CubeLib/4.8                         Python/3.9.6            (D)    libfabric/1.13.2
+    CubeWriter/4.8                      Qhull/2020.2                   libffi/3.4.2
+    ...
 
-On the top section the software compiled against Intel MPI (which is MPICH compiled against the Intel compilers) is displayed followed by the software compiled with Intel C, C++ and Fortran compilers. On the bottom is the software compiled with GCC/11.2.0 as a backend.
+On the top rwo the software compiled against Intel MPI (which is MPICH compiled against the Intel compilers) is displayed followed by the software compiled with Intel C, C++ and Fortran compilers. On the bottom row the software compiled with GCC/11.2.0 as a backend is displayed.
 
-The user can change to GCC based modules, e.g., to the foss/2021b toochain, by issuing ``module load foss/2021b`` obtaining
+The user can change to GCC based modules, e.g., to the foss/2022a toochain, by issuing ``module load foss/2022a`` obtaining
 
 .. code-block:: julia
 
-   Lmod is automatically replacing "intel-compilers/2021.4.0" with "GCC/11.2.0".
+   Lmod is automatically replacing "intel-compilers/2021.4.0" with "GCC/11.3.0".
    
    Inactive Modules:
-     1) impi/2021.4.0
+     1) imkl-FFTW/2021.4.0     2) impi/2021.4.0
 
-   Due to MODULEPATH changes, the following have been reloaded:                                                      
-     1) imkl-FFTW/2021.4.0
+   Due to MODULEPATH changes, the following have been reloaded:
+     1) numactl/2.0.14
+
+   The following have been reloaded with a version change:
+    1) GCCcore/11.2.0 => GCCcore/11.3.0     3) binutils/2.37 => binutils/2.38
+    2) UCX/1.11.2 => UCX/1.12.1             4) zlib/1.2.11 => zlib/1.2.12
 
 
 and ``module list`` gives
 
 .. code-block:: julia
 
-   Currently Loaded Modules:
-     1) GCCcore/11.2.0   6) imkl/2021.4.0   11) libpciaccess/0.16  16) PMIx/4.1.0       21) ScaLAPACK/2.1.0-fb       
-     2) zlib/1.2.11      7) intel/2021b     12) hwloc/2.5.0        17) OpenMPI/4.1.1    22) foss/2021b               
-     3) binutils/2.37    8) GCC/11.2.0      13) OpenSSL/1.1        18) OpenBLAS/0.3.18  23) imkl-FFTW/2021.4.0       
-     4) numactl/2.0.14   9) XZ/5.2.5        14) libevent/2.1.12    19) FlexiBLAS/3.0.4                               
-     5) UCX/1.11.2      10) libxml2/2.9.10  15) libfabric/1.13.2   20) FFTW/3.3.10            
+  Currently Loaded Modules:
+    1) imkl/2021.4.0    6) GCC/11.3.0         11) OpenSSL/1.1       16) UCC/1.0.0        21) FFTW.MPI/3.3.10
+    2) intel/2021b      7) XZ/5.2.5           12) libevent/2.1.12   17) OpenMPI/4.1.4    22) ScaLAPACK/2.2.0-fb
+    3) GCCcore/11.3.0   8) libxml2/2.9.13     13) UCX/1.12.1        18) OpenBLAS/0.3.20  23) foss/2022a
+    4) zlib/1.2.12      9) libpciaccess/0.16  14) libfabric/1.15.1  19) FlexiBLAS/3.2.0  24) numactl/2.0.14
+    5) binutils/2.38   10) hwloc/2.7.1        15) PMIx/4.1.2        20) FFTW/3.3.10
 
-   Inactive Modules:
-      1) impi/2021.4.0
+  Inactive Modules:
+    1) impi/2021.4.0   2) imkl-FFTW/2021.4.0
 
 
 4. Loading a Particular Software
 --------------------------------
 
-The user only needs to load the modules of interest. For example, if a user wants to use ``TensorFlow/2.8.4`` after loading foss/2021b he/she executes the command
+4.1 scipy, mpi4py, numpy, numexpr, pandas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These packages, as well as others, are included in the module scipy-bundle. Therefore, the user needs to follow the following procedure to use these packages: (i) decide which toolchain to use (foss or intel). If using foss/2022a execute ``module load foss/2022a`` followed with ``module load SciPy-bundle/2022.05``. These two commands can be typed once by using
 
 .. code-block:: julia
 
-  module load TensorFlow/2.8.4
-
-or if the user wants to use ``GROMACS/2021.5`` then just execute
+  module load foss/2022a SciPy-bundle/2022.05
+  
+``module list`` displays the loaded modules as
 
 .. code-block:: julia
 
-  module load GROMACS/2021.5
+ Currently Loaded Modules:
+   1) GCCcore/11.3.0      9) hwloc/2.7.1       17) OpenBLAS/0.3.20     25) libreadline/8.1.2
+   2) zlib/1.2.12        10) OpenSSL/1.1       18) FlexiBLAS/3.2.0     26) Tcl/8.6.12
+   3) binutils/2.38      11) libevent/2.1.12   19) FFTW/3.3.10         27) SQLite/3.38.3
+   4) GCC/11.3.0         12) UCX/1.12.1        20) FFTW.MPI/3.3.10     28) GMP/6.2.1
+   5) numactl/2.0.14     13) libfabric/1.15.1  21) ScaLAPACK/2.2.0-fb  29) libffi/3.4.2
+   6) XZ/5.2.5           14) PMIx/4.1.2        22) foss/2022a          30) Python/3.10.4
+   7) libxml2/2.9.13     15) UCC/1.0.0         23) bzip2/1.0.8         31) pybind11/2.9.2
+   8) libpciaccess/0.16  16) OpenMPI/4.1.4     24) ncurses/6.3         32) SciPy-bundle/2022.05
+
+
+Now the user can use, for example, mpi4py or numpy in their submission scripts.
+
+
+4.2 TensorFlow
+~~~~~~~~~~~~~~
+
+Similarly to the procedure discussed previously the user loads foss/2021b + TensorFlow/2.8.4 or foss/2022a + TensorFlor/2.8.4 as
+
+.. code-block:: julia
+
+  module load foss/2021b TensorFlow/2.8.4
+
+or
+
+.. code-block:: julia
+
+  module load foss/2022a TensorFlow/2.8.4
+
+and ``module list`` gives (here the results for foss/2021b + TensorFlow/2.8.4) are shown)
+
+.. code-block:: julia
+
+ Currently Loaded Modules:
+   1) GCCcore/11.2.0     14) PMIx/4.1.0          27) libffi/3.4.2             40) JsonCpp/1.9.4
+   2) zlib/1.2.11        15) OpenMPI/4.1.1       28) Python/3.9.6             41) NASM/2.15.05
+   3) binutils/2.37      16) OpenBLAS/0.3.18     29) pybind11/2.7.1           42) libjpeg-turbo/2.0.6
+   4) GCC/11.2.0         17) FlexiBLAS/3.0.4     30) SciPy-bundle/2021.10     43) LMDB/0.9.29
+   5) numactl/2.0.14     18) FFTW/3.3.10         31) Szip/2.1.1               44) nsync/1.24.0
+   6) XZ/5.2.5           19) ScaLAPACK/2.1.0-fb  32) HDF5/1.12.1              45) protobuf/3.17.3
+   7) libxml2/2.9.10     20) foss/2021b          33) h5py/3.6.0               46) protobuf-python/3.17.3
+   8) libpciaccess/0.16  21) bzip2/1.0.8         34) cURL/7.78.0              47) flatbuffers-python/2.0
+   9) hwloc/2.5.0        22) ncurses/6.2         35) dill/0.3.4               48) libpng/1.6.37
+  10) OpenSSL/1.1        23) libreadline/8.1     36) double-conversion/3.1.5  49) snappy/1.1.9
+  11) libevent/2.1.12    24) Tcl/8.6.11          37) flatbuffers/2.0.0        50) networkx/2.6.3
+  12) UCX/1.11.2         25) SQLite/3.36         38) giflib/5.2.1             51) TensorFlow/2.8.4
+  13) libfabric/1.13.2   26) GMP/6.2.1           39) ICU/69.1
+
+Note the presence of PMIx, UCX, and libfabric in the list - these packages are loaded to make sure for multi-core, multi-nodes communications.
+
+4.3 GROMACS
+~~~~~~~~~~~
+
+In both foss/2021b and foss/2022a there are two flavours of GROMACS. One compiled with PLUMED-2.8.0 (in foss/2021b) and 2.8.1 (in foss/2022a) (see https://www.plumed.org/doc-v2.8/user-doc/html/index.html) and the other without. To load GROMACS follow the procedures outlined above. Load the foss toolchain and then GROMACS. Here is an example using foss/2021b:
+
+.. code-block:: julia
+
+  module load foss/2021b GROMACS/2021.5
 
 In the latter case the loaded modules, given by ``module list``, are
 
