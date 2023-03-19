@@ -31,7 +31,7 @@ Toolchain is a pack of compiler(s)and libraries bundled together to provide a sp
 - imkl (Intel Math Kernel Library) 
 
 
-**Installed in OBLIVION are installed:** 
+**In OBLIVION are installed the following toolchains and sub-toolchains:** 
 
 Toolchains:
 
