@@ -288,36 +288,37 @@ and see what is available (``module av``)
 .. code-block:: julia
 
   -------------------- /mnt/beegfs/apps/cn01470x/modules/all/MPI/GCC/11.3.0/OpenMPI/4.1.4 ---------------------
-    ABINIT/9.6.2                       MUMPS/5.5.1-metis                     Valgrind/3.20.0
-    ASE/3.22.1                         MultiQC/1.12                          Wannier90/3.1.0
-    AmberTools/22.3                    NCO/5.1.0                             XCrySDen/1.6.2
-    Arrow/8.0.0                        ORCA/5.0.3                            arpack-ng/3.8.0
-    ArviZ/0.12.1                       OSU-Micro-Benchmarks/5.9              arrow-R/8.0.0-R-4.2.1
-    Bambi/0.10.0                       OpenCV/4.6.0-contrib                  astropy/5.1.1
-    Biopython/1.79                     OpenFOAM/v2206                        buildenv/default
-    CGAL/4.14.3                        PLUMED/2.8.1                          ecCodes/2.27.0
-    CP2K/8.2                           PSolver/1.8.3                         futile/1.8.3
-    CheMPS2/1.8.12                     ParMETIS/4.0.3                        h5py/3.7.0
-    Dalton/2020.0                      ParaView/5.10.1-mpi                   imkl-FFTW/2022.1.0
-    ELPA/2021.11.001                   PnetCDF/1.12.3                        libGridXC/0.9.6
-    ESMF/8.3.0                         PyMC3/3.11.1                          libvdwxc/0.4.0
-    FFTW.MPI/3.3.10                    PyTorch/1.12.1                        matplotlib/3.5.2
-    FMS/2022.02                        QuantumESPRESSO/7.1                   ncview/2.1.8
-    GDAL/3.5.0                         R-bundle-Bioconductor/3.15-R-4.2.1    netCDF-C++4/4.3.1
-    GPAW/22.8.0                        R/4.2.1                               netCDF-Fortran/4.6.0
-    GROMACS/2021.5-PLUMED-2.8.1        SCOTCH/7.0.1                          netCDF/4.9.0
-    GROMACS/2021.5              (D)    SUNDIALS/6.3.0                        netcdf4-python/1.6.1
-    HDF/4.2.15                  (D)    ScaFaCoS/1.0.1                        networkx/2.8.4
-    HDF5/1.12.2                        ScaLAPACK/2.2.0-fb                    numba/0.56.4
-    HPL/2.3                            SciPy-bundle/2022.05                  scikit-bio/0.5.7
-    Hypre/2.25.0                       Score-P/8.0                           scikit-learn/1.1.2
-    IMB/2021.3                         Siesta/4.1.5                          snakemake/7.22.0
-    KaHIP/3.14                         SimPEG/0.18.1                         spglib-python/2.0.0
-    LAMMPS/23Jun2022-kokkos            SuiteSparse/5.13.0-METIS-5.1.0        statsmodels/0.13.1
-    LMfit/1.0.3                        SuperLU/5.3.0                         worker/1.6.13
-    Libint/2.6.0-lmax-6-cp2k           TensorFlow/2.8.4                      xarray/2022.6.0
-    MDAnalysis/2.2.0                   Theano/1.1.2-PyMC                     xarray/2022.9.0       (D)
-    MDTraj/1.9.7                       VTK/9.2.2
+    ABINIT/9.6.2                       MultiQC/1.12                              XCrySDen/1.6.2
+    ASE/3.22.1                         NCO/5.1.0                                 arpack-ng/3.8.0
+    AmberTools/22.3                    ORCA/5.0.3                                arrow-R/8.0.0-R-4.2.1
+    Arrow/8.0.0                        OSU-Micro-Benchmarks/5.9                  astropy/5.1.1
+    ArviZ/0.12.1                       OpenCV/4.6.0-contrib                      buildenv/default
+    Bambi/0.10.0                       OpenFOAM/v2206                            ecCodes/2.27.0
+    Biopython/1.79                     PLUMED/2.8.1                              futile/1.8.3
+    CGAL/4.14.3                        PSolver/1.8.3                             h5py/3.7.0
+    CP2K/8.2                           ParMETIS/4.0.3                            imkl-FFTW/2022.1.0
+    CheMPS2/1.8.12                     ParaView/5.10.1-mpi                       libGridXC/0.9.6
+    Dalton/2020.0                      PnetCDF/1.12.3                            libvdwxc/0.4.0
+    ELPA/2021.11.001                   PyMC3/3.11.1                              matplotlib/3.5.2
+    ESMF/8.3.0                         PyTorch/1.12.1                            ncview/2.1.8
+    FFTW.MPI/3.3.10             (L)    QuantumESPRESSO/7.1                       netCDF-C++4/4.3.1
+    FMS/2022.02                        R-bundle-Bioconductor/3.15-R-4.2.1        netCDF-Fortran/4.6.0
+    GDAL/3.5.0                         R/4.2.1                                   netCDF/4.9.0
+    GPAW/22.8.0                        SCOTCH/7.0.1                              netcdf4-python/1.6.1
+    GROMACS/2021.5-PLUMED-2.8.1        SUNDIALS/6.3.0                            networkx/2.8.4
+    GROMACS/2021.5              (D)    ScaFaCoS/1.0.1                            numba/0.56.4
+    HDF/4.2.15                  (D)    ScaLAPACK/2.2.0-fb                 (L)    scikit-bio/0.5.7
+    HDF5/1.12.2                        SciPy-bundle/2022.05                      scikit-learn/1.1.2
+    HPL/2.3                            Score-P/8.0                               snakemake/7.22.0
+    Hypre/2.25.0                       Siesta/4.1.5                              spglib-python/2.0.0
+    IMB/2021.3                         SimPEG/0.18.1                             statsmodels/0.13.1
+    KaHIP/3.14                         SuiteSparse/5.13.0-METIS-5.1.0            torchsampler/0.1.2
+    LAMMPS/23Jun2022-kokkos            SuperLU/5.3.0                             torchvision/0.13.1
+    LMfit/1.0.3                        TensorFlow/2.8.4                          worker/1.6.13
+    Libint/2.6.0-lmax-6-cp2k           Theano/1.1.2-PyMC                         xarray/2022.6.0
+    MDAnalysis/2.2.0                   VTK/9.2.2                                 xarray/2022.9.0       (D)
+    MDTraj/1.9.7                       Valgrind/3.20.0
+    MUMPS/5.5.1-metis                  Wannier90/3.1.0
 
   ------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Compiler/GCC/11.3.0 -------------------------
     BEDTools/2.30.0    Flye/2.9.1                 GTK4/4.7.0             Pysam/0.19.1
@@ -655,6 +656,7 @@ and ``module list`` gives (here the results for foss/2021b + TensorFlow/2.8.4) a
 
 Note the presence of PMIx, UCX, and libfabric in the list - these packages are loaded to make sure for multi-core, multi-nodes communications.
 
+
 4.3 GROMACS
 ~~~~~~~~~~~
 
@@ -737,8 +739,9 @@ Let's check the information on GROMACS by using ``module spider GROMACS`` obtain
          contains the gmxapi extension for the single precision MPI build next to PLUMED.
 
       Versions:
-         GROMACS/2021.5-PLUMED-2.8.0
-         GROMACS/2021.5
+        GROMACS/2021.5-PLUMED-2.8.0
+        GROMACS/2021.5-PLUMED-2.8.1
+        GROMACS/2021.5
 
    ------------------------------------------------------------------------------------------------------
       For detailed information about a specific "GROMACS" package (including how to load the modules) use the 
@@ -762,7 +765,8 @@ and obtain details on the module by using ``module spider GROMACS/2021.5``
          build, containing both MPI and threadMPI builds for both single and double precision. It also
          contains the gmxapi extension for the single precision MPI build. 
 
-      You will need to load all module(s) on any one of the lines below before the "GROMACS/2021.5" module is available to load.
+      You will need to load all module(s) on any one of the lines below before the "GROMACS/2021.5" module 
+      is available to load.
 
          GCC/11.2.0  OpenMPI/4.1.1
          GCC/11.3.0  OpenMPI/4.1.4
