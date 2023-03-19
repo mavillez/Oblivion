@@ -34,9 +34,9 @@ The software directories are located at
 
 .. code-block:: julia
 
-    /mnt/beegfs/stack/cn01470/software
+    /mnt/beegfs/apps/cn01470x/software
   
-Using ``ls /mnt/beegfs/stack/cn01470/software`` a list of all software directories is displayed
+Using ``ls /mnt/beegfs/apps/cn01470x/software`` a list of all software directories is displayed
 
 .. code-block:: julia
 
