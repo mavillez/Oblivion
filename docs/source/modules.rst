@@ -48,27 +48,62 @@ After logging into the machine the user should execute the command ``module av``
 
 .. code-block:: julia
 
-  ----------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core ------------------------------------
-    ANSYS_CFD/2021R1                  M4/1.4.19                    iimpi/2021b                                     
-    ANSYS_CFD/2022R2         (D)      OpenSSL/1.1         (L)      iimpi/2022a              (D)                    
-    Anaconda3/2022.05                 ant/1.10.11-Java-11          imkl/2021.4.0                                   
-    Bison/3.8.2                       binutils/2.34                imkl/2022.1.0            (L,D)                  
-    FastQC/0.11.9-Java-11             binutils/2.37                intel-compilers/2021.4.0                        
-    GCC/9.3.0                         binutils/2.38                intel-compilers/2022.1.0 (L,D)                  
-    GCC/11.2.0                        flex/2.6.4                   intel/2021b                                     
-    GCC/11.3.0               (L,D)    foss/2021b                   intel/2022a              (L,D)                  
-    GCCcore/9.3.0                     foss/2022a          (D)      ncurses/6.1                                     
-    GCCcore/11.2.0                    gettext/0.20.1               ncurses/6.2                                     
-    GCCcore/11.3.0           (L,D)    gettext/0.21                 pkgconf/1.8.0                                   
-    GPAW-setups/0.9.20000             gompi/2020a                  zlib/1.2.11                                     
-    Java/11.0.16             (11)     gompi/2021b                  zlib/1.2.12                                     
-    Julia/1.8.2-linux-x86_64          gompi/2022a         (L,D)                                                    
+  ----------------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Core ------------------------------------
+   ANSYS_CFD/2021R1                 OpenSSL/1.1                iimpi/2021b
+   ANSYS_CFD/2022R2         (D)     ant/1.10.11-Java-11        iimpi/2022a              (D)
+   Anaconda3/2022.05                ant/1.10.12-Java-11 (D)    imkl/2021.4.0
+   Bison/3.8.2                      binutils/2.34              imkl/2022.1.0            (D)
+   FastQC/0.11.9-Java-11            binutils/2.37              intel-compilers/2021.4.0
+   GCC/9.3.0                        binutils/2.38       (D)    intel-compilers/2022.1.0 (D)
+   GCC/11.2.0                       flex/2.6.4                 intel/2021b
+   GCC/11.3.0               (D)     foss/2020a                 intel/2022a              (D)
+   GCCcore/9.3.0                    foss/2021b                 iompi/2021b
+   GCCcore/11.2.0                   foss/2022a          (D)    ncurses/6.1
+   GCCcore/11.3.0           (D)     gettext/0.20.1             ncurses/6.2              (D)
+   GPAW-setups/0.9.20000            gettext/0.21        (D)    pkgconf/1.8.0
+   Java/11.0.16             (11)    gompi/2020a                pplacer/1.1.alpha19
+   Julia/1.8.5-linux-x86_64         gompi/2021b                zlib/1.2.11
+   M4/1.4.19                        gompi/2022a         (D)    zlib/1.2.12              (D)
 
-   Where:
-      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
-      D:        Default Module
+--------------------------------------------- /usr/share/modulefiles ----------------------------------------------
+   pmi/pmix-x86_64
+
+-------------------------------------- /usr/share/lmod/lmod/modulefiles/Core --------------------------------------
+   lmod    settarg
+
+  Where:
+   Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
+   D:        Default Module
+
     
 The lists displays the GCC, gompi, intel-compilers, iimpi, and imkl sub-toolchains and the foss and intel toolchains available to the users.
+
+.. code-block:: julia
+
+ --------------------------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Core ----------------------------------------------
+   ANSYS_CFD/2021R1             Java/11.0.16             (11)    foss/2022a               (D)    intel/2021b
+   ANSYS_CFD/2022R2      (D)    Julia/1.8.5-linux-x86_64         gettext/0.20.1                  intel/2022a         (D)
+   Anaconda3/2022.05            M4/1.4.19                        gettext/0.21             (D)    iompi/2021b
+   Bison/3.8.2                  OpenSSL/1.1                      gompi/2020a                     ncurses/6.1
+   FastQC/0.11.9-Java-11        ant/1.10.11-Java-11              gompi/2021b                     ncurses/6.2         (D)
+   GCC/9.3.0                    ant/1.10.12-Java-11      (D)     gompi/2022a              (D)    pkgconf/1.8.0
+   GCC/11.2.0                   binutils/2.34                    iimpi/2021b                     pplacer/1.1.alpha19
+   GCC/11.3.0            (D)    binutils/2.37                    iimpi/2022a              (D)    zlib/1.2.11
+   GCCcore/9.3.0                binutils/2.38            (D)     imkl/2021.4.0                   zlib/1.2.12         (D)
+   GCCcore/11.2.0               flex/2.6.4                       imkl/2022.1.0            (D)
+   GCCcore/11.3.0        (D)    foss/2020a                       intel-compilers/2021.4.0
+   GPAW-setups/0.9.20000        foss/2021b                       intel-compilers/2022.1.0 (D)
+
+ ------------------------------------------------------- /usr/share/modulefiles --------------------------------------------------------
+   pmi/pmix-x86_64
+
+ ------------------------------------------------ /usr/share/lmod/lmod/modulefiles/Core ------------------------------------------------
+   lmod    settarg
+
+  Where:
+   Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
+   D:        Default Module
+
 
 
 3. Loading Modules
