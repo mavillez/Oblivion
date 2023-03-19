@@ -23,26 +23,29 @@ Toolchain intel includes the following software:
 - MPI implementation (Intel MPI);
 - BLAS, LAPACK and FFTW: Intel MKL.
 
-Sub-toolchains gompi and iimpi include GCC + OpenMPI and Intel compilers + Intel MPI (MPICH), respectively.
+Sub-toolchains: gompi (GCC + OpenMPI), iompi (Intel compilers + OpenMPI), iimpi (Intel compilers + Intel MPI (MPICH)), imkl (Intel Math Kernel Library). 
 
-Installed in OBLIVION are, as of 2022.02.23, the toolchains
 
-- foss: 2021b, 2022a;
+Installed in OBLIVION are, as of 2023.03.19, the toolchains
+
+- foss: 2020a, 2021b, 2022a;
 - intel: 2021b, 2022a.
  
 and sub-toolchains 
 
 - gompi: 2020a, 2021b, 2022a;
 - iimpi: 2021b; 2022a;
-- intel-compilers: 2021.4.0, 2021.6.0.
+- iompi: 2021b;
+- intel-compilers: 2021.4.0, 2021.6.0;
+- imkl: 2021.4.0, 2021.6.0.
 
 
 2. Core Modules
 ---------------
 
-The user sets the software environment by loading the modules associated to the packages he/she needs to use. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
+The user sets the software environment by loading the modules associated to the needed packages. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (hmns) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
-Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., GCC/9.3.0, GCC/11.2.0, intel-compilers/20211.4.0) and a MPI API (OpenMPI, Intel MPI). It also includes modules of software that i) are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib) or ii) are not being built but instead they are directly installed into the stack (e.g., Anaconda, ANSYS_CFD).
+Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., ``GCC/9.3.0, GCC/11.2.0, GCC/11.3.0, intel-compilers/2021.4.0, intel-compilers/2022.1.0``) and a MPI API (OpenMPI, Intel MPI). It also includes modules of software that i) are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib) or ii) are not being built but instead are directly installed into the stack (e.g., Anaconda, ANSYS_CFD).
 
 After logging into the machine the user should execute the command ``module av`` (av for available) obtaining the list of core modules (including the toolchains and sub-toolchains):
 
@@ -65,45 +68,12 @@ After logging into the machine the user should execute the command ``module av``
    Julia/1.8.5-linux-x86_64         gompi/2021b                zlib/1.2.11
    M4/1.4.19                        gompi/2022a         (D)    zlib/1.2.12              (D)
 
---------------------------------------------- /usr/share/modulefiles ----------------------------------------------
-   pmi/pmix-x86_64
-
--------------------------------------- /usr/share/lmod/lmod/modulefiles/Core --------------------------------------
-   lmod    settarg
-
   Where:
    Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
    D:        Default Module
 
     
-The lists displays the GCC, gompi, intel-compilers, iimpi, and imkl sub-toolchains and the foss and intel toolchains available to the users.
-
-.. code-block:: julia
-
- --------------------------------------------- /mnt/beegfs/apps/cn01470x/modules/all/Core ----------------------------------------------
-   ANSYS_CFD/2021R1             Java/11.0.16             (11)    foss/2022a               (D)    intel/2021b
-   ANSYS_CFD/2022R2      (D)    Julia/1.8.5-linux-x86_64         gettext/0.20.1                  intel/2022a         (D)
-   Anaconda3/2022.05            M4/1.4.19                        gettext/0.21             (D)    iompi/2021b
-   Bison/3.8.2                  OpenSSL/1.1                      gompi/2020a                     ncurses/6.1
-   FastQC/0.11.9-Java-11        ant/1.10.11-Java-11              gompi/2021b                     ncurses/6.2         (D)
-   GCC/9.3.0                    ant/1.10.12-Java-11      (D)     gompi/2022a              (D)    pkgconf/1.8.0
-   GCC/11.2.0                   binutils/2.34                    iimpi/2021b                     pplacer/1.1.alpha19
-   GCC/11.3.0            (D)    binutils/2.37                    iimpi/2022a              (D)    zlib/1.2.11
-   GCCcore/9.3.0                binutils/2.38            (D)     imkl/2021.4.0                   zlib/1.2.12         (D)
-   GCCcore/11.2.0               flex/2.6.4                       imkl/2022.1.0            (D)
-   GCCcore/11.3.0        (D)    foss/2020a                       intel-compilers/2021.4.0
-   GPAW-setups/0.9.20000        foss/2021b                       intel-compilers/2022.1.0 (D)
-
- ------------------------------------------------------- /usr/share/modulefiles --------------------------------------------------------
-   pmi/pmix-x86_64
-
- ------------------------------------------------ /usr/share/lmod/lmod/modulefiles/Core ------------------------------------------------
-   lmod    settarg
-
-  Where:
-   Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
-   D:        Default Module
-
+The list displays the toolchains (foss and intel) and the sub-toolchains (GCC, gompi, iompi, intel-compilers, iimpi, and imkl) availables to the users.
 
 
 3. Loading Modules
