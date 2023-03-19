@@ -10,30 +10,35 @@ Toolchain is a pack of compiler(s)and libraries bundled together to provide a sp
 
 **Toolchain foss includes the following software:**
 
-- C, C++ and Fortran compilers: GCC;
-- MPI implementation: OpenMPI;
-- OpenBLAS and LAPACK implementation: FlexiBLAS;
-- Parallel, distributed LAPACK implementation: ScaLAPACK;
-- Fourier transforms: FFTW.
+- C, C++ and Fortran compilers: GCC
+- MPI implementation: OpenMPI
+- OpenBLAS and LAPACK implementation: FlexiBLAS
+- Parallel, distributed LAPACK implementation: ScaLAPACK
+- Fourier transforms: FFTW
 
 **Toolchain intel includes the following software:**
 
-- C, C++ and Fortran compilers (icc/icpc/ifort);
-- GCC as a base for the Intel compilers;
-- MPI implementation (Intel MPI);
-- BLAS, LAPACK and FFTW: Intel MKL.
+- C, C++ and Fortran compilers (icc/icpc/ifort)
+- GCC as a base for the Intel compilers
+- MPI implementation (Intel MPI)
+- BLAS, LAPACK and FFTW: Intel MKL
 
 **Sub-toolchains:** 
 
-- gompi (GCC + OpenMPI), iompi (Intel compilers + OpenMPI), iimpi (Intel compilers + Intel MPI (MPICH)), imkl (Intel Math Kernel Library). 
+- gompi (GCC + OpenMPI)
+- iompi (Intel compilers + OpenMPI)
+- iimpi (Intel compilers + Intel MPI (MPICH))
+- imkl (Intel Math Kernel Library) 
 
 
-**Installed in OBLIVION are**, as of 2023.03.19, the toolchains
+**Installed in OBLIVION are installed:** 
+
+Toolchains:
 
 - foss: 2020a, 2021b, 2022a;
 - intel: 2021b, 2022a.
  
-and sub-toolchains 
+Sub-toolchains:
 
 - gompi: 2020a, 2021b, 2022a;
 - iimpi: 2021b; 2022a;
