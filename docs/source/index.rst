@@ -28,5 +28,6 @@ Contents
    scripts.rst
    management.rst
    responsibilities.rst
+   acknowledgements.rst
 
 
