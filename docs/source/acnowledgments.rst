@@ -15,5 +15,5 @@ Acnowledgements
     - Alfrado Palace Carvalho: Dalton, GPAW, GROMACS, Quantum ESPRESSO
     - Estelina Lora da Silva: Quantum ESPRESSO
     - José Coutinho: VASP with foss/2021b and Intel compilers
-    - Miguel Avillez: General testing of the software, parallel runs, Dalton, GPAW, GROMACs, Python, Astrophysical software (ZeusMP, MAP, GADGET, CPIPES (Avillez 2018), Evora-Vienna Astrophysical Fluids Parallel Adaptive Mesh Refinement software (Avillez 2005))
+    - Miguel Avillez: General testing of the software, parallel runs, Dalton, GPAW, GROMACs, Astrophysical software (ZeusMP, MAP, GADGET, CPIPES (Avillez 2018), Evora-Vienna Astrophysical Fluids Parallel Adaptive Mesh Refinement software (Avillez 2005), PAMNEI - Parallel Adaptive Mesh Refinement MHD Non-Equilibrium Ionization software (Avillez 2023))
 
