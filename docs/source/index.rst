@@ -12,6 +12,7 @@ Here you can find the documentation on how to use the OBLIVION supercomputer:
 - Accounting
 - Slurm commands
 - User responsibilities
+- Acknowledgments
 
 
 Contents
