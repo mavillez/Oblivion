@@ -15,5 +15,5 @@ Acnowledgements
     - Alfrado Palace Carvalho: Dalton, GPAW, GROMACS, Quantum ESPRESSO
     - Estelina Lora da Silva: Quantum ESPRESSO
     - José Coutinho: VASP with foss/2021b and Intel compilers
-    - Miguel Avillez: general testing of the software, parallel runs, Python, mpipy, GROMACs, Astrophysical software
+    - Miguel Avillez: general testing of the software, parallel runs, Python, mpipy, Dalton, GPAW, GROMACs, Astrophysical software
 
