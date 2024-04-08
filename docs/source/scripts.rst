@@ -409,6 +409,38 @@ If VASP is compiled with HDF5 then the script must also include ``module load HD
 
 Using VASP compiled against Intel compilers requires the use of all cores in a socket for the solution to converge. 
 
+6.6 STATA
+~~~~~~~~~
+
+For a job on a single node using 4 cores the script can look like
+
+.. code-block:: bash
+
+  !/bin/bash
+
+  #SBATCH --time=48:00:00
+  #SBATCH --account=ACCOUNT_NAME
+  #SBATCH --job-name=stata
+  #SBATCH --output=job_name_%j.out
+  #SBATCH --error=job_name_%j.error
+  #SBATCH --nodes=1
+  #SBATCH --ntasks-per-node=4
+  #SBATCH --exclusive
+  #SBATCH --partition=debug
+  
+  module purge
+  module load stata
+
+  export PMIX_MCA_psec=native
+
+  #run stata
+  stata -b filename.do 
+
+Note that the filename.do contains the list of commands you need to execute stata ifyou were running on the command line.
+
+
+
+
 Acknowledgements
 ---------------
 
