@@ -5,7 +5,13 @@ The user needs to set the working environment before compiling the codes. That e
 
 .. code-block:: bash
 
-  sbatch script_name.sh
+  sbatch ./script_name.sh
+
+if you are in the folder where the script is, othertwise you need to put the path to the script, .e.g., 
+
+.. code-block:: bash
+
+  sbatch PATH/script_name.sh
   
 The scripts include all the needed information about the requested resources (cores, number of CPUs, memory, etc.,), computing time, and account to be charged. In addition the script can include compilation instructions, setup of system variables, loading modules, etc..
 
