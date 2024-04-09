@@ -79,6 +79,9 @@ This prevents the warning
 
   srun ./executable
 
+ACCOUNTID is the project account reference
+PARTITION is short, medium, or debug - pick one.
+
 In this script we are setting the number of MPI tasks (ntasks), the number of cores per task (cpus-per-task) and the number of tasks per CPU also referred as socket (ntasks-per-socket). So, this script imposes that 1 core executes 1 MPI task. The compute nodes are being used exclusively by this run (option exclusive), and the queue, which in SLURM is called partition, is the debug queue. Finally the code is executed using srun. 
 
 
