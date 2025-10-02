@@ -18,15 +18,14 @@ User Information, Partition Quotas & Accounting
 
   * - $HOME	
     - Home directory for user 
-    - 10 GB
+    - 20 GB
   * - $PROJECT	
     - Project directory
-    - 10 TB → Can be increased upon demand
-  * - $DATA	
-    - Storage location for large data
+    - 10/20 TB → Can be increased upon demand
+  * - $DATA
+    - Massive volumes of data
     - 100 TB → Can be increased upon demand
- 
-``$DATA`` is exclusive for large projects. 
+
 
 3. Backups
 ----------
@@ -53,13 +52,12 @@ User can set exclusivity of the compute nodes by using ``#SBATCH --exclusive`` i
 
   * - private
     - All compute nodes; Maxtime=72 hours; Exclusive for sys admin or national urgency runs (high priority)
-  * - short
-    - 20 compute nodes: cn[001-020]; Maxtime=72 hours
-  * - medium
-    - 38 compute nodes: cn[021-058]; Maxtime=48 hours
   * - debug
-    - 58 compute nodes: cn[001-058]; Maxtime=48 hours
-
+    - 88 compute nodes: cn[001-088]; Maxtime=48 hours
+  * - medium
+    - 58 compute nodes: cn[001-058]; Maxtime=72 hours
+  * - short
+    - 30 compute nodes: cn[059-088]; Maxtime=48 hours
 
 7. Accounting
 -------------
