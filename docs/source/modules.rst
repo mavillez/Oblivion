@@ -380,7 +380,7 @@ It is the same obtained previously by loading GCC/14.2.0 and OpenMPI/5.0.7.
 
 
 3.2 Foss/2024a and 2023a Toolchains
-~~~~~~~~~~~~~~~~~~~~~~~~-----------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The foss/2024a and 2023a toolchains have the same software but with different versions being the latest versions (as off September 2025) in foss/2024a and foss/2025a. The latter toolchain includes only a subgroup of the software in foss/2024a and foss/2023a toolchains. 
 
