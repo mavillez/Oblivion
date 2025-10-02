@@ -55,9 +55,7 @@ Sub-toolchains:
 
 The user sets the software environment by loading the modules associated to the needed packages. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (HMNS) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
-Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., ``GCC 12.3.0, 13.3.0, or 14.2.0; intel-compilers 2023.1.0, 2024.2.0 or 2025.1.1``) and a MPI API (OpenMPI 4.1.5, 5.0.3, 5.0.7; MPICH 4.2.1, 4.2.2; Intel MPI 2021.9.0, 2021.13.0, or 2021.15.0 which were compiled with intel-compilers 2023.1.0, 2024.2.0, 2025.1.1, respectively). It also includes modules of software that 
-- i) are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib) or 
-- ii) are not being built but instead are directly installed into the stack (e.g., Anaconda, ANSYS_CFD).
+Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., ``GCC 12.3.0, 13.3.0, or 14.2.0; intel-compilers 2023.1.0, 2024.2.0 or 2025.1.1``) and a MPI API (e.g., OpenMPI 4.1.5, 5.0.3, 5.0.7; MPICH 4.2.1, 4.2.2; Intel MPI 2021.9.0, 2021.13.0, or 2021.15.0 - the latter were compiled with intel-compilers 2023.1.0, 2024.2.0, 2025.1.1, respectively). It also includes modules of software that i) are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib), and ii) are not being built but instead are directly installed into the stack (e.g., Anaconda, ANSYS_CFD).
 
 After logging into the machine the user should execute the command ``module --nx av`` (av for available software, --nx to prevent the display of the extensions list) obtaining the list of core modules (including the toolchains and sub-toolchains):
 
