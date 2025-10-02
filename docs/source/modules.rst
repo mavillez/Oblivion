@@ -63,36 +63,36 @@ After logging into the machine the user should execute the command ``module --nx
 
 .. code-block:: julia
 
--------------------------------- /mnt/beegfs/apps/modules/all/Core ---------------------------------
-   Anaconda3/2025.06-1                  OpenSSL/3           (D)    iimkl/2025a              (D)
-   Autoconf/2.71                        Perl/5.38.0                iimpi/2023a
-   Bison/3.8.2                          ant/1.10.12-Java-17        iimpi/2024a
-   FastQC/0.11.9-Java-11                ant/1.10.14-Java-11 (D)    iimpi/2025a              (D)
-   GCC/12.3.0                           binutils/2.40              imkl/2023.1.0
-   GCC/13.3.0                           binutils/2.42       (D)    imkl/2023.2.0
-   GCC/14.2.0                 (D)       ecBuild/3.8.0              imkl/2024.2.0
-   GCCcore/12.3.0                       ffnvcodec/12.0.16.0        imkl/2025.1.0            (D)
-   GCCcore/13.3.0                       ffnvcodec/12.1.14.0        intel-compilers/2023.1.0
-   GCCcore/14.2.0             (D)       ffnvcodec/12.2.72.0 (D)    intel-compilers/2024.2.0
-   GPAW-setups/24.1.0                   flex/2.6.4                 intel-compilers/2025.1.1 (D)
-   GPAW-setups/24.11.0        (D)       foss/2023a                 intel/2023a
-   IJulia/1.29.0-Julia-1.11.6           foss/2024a                 intel/2024a
-   Java/11.0.27               (11)      foss/2025a          (D)    intel/2025a              (D)
-   Java/17.0.15               (D:17)    gettext/0.21.1             iompi/2023a
-   Julia/1.11.3-linux-x86_64            gettext/0.22               iompi/2024a
-   Julia/1.11.6-linux-x86_64  (D)       gettext/0.22.5      (D)    iompi/2025a              (D)
-   M4/1.4.18                            gfbf/2023a                 ncurses/6.3
-   M4/1.4.19                  (D)       gfbf/2024a                 ncurses/6.4
-   Mamba/23.11.0-0                      gfbf/2025a          (D)    ncurses/6.5              (D)
-   Miniconda3/24.7.1-0                  gompi/2023a                pkgconf/1.8.0
-   Miniconda3/25.5.1-1        (D)       gompi/2024a                zlib/1.2.13
-   Miniforge3/24.11.3-0                 gompi/2025a         (D)    zlib/1.3.1               (D)
-   Miniforge3/25.3.0-1        (D)       iimkl/2023a
-   OpenSSL/1.1                          iimkl/2024a
+   -------------------------------- /mnt/beegfs/apps/modules/all/Core ---------------------------------
+     Anaconda3/2025.06-1                  OpenSSL/3           (D)    iimkl/2025a              (D)
+     Autoconf/2.71                        Perl/5.38.0                iimpi/2023a
+     Bison/3.8.2                          ant/1.10.12-Java-17        iimpi/2024a
+     FastQC/0.11.9-Java-11                ant/1.10.14-Java-11 (D)    iimpi/2025a              (D)
+     GCC/12.3.0                           binutils/2.40              imkl/2023.1.0
+     GCC/13.3.0                           binutils/2.42       (D)    imkl/2023.2.0
+     GCC/14.2.0                 (D)       ecBuild/3.8.0              imkl/2024.2.0
+     GCCcore/12.3.0                       ffnvcodec/12.0.16.0        imkl/2025.1.0            (D)
+     GCCcore/13.3.0                       ffnvcodec/12.1.14.0        intel-compilers/2023.1.0
+     GCCcore/14.2.0             (D)       ffnvcodec/12.2.72.0 (D)    intel-compilers/2024.2.0
+     GPAW-setups/24.1.0                   flex/2.6.4                 intel-compilers/2025.1.1 (D)
+     GPAW-setups/24.11.0        (D)       foss/2023a                 intel/2023a
+     IJulia/1.29.0-Julia-1.11.6           foss/2024a                 intel/2024a
+     Java/11.0.27               (11)      foss/2025a          (D)    intel/2025a              (D)
+     Java/17.0.15               (D:17)    gettext/0.21.1             iompi/2023a
+     Julia/1.11.3-linux-x86_64            gettext/0.22               iompi/2024a
+     Julia/1.11.6-linux-x86_64  (D)       gettext/0.22.5      (D)    iompi/2025a              (D)
+     M4/1.4.18                            gfbf/2023a                 ncurses/6.3
+     M4/1.4.19                  (D)       gfbf/2024a                 ncurses/6.4
+     Mamba/23.11.0-0                      gfbf/2025a          (D)    ncurses/6.5              (D)
+     Miniconda3/24.7.1-0                  gompi/2023a                pkgconf/1.8.0
+     Miniconda3/25.5.1-1        (D)       gompi/2024a                zlib/1.2.13
+     Miniforge3/24.11.3-0                 gompi/2025a         (D)    zlib/1.3.1               (D)
+     Miniforge3/25.3.0-1        (D)       iimkl/2023a
+     OpenSSL/1.1                          iimkl/2024a
 
-  Where:
-   Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
-   D:        Default Module
+    Where:
+     Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
+     D:        Default Module
 
     
 The list displays the toolchains (foss and intel) and the sub-toolchains (GCC, gompi, iompi, intel-compilers, iimpi, and imkl) availables to the users. It also displays software that do not belong to these categories and is available in the system, e.g., ANACONDA, JAVA, Julia, etc..
