@@ -21,7 +21,7 @@ User Information, Partition Quotas & Accounting
     - 20 GB
   * - $PROJECT	
     - Project directory
-    - 10/20 TB → Can be increased upon demand
+    - 20 TB → Can be increased upon demand
   * - $DATA
     - Massive volumes of data
     - 100 TB → Can be increased upon demand
