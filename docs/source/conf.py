@@ -36,7 +36,7 @@ html_theme ='alabaster'
 
 html_theme_options = {
     # Set the maximum width of the main content column (Default is 940px)
-    'page_width': '1400px',
+    'page_width': '1200px',
     
     # Set the width of the left sidebar (Default is 220px)
     'sidebar_width': '260px',
