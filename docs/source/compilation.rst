@@ -44,6 +44,7 @@ To set the work environment the user must load the needed modules. To do that st
       Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
       D:        Default Module
 
+
 In OBLIVION the modules are set in a hierarchical naming structure (Core/Compiler/MPI) and thus the user must start by loading the core modules or toolchains, e.g., load OpenMPI compiled with GCC (``module load GCC/11.2.0`` + ``module load OpenMPI/4.1.1``), load OpenMPI compiled with Intel compilers or load Intel MPI (``module load iimpi/2021b`` or ``module load intel/2021b``).
 
 
