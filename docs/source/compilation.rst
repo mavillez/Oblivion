@@ -4,24 +4,41 @@ Software Compilation Using MPI
 1. Work Enviroment
 ------------------
 
-To set the work environment the user must load the needed modules. To do that start by using ``module av`` to see the available modules:
+To set the work environment the user must load the needed modules. To do that start by using ``module --nx av`` to see the available modules:
 
 .. code-block:: julia
 
-  ---------------------------------- /mnt/beegfs/stack/cn01470/modules/all/Core -----------------------
-    ANSYS_CFD/2021R1              Julia/1.8.2-linux-x86_64        gompi/2021b                                   
-    ANSYS_CFD/2022R2      (D)     M4/1.4.19                       gompi/2022a              (D)                  
-    Anaconda3/2022.05             OpenSSL/1.1                     iimpi/2021b                                   
-    Bison/3.8.2                   ant/1.10.11-Java-11             imkl/2021.4.0                                 
-    FastQC/0.11.9-Java-11         binutils/2.34                   intel-compilers/2021.4.0                      
-    GCC/9.3.0                     binutils/2.37                   intel/2021b                                   
-    GCC/11.2.0                    binutils/2.38            (D)    ncurses/6.1                                   
-    GCC/11.3.0            (D)     flex/2.6.4                      ncurses/6.2              (D)                  
-    GCCcore/9.3.0                 foss/2021b                      pkgconf/1.8.0                                 
-    GCCcore/11.2.0                foss/2022a               (D)    zlib/1.2.11                                   
-    GCCcore/11.3.0        (D)     gettext/0.20.1                  zlib/1.2.12              (D)                  
-    GPAW-setups/0.9.20000         gettext/0.21             (D)                                                  
-    Java/11.0.16          (11)    gompi/2020a
+--------------------------------- /mnt/beegfs/apps/modules/all/Core ----------------------------------
+   Anaconda3/2025.06-1                  Miniforge3/25.3.0-1 (D)    gompi/2024a
+   Autoconf/2.71                        OSPRay/2.12.0              gompi/2025a
+   Bison/3.8.2                          OpenSSL/1.1                gompi/2025b              (D)
+   FastQC/0.11.9-Java-11                OpenSSL/3           (D)    iimkl/2023a
+   GCC/12.3.0                           Pandoc/3.6.2               iimkl/2024a
+   GCC/13.3.0                           Perl/5.38.0                iimkl/2025a              (D)
+   GCC/14.2.0                           ant/1.10.12-Java-17        iimpi/2023a
+   GCC/14.3.0                 (D)       ant/1.10.14-Java-11 (D)    iimpi/2024a
+   GCCcore/12.3.0                       binutils/2.40              iimpi/2025a              (D)
+   GCCcore/13.3.0                       binutils/2.42              imkl/2023.1.0
+   GCCcore/14.2.0                       binutils/2.44       (D)    imkl/2023.2.0
+   GCCcore/14.3.0             (D)       ecBuild/3.8.0              imkl/2024.2.0
+   GPAW-setups/24.1.0                   ffnvcodec/12.0.16.0        imkl/2025.1.0            (D)
+   GPAW-setups/24.11.0        (D)       ffnvcodec/12.1.14.0        intel-compilers/2023.1.0
+   IJulia/1.29.0-Julia-1.11.6           ffnvcodec/12.2.72.0        intel-compilers/2024.2.0
+   Java/11.0.27               (11)      ffnvcodec/13.0.19.0 (D)    intel-compilers/2025.1.1 (D)
+   Java/17.0.15               (17)      flex/2.6.4                 intel/2023a
+   Java/21.0.8                (D:21)    foss/2023a                 intel/2024a
+   Julia/1.11.3-linux-x86_64            foss/2024a                 intel/2025a              (D)
+   Julia/1.11.6-linux-x86_64            foss/2025a                 iompi/2023a
+   Julia/1.11.7                         foss/2025b          (D)    iompi/2024a
+   Julia/1.12.2                         gettext/0.21.1             iompi/2025a              (D)
+   Julia/1.12.6               (D)       gettext/0.22               ncurses/6.3
+   M4/1.4.18                            gettext/0.22.5             ncurses/6.4
+   M4/1.4.19                            gettext/0.25        (D)    ncurses/6.5              (D)
+   M4/1.4.20                  (D)       gfbf/2023a                 pkgconf/1.8.0
+   Mamba/23.11.0-0                      gfbf/2024a                 zlib/1.2.13
+   Miniconda3/24.7.1-0                  gfbf/2025a                 zlib/1.3.1               (D)
+   Miniconda3/25.5.1-1        (D)       gfbf/2025b          (D)
+   Miniforge3/24.11.3-0                 gompi/2023a
 
    Where:
       Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3         
@@ -36,57 +53,35 @@ In OBLIVION the modules are set in a hierarchical naming structure (Core/Compile
 2.1 Loading intel and iimpi toolchains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Load Intel MPI sub-toolchain by executing ``module load iimpi/2021b`` and check the loaded modules using ``module list``
+Load Intel MPI sub-toolchain by executing ``module load iimpi/2025a`` and check the loaded modules using ``module list``
 
 .. code-block:: julia
 
   Currently Loaded Modules:
-    1) GCCcore/11.2.0   3) binutils/2.37              5) numactl/2.0.14   7) impi/2021.4.0
-    2) zlib/1.2.11      4) intel-compilers/2021.4.0   6) UCX/1.11.2       8) iimpi/2021b
+    1) GCCcore/14.2.0   3) binutils/2.42              5) numactl/2.0.19   7) impi/2021.15.0
+    2) zlib/1.3.1       4) intel-compilers/2025.1.1   6) UCX/1.18.0       8) iimpi/2025a
 
 
-The intel/2021b toolchain includes, among others, the Intel MPI and MKL distributions. Using ``module load intel/2021b`` followed with ``module list`` one obtains
+The intel/2025a toolchain includes, among others, the Intel MPI and MKL distributions. Using ``module load intel/2025a`` followed with ``module list`` one obtains
 
 .. code-block:: julia
   
   Currently Loaded Modules:
-    1) GCCcore/11.2.0   4) intel-compilers/2021.4.0   7) impi/2021.4.0       10) intel/2021b
-    2) zlib/1.2.11      5) numactl/2.0.14             8) imkl/2021.4.0
-    3) binutils/2.37    6) UCX/1.11.2                 9) imkl-FFTW/2021.4.0
+    1) GCCcore/14.2.0   4) intel-compilers/2025.1.1   7) impi/2021.15.0      10) intel/2025a
+    2) zlib/1.3.1       5) numactl/2.0.19             8) imkl/2025.1.0
+    3) binutils/2.42    6) UCX/1.18.0                 9) imkl-FFTW/2025.1.0
 
-In both cases the available modules are the same (check with ``module av``):
+
+In both cases the available modules are the same (check with ``module --nx av``):
 
 .. code-block:: julia
 
-  -------------- /mnt/beegfs/stack/cn01470/modules/all/MPI/intel/2021.4.0/impi/2021.4.0 ---------------
-    ABINIT/9.6.2                MUMPS/5.4.1-metis                 ecCodes/2.24.2
-    ASE/3.22.1                  NCO/5.0.3                         futile/1.8.3
-    AmberTools/21               NWChem/7.0.2                      h5py/3.6.0
-    ArviZ/0.11.4                OSU-Micro-Benchmarks/5.8          imkl-FFTW/2021.4.0   (L)
-    Bambi/0.7.1                 OpenMolcas/22.10                  libGridXC/0.9.6
-    Biopython/1.79              PLUMED/2.8.0                      libvdwxc/0.4.0
-    CGAL/4.14.3                 PSolver/1.8.3                     libxsmm/1.17
-    CP2K/8.2                    ParMETIS/4.0.3                    matplotlib/3.4.3
-    ELPA/2021.05.001            PnetCDF/1.12.3                    mkl-service/2.3.0
-    ESMF/8.2.0                  PyMC3/3.11.1                      ncview/2.1.8
-    FDS/6.7.7                   QuantumESPRESSO/7.0               netCDF-C++4/4.3.1
-    FFTW/3.3.10                 SCOTCH/6.1.2                      netCDF-Fortran/4.5.3
-    FMS/2022.02                 SPOTPY/1.5.14                     netCDF/4.8.1
-    GDAL/3.3.2                  ScaFaCoS/1.0.1                    netcdf4-python/1.5.7
-    GEOS/3.9.1                  SciPy-bundle/2021.10              networkx/2.6.3
-    GPAW/22.8.0                 Siesta/4.1.5                      numba/0.54.1
-    GlobalArrays/5.8.1          SimPEG/0.18.1                     scikit-bio/0.5.7
-    HDF5/1.12.1                 SuiteSparse/5.10.1-METIS-5.1.0    scikit-learn/1.0.1
-    HPL/2.3                     SuperLU/5.3.0                     spglib-python/1.16.3
-    Hypre/2.24.0                Theano/1.1.2-PyMC                 statsmodels/0.13.1
-    IMB/2021.3                  VTK/9.1.0                         worker/1.6.13
-    Libint/2.6.0-lmax-6-cp2k    Valgrind/3.18.1                   xarray/0.20.1
-    MDAnalysis/2.0.0            Wannier90/3.1.0
-    MDTraj/1.9.7                XCrySDen/1.6.2
+------------------- /mnt/beegfs/apps/modules/all/MPI/intel/2025.1.1/impi/2021.15.0 -------------------
+   HDF5/1.14.6    OSU-Micro-Benchmarks/7.5    Wannier90/3.1.0     imkl-FFTW/2025.1.0
+   HPL/2.3        Score-P/9.2                 buildenv/default
 
-  ------------------- /mnt/beegfs/stack/cn01470/modules/all/Compiler/intel/2021.4.0 -------------------
-    BLIS/0.9.0      DFT-D3/3.2.0    GSL/2.7          NLopt/2.7.0   (D)    libxc/5.1.6
-    Boost/1.77.0    Flye/2.9        LAPACK/3.10.1    impi/2021.4.0 (L)    xmlf90/1.5.4
+------------------------ /mnt/beegfs/apps/modules/all/Compiler/intel/2025.1.1 ------------------------
+   OpenMPI/5.0.7    impi/2021.15.0 (L)
 
 
 2.2 MPIIFORT Vs. MPIF90
@@ -98,7 +93,7 @@ With Intel MPI the user gets two flavours: MPI compiled with GCC and MPI compile
 
   $ which mpif90
 
-  /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
+  /mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/bin/mpif90
   
 Now lets see the content of the bin folder:
 
@@ -129,7 +124,7 @@ To check this just type
 
 .. code-block:: julia
 
-  $ less /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpif90
+  $ less /mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/bin/mpif90
 
 obtaining
 
@@ -146,7 +141,7 @@ and
 
 .. code-block:: julia
 
-  $ less /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
+  $ less /mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/bin/mpiifx
 
 obtaining
 
@@ -156,7 +151,7 @@ obtaining
   # Default settings for compiler, flags, and libraries
   # Determined by a combination of environment variables and tests within
   # configure (e.g., determining whehter -lsocket is needed)
-  FC="ifort"
+  COMPILER="ifort"
   ⋮ 
 
 You can also run
@@ -164,8 +159,8 @@ You can also run
 .. code-block:: julia
 
   $ mpif90 --version
-  GNU Fortran (GCC) 11.2.0
-  Copyright (C) 2021 Free Software Foundation, Inc.
+  GNU Fortran (GCC) 14.2.0
+  Copyright (C) 2024 Free Software Foundation, Inc.
   This is free software; see the source for copying conditions.  There is NO
   warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -173,34 +168,34 @@ or
 
 .. code-block:: julia
 
-  $ mpiifort --version
-  ifort (IFORT) 2021.4.0 20210910
-  Copyright (C) 1985-2021 Intel Corporation.  All rights reserved.
+  $ mpiifx --version
+  ifx (IFX) 2025.1.1 20250418
+  Copyright (C) 1985-2025 Intel Corporation. All rights reserved.
 
 
 Lets find the PATHs for binary, libraries and include. So, first lets determine the path of the binaries, say, mpif90 (mpiifort):
 
 .. code-block:: julia
 
-  $ which mpiifort
+  $ which mpiifx
   
-  /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin/mpiifort
+  /mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/bin/mpiifx
   
 Now look for the paths:
 
 .. code-block:: julia
 
-  $ ls /mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/
+  $ ls /mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/
   
-   benchmarks  bin  include  lib  man
+   bin  env  etc  include  lib  libfabric  man  opt  share
 
 So, here we show some of the listed folders. Lets set the paths to be used in the Makefile
 
 .. code-block:: julia
 
-  MPI_BIN=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/bin
-  MPI_LIB=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/lib
-  MPI_INC=/mnt/beegfs/stack/cn01470/software/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0/include
+  MPI_BIN=/mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/bin
+  MPI_LIB=/mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/lib
+  MPI_INC=/mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/include
   
 3. Makefile
 -----------
@@ -220,7 +215,7 @@ Here is an example for two setups in OBLIVION. In the header of the Makefile add
 
   ifeq ($(SYSTYPE),"oblivion_impi_intel")
   SOFTWARE=/mnt/beegfs/stack/cn01470/software
-  MPI_VER=/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0
+  MPI_VER=/mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/
   MPI_BIN=${SOFTWARE}/${MPI_VER}/bin
   MPI_LIB=${SOFTWARE}/${MPI_VER}/lib
   MPI_INC=${SOFTWARE}/${MPI_VER}/include
@@ -230,7 +225,7 @@ Here is an example for two setups in OBLIVION. In the header of the Makefile add
   
   ifeq ($(SYSTYPE),"oblivion_impi_gcc")
   SOFTWARE=/mnt/beegfs/stack/cn01470/software
-  MPI_VER=/impi/2021.4.0-intel-compilers-2021.4.0/mpi/2021.4.0
+  MPI_VER=/mnt/beegfs/apps/software/impi/2021.15.0-intel-compilers-2025.1.1/mpi/2021.15/
   MPI_BIN=${SOFTWARE}/${MPI_VER}/bin
   MPI_LIB=${SOFTWARE}/${MPI_VER}/lib
   MPI_INC=${SOFTWARE}/${MPI_VER}/include
