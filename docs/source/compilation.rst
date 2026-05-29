@@ -8,7 +8,7 @@ To set the work environment the user must load the needed modules. To do that st
 
 .. code-block:: julia
 
---------------------------------- /mnt/beegfs/apps/modules/all/Core ----------------------------------
+ --------------------------------- /mnt/beegfs/apps/modules/all/Core ----------------------------------
    Anaconda3/2025.06-1                  Miniforge3/25.3.0-1 (D)    gompi/2024a
    Autoconf/2.71                        OSPRay/2.12.0              gompi/2025a
    Bison/3.8.2                          OpenSSL/1.1                gompi/2025b              (D)
