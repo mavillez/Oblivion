@@ -85,8 +85,8 @@ In both cases the available modules are the same (check with ``module --nx av``)
    OpenMPI/5.0.7    impi/2021.15.0 (L)
 
 
-2.2 MPIIFORT Vs. MPIF90
-~~~~~~~~~~~~~~~~~~~~~~~
+2.2 MPIIFX Vs. MPIF90
+~~~~~~~~~~~~~~~~~~~~~
 
 With Intel MPI the user gets two flavours: MPI compiled with GCC and MPI compiled with Intel compilers. First lets get the binaries location
 
@@ -115,6 +115,7 @@ Now lets see the content of the bin folder:
    mpiicc
    mpiicpc
    mpiifort
+   mpiifx
    ⋮ 
 
 ``mpif77``, ``mpif90``, ``mpigcc``, and ``mpigxx`` are the executables for MPI compiled against GCC.
