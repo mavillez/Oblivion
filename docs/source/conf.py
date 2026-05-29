@@ -3,10 +3,10 @@
 # -- Project information
 
 project = 'OBLIVION'
-copyright = '2025, MAvillez'
+copyright = '2026, MAvillez'
 author = 'MAvillez'
 
-release = '0.4'
+release = '2026.01'
 version = '0.1.0'
 
 # -- General configuration
