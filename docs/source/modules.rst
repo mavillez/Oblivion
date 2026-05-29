@@ -616,6 +616,7 @@ These packages, as well as others, are included in the module scipy-bundle. Ther
 First check which scipy versions are available using `module spider scipy` obtaining
 
 .. code-block:: julia
+
   --------------------------------------------------------------------------------------------------
     scipy:
   --------------------------------------------------------------------------------------------------
@@ -635,6 +636,7 @@ First check which scipy versions are available using `module spider scipy` obtai
 So, lets try `module spider scipy/1.16.1`
 
 . code-block:: julia
+
   --------------------------------------------------------------------------------------------------
     scipy: scipy/1.16.1 (E)
   --------------------------------------------------------------------------------------------------
@@ -649,6 +651,7 @@ Now we know that for scipy/1.16.1 we need to load SciPy-bundle/2025.07 that depd
 First clear the modules from your environment using `module purge`, then 
 
 .. code-block:: julia
+
   module load foss/2025b  SciPy-bundle/2025.07
 
 Now check the modules that were loaded using `module list`
@@ -708,20 +711,20 @@ So, follow the instruction: `module load GCC/14.3.0  OpenMPI/5.0.8 GROMACS/2026.
 
 .. code-block:: julia
 
- Currently Loaded Modules:
-   1) GCCcore/14.3.0       14) PMIx/5.0.8          27) Tcl/9.0.1
-   2) zlib/1.3.1           15) PRRTE/3.0.11        28) SQLite/3.50.1
-   3) binutils/2.44        16) UCC/1.4.4           29) libffi/3.5.1
-   4) GCC/14.3.0           17) OpenMPI/5.0.8       30) Python/3.13.5
-   5) numactl/2.0.19       18) OpenBLAS/0.3.30     31) cffi/1.17.1
-   6) XZ/5.8.1             19) FlexiBLAS/3.4.5     32) cryptography/45.0.5
-   7) libxml2/2.14.3       20) FFTW/3.3.10         33) virtualenv/20.32.0
-   8) libpciaccess/0.18.1  21) FFTW.MPI/3.3.10     34) Python-bundle-PyPI/2025.07
-   9) hwloc/2.12.1         22) ScaLAPACK/2.2.2-fb  35) SciPy-bundle/2025.07
-  10) OpenSSL/3            23) bzip2/1.0.8         36) networkx/3.5
-  11) libevent/2.1.12      24) ncurses/6.5         37) mpi4py/4.1.0
-  12) UCX/1.19.0           25) libreadline/8.2     38) GROMACS/2026.2
-  13) libfabric/2.1.0      26) libtommath/1.3.0
+  Currently Loaded Modules:
+    1) GCCcore/14.3.0       14) PMIx/5.0.8          27) Tcl/9.0.1
+    2) zlib/1.3.1           15) PRRTE/3.0.11        28) SQLite/3.50.1
+    3) binutils/2.44        16) UCC/1.4.4           29) libffi/3.5.1
+    4) GCC/14.3.0           17) OpenMPI/5.0.8       30) Python/3.13.5
+    5) numactl/2.0.19       18) OpenBLAS/0.3.30     31) cffi/1.17.1
+    6) XZ/5.8.1             19) FlexiBLAS/3.4.5     32) cryptography/45.0.5
+    7) libxml2/2.14.3       20) FFTW/3.3.10         33) virtualenv/20.32.0
+    8) libpciaccess/0.18.1  21) FFTW.MPI/3.3.10     34) Python-bundle-PyPI/2025.07
+    9) hwloc/2.12.1         22) ScaLAPACK/2.2.2-fb  35) SciPy-bundle/2025.07
+   10) OpenSSL/3            23) bzip2/1.0.8         36) networkx/3.5
+   11) libevent/2.1.12      24) ncurses/6.5         37) mpi4py/4.1.0
+   12) UCX/1.19.0           25) libreadline/8.2     38) GROMACS/2026.2
+   13) libfabric/2.1.0      26) libtommath/1.3.0
 
 
 
