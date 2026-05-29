@@ -19,7 +19,7 @@ Check the available modules in the machine by using
 
 .. code-block:: julia
 
-  module av
+  module --nx av
   
 Load the needed modules to create the working environment (:ref:`see the modules section<Environment Modules>`)
       
@@ -34,9 +34,9 @@ The software directories are located at
 
 .. code-block:: julia
 
-    /mnt/beegfs/apps/cn01470x/software
+    /mnt/beegfs/apps/software
   
-Using ``ls /mnt/beegfs/apps/cn01470x/software`` a list of all software directories is displayed
+Using ``ls /mnt/beegfs/apps/software`` a list of all software directories is displayed
 
 .. code-block:: julia
 
