@@ -30,7 +30,17 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 #html_theme = 'sphinx_rtd_theme'
-html_theme = "furo"
+#html_theme = "furo"
+
+html_theme ='alabaster'
+
+html_theme_options = {
+    # Set the maximum width of the main content column (Default is 940px)
+    'page_width': '1200px',
+    
+    # Set the width of the left sidebar (Default is 220px)
+    'sidebar_width': '260px',
+}
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
