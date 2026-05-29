@@ -1,1 +1,9 @@
+div.highlight {
+    max-width: 100% !important;
+    width: 100% !important;
+}
 
+div.highlight pre {
+    white-space: pre !important;
+    overflow-x: auto !important;
+}
