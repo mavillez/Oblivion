@@ -46,8 +46,8 @@ Toolchain is a pack of compiler(s) and libraries bundled together to provide a s
 
 Toolchains:
 
-- foss: 2025b, 2026.1;
-- intel: 2025b, 2026.1.
+- foss: 2025b, 2026.1
+- intel: 2025b, 2026.1
  
 Sub-toolchains:
 
