@@ -68,6 +68,7 @@ Core refers to the basic core modules that have to be loaded in order to have ac
 After logging into the machine the user should execute the command ``module av`` (av for available software) obtaining the list of core modules (including the toolchains and sub-toolchains):
 
 .. code-block:: julia
+
   ----------------------------------- /mnt/beegfs/appsx/modules/all/Core -----------------------------------
     GCC/14.3.0            foss/2026.1  (D)    iimpi/2025b                     intel-compilers/2025.3.3 (D)
     GCC/15.2.0     (D)    gfbf/2025b          iimpi/2026.1             (D)    intel/2025b
@@ -75,7 +76,7 @@ After logging into the machine the user should execute the command ``module av``
     GCCcore/15.2.0 (D)    gompi/2025b         imkl/2025.3.1            (D)    site/langs
     foss/2025b            gompi/2026.1 (D)    intel-compilers/2025.2.0
 
-Where:
+  Where:
      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
      D:        Default Module
 
@@ -85,6 +86,7 @@ The list displays the toolchains (foss and intel) and the sub-toolchains (GCC, g
 In order to see the contents of site/langs run the command ``module load site/langs && module av`` obtaining
 
 .. code-block:: julia
+  
   ---------------------------------- /mnt/beegfs/appsx/modules/all/langs -----------------------------------
     Anaconda3/2025.12-1        Java/21.0.8  (21)    Julia/1.12.7        (D)    Miniforge3/25.3.0-3
     Anaconda3/2026.07-1 (D)    Julia/1.12.6         Miniconda3/25.7.0-2        Perl/5.38.0
@@ -93,6 +95,7 @@ In order to see the contents of site/langs run the command ``module load site/la
 Core also includes modules of software that are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib) but are not shown to the user - hidden modules - that can be seen by using the command ``module --show-hidden av``:
 
 .. code-block:: julia
+
   --------------------------------------- /mnt/beegfs/appsx/modules/all/Core -------------------------------
     Bison/3.8.2    (H)    Pandoc/3.6.2        (H)    gettext/0.25  (H)    intel-compilers/2025.2.0
     GCC/14.3.0            ant/1.10.15-Java-21 (H)    gfbf/2025b           intel-compilers/2025.3.3 (D)
@@ -137,7 +140,8 @@ obtaining
 Loading the module GCC/14.3.0 gives access to other modules that only now became available. To see those modules use ``module av`` obtaining
 
 .. code-block:: julia
-  -------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------------
+
+  -------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------
      AOCL-BLAS/5.1            Delly/2.0.0       (D)    OpenMPI/5.0.8           imageio/2.37.0
      ASE/3.26.0               Dyninst/13.0.0           Osi/0.108.11            kim-api/2.4.1
      ASE/3.29.0        (D)    FFTW/3.3.10              Pysam/0.23.3            libxc/7.0.0
@@ -151,7 +155,7 @@ Loading the module GCC/14.3.0 gives access to other modules that only now became
      DFT-D3/3.2.0             MPICH/4.3.2              bokeh/3.7.3             statsmodels/0.14.6
      Delly/1.7.3              OpenBLAS/0.3.30          dask/2025.9.1
 
- ------------------------------ /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/14.3.0 ------------------------------
+ ------------------------------ /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/14.3.0 -------------------------
     ATK/2.38.0                          PostgreSQL/17.5                     libarchive/3.8.1
     Abseil/20250512.1                   PyYAML/6.0.2                        libcerf/3.0
     Autoconf/2.72                       Python-bundle-PyPI/2025.07          libclc/20.1.8
@@ -196,7 +200,7 @@ We loaded ``OpenMPI/5.0.8`` and checked the list of loaded modules, but loading 
 
 .. code-block:: julia
 
-  --------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/14.3.0/OpenMPI/5.0.8 ----------------------
+  --------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/14.3.0/OpenMPI/5.0.8 -------------------
     ABINIT/10.4.7               Kraken2/2.17.1                        Valgrind/3.25.1
     ADIOS2/2.10.2               MDAnalysis/2.10.0                     Wannier90/3.1.0
     ASAP3/3.13.11               MDTraj/1.11.0                         Zoltan/3.901
@@ -230,7 +234,7 @@ We loaded ``OpenMPI/5.0.8`` and checked the list of loaded modules, but loading 
     Hypre/2.33.0                VASP/6.5.1                     (D)    snakemake/9.22.0
     KaHIP/3.19                  VTK/9.5.2
 
- -------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------
+ -------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 -----------------------
    AOCL-BLAS/5.1            Delly/2.0.0       (D)    OpenMPI/5.0.8        (L)    imageio/2.37.0
    ASE/3.26.0               Dyninst/13.0.0           Osi/0.108.11                kim-api/2.4.1
    ASE/3.29.0        (D)    FFTW/3.3.10              Pysam/0.23.3                libxc/7.0.0
@@ -285,7 +289,7 @@ No longer have access to OpenMPI/5.0.8 and associated frameworks. Let's check wh
 
 .. code-block:: julia
 
-  ------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/15.2.0 -------------------------------
+  ------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/15.2.0 ---------------------------
      AOCL-BLAS/5.2     Delly/2.0.0     (D)    Kokkos/5.1.1       SciPy-bundle/2026.05    matplotlib/3.10.9
      ASE/3.28.0        FFTW/3.3.10            MPICH/5.0.1        Seaborn/0.13.2          mrcfile/1.5.4
      Arrow/24.0.0      FlexiBLAS/3.5.0        OpenBLAS/0.3.32    Shapely/2.1.2           networkx/3.6.1
@@ -293,7 +297,7 @@ No longer have access to OpenMPI/5.0.8 and associated frameworks. Let's check wh
      Biopython/1.87    GSL/2.8                Pysam/0.24.0       bokeh/3.10.0            spglib-python/2.7.0
      Delly/1.7.3       HTSlib/1.23.1          R/4.6.1            dask/2026.7.1
 
-  ----------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/15.2.0 -----------------------------
+  ----------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/15.2.0 -------------------------
     Abseil/20260107.1                   PyYAML/6.0.3                        libde265/1.1.0
     Autoconf/2.72                       Pygments/2.20.0                     libdeflate/1.25
     Automake/1.18.1                     Python-bundle-PyPI/2026.04          libdrm/2.4.133
@@ -313,7 +317,7 @@ No longer have access to OpenMPI/5.0.8 and associated frameworks. Let's check wh
     CubeLib/4.9.1                       UCC/1.7.0                           libpsl/0.21.5
     ...
    
- -------------------------------------- /mnt/beegfs/appsx/modules/all/Core ---------------------------------------
+ -------------------------------------- /mnt/beegfs/appsx/modules/all/Core -----------------------------------
    GCC/14.3.0              foss/2025b         gompi/2026.1  (D)    intel-compilers/2025.2.0
    GCC/15.2.0     (L,D)    foss/2026.1 (D)    iimpi/2025b          intel-compilers/2025.3.3 (D)
    GCCcore/14.3.0          gfbf/2025b         iimpi/2026.1  (D)    intel/2025b
@@ -354,7 +358,7 @@ and see what is available (``module --nx av``)
 
 .. code-block:: julia
 
-  --------------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/15.2.0/OpenMPI/5.0.10 ---------------------------
+  --------------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/15.2.0/OpenMPI/5.0.10 ----------------------
     Armadillo/15.2.7        MDAnalysis/2.10.0                       SuperLU_DIST/9.2.1
     Boost.MPI/1.90.0        MDTraj/1.11.1                           arpack-ng/3.9.1
     CASTEP/26.11            MUMPS/5.9.1-metis                       buildenv/default
@@ -397,7 +401,7 @@ The available modules are (use ``module --nx av``)
 
 .. code-block:: julia
 
-  --------------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/14.3.0/OpenMPI/5.0.8 ----------------------------
+  --------------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/14.3.0/OpenMPI/5.0.8 ------------------------
     ABINIT/10.4.7               Kraken2/2.17.1                        Valgrind/3.25.1
     ADIOS2/2.10.2               MDAnalysis/2.10.0                     Wannier90/3.1.0
     ASAP3/3.13.11               MDTraj/1.11.0                         Zoltan/3.901
@@ -416,7 +420,7 @@ The available modules are (use ``module --nx av``)
     Clp/1.17.10                 ParaView/6.0.1                        maeparser/1.3.3
     ...
   
- -------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------------
+ -------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 ----------------------------
    AOCL-BLAS/5.1            Delly/2.0.0       (D)    OpenMPI/5.0.8        (L)    imageio/2.37.0
    ASE/3.26.0               Dyninst/13.0.0           Osi/0.108.11                kim-api/2.4.1
    ASE/3.29.0        (D)    FFTW/3.3.10       (L)    Pysam/0.23.3                libxc/7.0.0
@@ -457,9 +461,9 @@ So, we see dependences listed plus DIRAC/25.0. Lets check which DIRAC versions a
 
 .. code-block:: julia
 
-   ---------------------------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------------------
      DIRAC:
-   ---------------------------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------------------
      Description:
       DIRAC: Program for Atomic and Molecular Direct Iterative Relativistic All-electron Calculations
 
@@ -467,8 +471,8 @@ So, we see dependences listed plus DIRAC/25.0. Lets check which DIRAC versions a
         DIRAC/25.0
         DIRAC/26.0
 
-   ---------------------------------------------------------------------------------------------------------------------
-   For detailed information about a specific "DIRAC" package (including how to load the modules) use the module's full 
+   ---------------------------------------------------------------------------------------------------------------
+   For detailed information about a specific "DIRAC" package (including how to load the modules) use the module's
    name. For example:
 
      $ module spider DIRAC/26.0
@@ -478,13 +482,14 @@ Let's follow the suggestion using ``module spider DIRAC/26.0`` obtaining
 
 .. code-block:: julia
 
-   ---------------------------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------------------
       DIRAC: DIRAC/26.0
-   ---------------------------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------------------
       Description:
         DIRAC: Program for Atomic and Molecular Direct Iterative Relativistic All-electron Calculations
 
-      You will need to load all module(s) on any one of the lines below before the "DIRAC/26.0" module is available to load
+      You will need to load all module(s) on any one of the lines below before the "DIRAC/26.0" module is available 
+        to load
 
       GCC/14.3.0  OpenMPI/5.0.8
  
@@ -519,6 +524,7 @@ Similar procedure to what has been outlined above applies for software using the
      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
      D:        Default Module
 
+
 After loading intel/2025b or iimpi/2025b (``module load intel/2025b`` or ``module load iimpi/2025a``) ``module list`` shows
 
 .. code-block:: julia
@@ -527,6 +533,7 @@ After loading intel/2025b or iimpi/2025b (``module load intel/2025b`` or ``modul
     1) GCCcore/14.3.0   4) intel-compilers/2025.2.0   7) impi/2021.16.1      10) intel/2025b
     2) zlib/1.3.1       5) numactl/2.0.19             8) imkl/2025.2.0
     3) binutils/2.44    6) UCX/1.19.0                 9) imkl-FFTW/2025.2.0
+
 
 and ``module av`` displays
 
@@ -685,7 +692,7 @@ which is used to test the MPI communication between cores through the submission
 
 Details of this script are presented below. What matters here, for the sake of the discussion, is the use of the module and how it can be included into a parallel communication test script.
 
-The result of the above submission is given in file named hello_mpi4py_65368.out (resulting from the directive --output=%x_%j.out in the script; %j is the job number):
+The result of the above submission is given in file named ``hello_mpi4py_65368.out`` (resulting from the directive ``--output=%x_%j.out`` in the script; ``%j`` is the job number):
 
 .. code-block:: julia
   
@@ -777,7 +784,8 @@ Lets check what spider tells us about numpy/2.4.6. Use ``module spider numpy/2.4
     numpy: numpy/2.4.6 (E)
   ---------------------------------------------------------------------------------------------------------
     This extension is provided by the following modules. To access the extension you must load one of the 
-    following modules. Note that any module names in parentheses show the module location in the software hierarchy.
+    following modules. Note that any module names in parentheses show the module location in the software 
+    hierarchy.
 
        SciPy-bundle/2026.05 (GCC/15.2.0)
 
@@ -789,25 +797,24 @@ Check the modules that were loaded (``module list``):
 
 .. code-block:: julia
 
- Currently Loaded Modules:
-   1) GCCcore/15.2.0         13) libfabric/2.5.0     25) libreadline/8.3      37) virtualenv/21.3.0
-   2) zlib/2.3.2             14) PMIx/6.1.0          26) libtommath/1.3.0     38) psutil/7.2.1
-   3) binutils/2.45          15) PRRTE/4.1.0         27) Tcl/9.0.3            39) coverage/7.13.5
-   4) GCC/15.2.0             16) UCC/1.7.0           28) SQLite/3.51.1        40) tibs/0.5.7
-   5) numactl/2.0.19         17) OpenMPI/5.0.10      29) XZ/5.8.2             41) Pygments/2.20.0
-   6) libxml2/2.15.1         18) OpenBLAS/0.3.32     30) libffi/3.5.2         42) watchfiles/1.1.1
-   7) libpciaccess/0.19      19) FlexiBLAS/3.5.0     31) gzip/1.14            43) BeautifulSoup/4.14.3
-   8) ncurses/6.6            20) FFTW/3.3.10         32) lz4/1.10.0           44) libyaml/0.2.5
-   9) hwloc/2.13.0           21) FFTW.MPI/3.3.10     33) zstd/1.5.7           45) PyYAML/6.0.3
-  10) OpenSSL/3         (H)  22) ScaLAPACK/2.2.2-fb  34) Python/3.14.2        46) rpds-py/0.30.0
-  11) libevent/2.1.12        23) foss/2026.1         35) cffi/2.0.0           47) Python-bundle-PyPI/2026.04
-  12) UCX/1.20.0             24) bzip2/1.0.8         36) cryptography/47.0.0  48) SciPy-bundle/2026.05
+  Currently Loaded Modules:
+    1) GCCcore/15.2.0         13) libfabric/2.5.0     25) libreadline/8.3      37) virtualenv/21.3.0
+    2) zlib/2.3.2             14) PMIx/6.1.0          26) libtommath/1.3.0     38) psutil/7.2.1
+    3) binutils/2.45          15) PRRTE/4.1.0         27) Tcl/9.0.3            39) coverage/7.13.5
+    4) GCC/15.2.0             16) UCC/1.7.0           28) SQLite/3.51.1        40) tibs/0.5.7
+    5) numactl/2.0.19         17) OpenMPI/5.0.10      29) XZ/5.8.2             41) Pygments/2.20.0
+    6) libxml2/2.15.1         18) OpenBLAS/0.3.32     30) libffi/3.5.2         42) watchfiles/1.1.1
+    7) libpciaccess/0.19      19) FlexiBLAS/3.5.0     31) gzip/1.14            43) BeautifulSoup/4.14.3
+    8) ncurses/6.6            20) FFTW/3.3.10         32) lz4/1.10.0           44) libyaml/0.2.5
+    9) hwloc/2.13.0           21) FFTW.MPI/3.3.10     33) zstd/1.5.7           45) PyYAML/6.0.3
+   10) OpenSSL/3         (H)  22) ScaLAPACK/2.2.2-fb  34) Python/3.14.2        46) rpds-py/0.30.0
+   11) libevent/2.1.12        23) foss/2026.1         35) cffi/2.0.0           47) Python-bundle-PyPI/2026.04
+   12) UCX/1.20.0             24) bzip2/1.0.8         36) cryptography/47.0.0  48) SciPy-bundle/2026.05
 
   Where:
    H:  Hidden Module
 
 Now the user can use, for example, scipy or numpy in their submission scripts.
-
 
 
 4.3 GROMACS
@@ -819,10 +826,6 @@ In OBLIVION there are several versions of GROMACS compiled with/without PLUMED. 
 
   ...
   Versions:
-        GROMACS/2023.3-PLUMED-2.9.0
-        GROMACS/2023.4
-        GROMACS/2024.4
-        GROMACS/2025.2
         GROMACS/2025.4
         GROMACS/2026.2
 
