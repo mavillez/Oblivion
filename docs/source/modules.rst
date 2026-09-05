@@ -13,22 +13,30 @@ Toolchain is a pack of compiler(s) and libraries bundled together to provide a s
 
 **Toolchain foss includes the following software:**
 
-- C, C++ and Fortran compilers: GCC
-- MPI implementation: OpenMPI
-- OpenBLAS and LAPACK implementation: FlexiBLAS
-- Parallel, distributed LAPACK implementation: ScaLAPACK
-- Fourier transforms: FFTW
+- GCC compilers (C, C++, Fortran)
+- OpenMPI
+- OpenBLAS and FlexiBLAS
+- ScaLAPACK
+- FFTW
 
 **Toolchain intel includes the following software:**
 
-- C, C++ and Fortran compilers (icc/icpc/ifort)
-- GCC as a base for the Intel compilers
+- Intel compilers (C, C++ and Fortran: icx/icpx/ifx)
 - MPI implementation (Intel MPI)
 - BLAS, LAPACK and FFTW: Intel MKL
+
+**Toolchain lfoss includes the following software:**
+
+- LLVM compilers
+- OpenMPI
+- AOCL-BLAS, OpenBLAS and FlexiBLAS
+- ScaLAPACK
+- FFTW
 
 **Sub-toolchains:** 
 
 - gompi (GCC + OpenMPI)
+- lompi (LLVM + OpenMPI)
 - iompi (Intel compilers + OpenMPI)
 - iimpi (Intel compilers + Intel MPI (MPICH))
 - imkl (Intel Math Kernel Library) 
@@ -38,16 +46,16 @@ Toolchain is a pack of compiler(s) and libraries bundled together to provide a s
 
 Toolchains:
 
-- foss: 2023a, 2024a, 2025a;
-- intel: 2023a, 2024a, 2025a.
+- foss: 2025b, 2026.1;
+- intel: 2025b, 2026.1.
  
 Sub-toolchains:
 
-- gompi: 2023a, 2024a, 2025a, 2025b
-- iimpi: 2023a, 2024a, 2025a, 2025b
-- iompi: 2023a, 2024a, 2025a, 2025b
-- intel-compilers: 2023.1.0, 2024.2.0, 2025.1.1, 2025.15.0
-- imkl: 2023.1.0, 2023.2.0, 2024.2.0, 2025.1.0 
+- gompi: 2025b, 2026.1
+- iimpi: 2025b, 2026.1
+- iompi: 2025b
+- intel-compilers: 2025.2.0, 2025.3.3
+- imkl: 2025.2.0, 2025.3.1 
 
 
 2. Core Modules
@@ -55,35 +63,51 @@ Sub-toolchains:
 
 The user sets the software environment by loading the modules associated to the needed packages. This is easily done by using ``module load`` or ``module add``. Software dependences are set in the same way. OBLIVION uses a hierarchical module naming scheme (HMNS) in which modules availability follows the software hierarchy Core/Compiler/MPI.
 
-Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., ``GCC 12.3.0, 13.3.0, or 14.2.0; intel-compilers 2023.1.0, 2024.2.0 or 2025.1.1``) and a MPI API (e.g., OpenMPI 4.1.5, 5.0.3, 5.0.7; MPICH 4.2.1, 4.2.2; Intel MPI 2021.9.0, 2021.13.0, or 2021.15.0 - the latter were compiled with intel-compilers 2023.1.0, 2024.2.0, 2025.1.1, respectively). It also includes modules of software that i) are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib), and ii) are not being built but instead are directly installed into the stack (e.g., Anaconda, ANSYS_CFD).
+Core refers to the basic core modules that have to be loaded in order to have access to next levels of software compiled against a specific compiler (e.g., ``GCC 14.3.0, 15.2.0; intel-compilers 2025.2.0, 2025.3.3``) and a MPI API (e.g., OpenMPI 5.0.8, 5.0.10; MPICH 4.3.2, 5.0.1). 
 
-After logging into the machine the user should execute the command ``module --nx av`` (av for available software, --nx to prevent the display of the extensions list) obtaining the list of core modules (including the toolchains and sub-toolchains):
+After logging into the machine the user should execute the command ``module av`` (av for available software) obtaining the list of core modules (including the toolchains and sub-toolchains):
 
 .. code-block:: julia
-  --------------------------------- /mnt/beegfs/apps/modules/all/Core ----------------------------------
-    Anaconda3/2025.06-1                  Miniforge3/25.3.0-1 (D)    gompi/2024a
-    Autoconf/2.71                        OSPRay/2.12.0              gompi/2025a
-    Bison/3.8.2                          OpenSSL/1.1                gompi/2025b              (D)
-    FastQC/0.11.9-Java-11                OpenSSL/3           (D)    iimkl/2023a
-    GCC/12.3.0                           Pandoc/3.6.2               iimkl/2024a
-    GCC/13.3.0                           Perl/5.38.0                iimkl/2025a              (D)
-    GCC/14.2.0                           ant/1.10.12-Java-17        iimpi/2023a
-    GCC/14.3.0                 (D)       ant/1.10.14-Java-11 (D)    iimpi/2024a
-    GCCcore/12.3.0                       binutils/2.40              iimpi/2025a              (D)
-    GCCcore/13.3.0                       binutils/2.42              imkl/2023.1.0
-    GCCcore/14.2.0                       binutils/2.44       (D)    imkl/2023.2.0
-    GCCcore/14.3.0             (D)       ecBuild/3.8.0              imkl/2024.2.0
-    GPAW-setups/24.1.0                   ffnvcodec/12.0.16.0        imkl/2025.1.0            (D)
-    GPAW-setups/24.11.0        (D)       ffnvcodec/12.1.14.0        intel-compilers/2023.1.0
-    IJulia/1.29.0-Julia-1.11.6           ffnvcodec/12.2.72.0        intel-compilers/2024.2.0
-    ...
+  ----------------------------------- /mnt/beegfs/appsx/modules/all/Core -----------------------------------
+    GCC/14.3.0            foss/2026.1  (D)    iimpi/2025b                     intel-compilers/2025.3.3 (D)
+    GCC/15.2.0     (D)    gfbf/2025b          iimpi/2026.1             (D)    intel/2025b
+    GCCcore/14.3.0        gfbf/2026.1  (D)    imkl/2025.2.0                   intel/2026.1             (D)
+    GCCcore/15.2.0 (D)    gompi/2025b         imkl/2025.3.1            (D)    site/langs
+    foss/2025b            gompi/2026.1 (D)    intel-compilers/2025.2.0
 
-    Where:
+Where:
      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
      D:        Default Module
+...
 
-    
-The list displays the toolchains (foss and intel) and the sub-toolchains (GCC, gompi, iompi, intel-compilers, iimpi, and imkl) availables to the users. It also displays software that do not belong to these categories and is available in the system, e.g., ANACONDA, JAVA, Julia, etc..
+The list displays the toolchains (foss and intel) and the sub-toolchains (GCC, gompi, iompi, intel-compilers, iimpi, and imkl) availables to the users. It also displays site/langs that includes the modules of packages not built but downloaded into the stack (e.g., Anaconda, Julia, Perl, Miniconda, etc...)
+
+In order to see the contents of site/langs run the command ``module load site/langs && module av`` obtaining
+
+.. code-block:: julia
+  ---------------------------------- /mnt/beegfs/appsx/modules/all/langs -----------------------------------
+    Anaconda3/2025.12-1        Java/21.0.8  (21)    Julia/1.12.7        (D)    Miniforge3/25.3.0-3
+    Anaconda3/2026.07-1 (D)    Julia/1.12.6         Miniconda3/25.7.0-2        Perl/5.38.0
+...
+
+Core also includes modules of software that are initially compiled with the system/machine compiler (e.g., binutils, gettext, M4, ncurses, pkgconf, zlib) but are not shown to the user - hidden modules - that can be seen by using the command ``module --show-hidden av``:
+
+.. code-block:: julia
+  --------------------------------------- /mnt/beegfs/appsx/modules/all/Core -------------------------------
+    Bison/3.8.2    (H)    Pandoc/3.6.2        (H)    gettext/0.25  (H)    intel-compilers/2025.2.0
+    GCC/14.3.0            ant/1.10.15-Java-21 (H)    gfbf/2025b           intel-compilers/2025.3.3 (D)
+    GCC/15.2.0     (D)    binutils/2.40       (H)    gfbf/2026.1   (D)    intel/2025b
+    GCCcore/14.3.0        binutils/2.44       (H)    gompi/2025b          intel/2026.1             (D)
+    GCCcore/15.2.0 (D)    binutils/2.45       (H)    gompi/2026.1  (D)    ncurses/6.5              (H)
+    M4/1.4.19      (H)    ffnvcodec/13.0.19.0 (H)    iimpi/2025b          pkgconf/1.8.0            (H)
+    M4/1.4.20      (H)    flex/2.6.4          (H)    iimpi/2026.1  (D)    site/langs
+    OSPRay/2.12.0  (H)    foss/2025b                 imkl/2025.2.0        zlib/1.2.13              (H)
+    OpenSSL/3      (H)    foss/2026.1         (D)    imkl/2025.3.1 (D)    zlib/1.3.1               (H)
+
+  Where:
+   D:  Default Module
+   H:  Hidden Module
+...
 
 
 3. Loading Modules
@@ -96,7 +120,7 @@ Let us assume that the user wants to use software compiled with GCC-13.3.0 he mu
 
 .. code-block:: julia
 
-  module load GCC/13.3.0
+  module load GCC/14.3.0
 
 To learn the loaded modules use
 
@@ -108,223 +132,249 @@ obtaining
 
 .. code-block:: julia
 
-   Currently Loaded Modules:
-      1) GCCcore/13.3.0   2) zlib/1.3.1   3) binutils/2.42   4) GCC/13.3.0
+  Currently Loaded Modules:
+    1) GCCcore/14.3.0   2) zlib/1.3.1   3) binutils/2.44   4) GCC/14.3.0
 
-Loading the module GCC/13.3.0 gives access to other modules that only now became available. To see those modules use "module --nx av" obtaining
+Loading the module GCC/14.3.0 gives access to other modules that only now became available. To see those modules use ``module av`` obtaining
+
+.. code-block:: julia
+  -------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------------
+     AOCL-BLAS/5.1            Delly/2.0.0       (D)    OpenMPI/5.0.8           imageio/2.37.0
+     ASE/3.26.0               Dyninst/13.0.0           Osi/0.108.11            kim-api/2.4.1
+     ASE/3.29.0        (D)    FFTW/3.3.10              Pysam/0.23.3            libxc/7.0.0
+     Arrow/22.0.0             FlexiBLAS/3.4.5          R/4.5.2                 lpsolve/5.5.2.14
+     BCFtools/1.22            GEOS/3.13.1              SAMtools/1.22.1         matplotlib/3.10.5
+     BLIS/2.0                 GKlib-METIS/5.1.1        SOCI/4.1.2              mrcfile/1.5.4
+     BamTools/2.5.3           GSL/2.8                  SciPy-bundle/2025.07    networkx/3.5
+     Biopython/1.86           HTSlib/1.22.1            Seaborn/0.13.2          pybind11/3.0.0
+     Boost/1.88.0             Kokkos/5.0.2             Shapely/2.1.1           scikit-learn/1.7.1
+     CoinUtils/2.11.12        MGARD/1.6.0              SuiteSparse/7.11.0      spglib-python/2.6.0
+     DFT-D3/3.2.0             MPICH/4.3.2              bokeh/3.7.3             statsmodels/0.14.6
+     Delly/1.7.3              OpenBLAS/0.3.30          dask/2025.9.1
+
+ ------------------------------ /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/14.3.0 ------------------------------
+    ATK/2.38.0                          PostgreSQL/17.5                     libarchive/3.8.1
+    Abseil/20250512.1                   PyYAML/6.0.2                        libcerf/3.0
+    Autoconf/2.72                       Python-bundle-PyPI/2025.07          libclc/20.1.8
+    Automake/1.18                       Python/3.13.5                       libde265/1.0.16
+    Autotools/20250527                  Qhull/2020.2                        libdeflate/1.24
+    Bison/3.8.2                         Qt6/6.9.3                           libdrm/2.4.125
+    Blosc/1.21.6                        RE2/2025-07-22                      libepoxy/1.5.10
+    Blosc2/2.19.0                       RapidJSON/1.1.0-20250205            libevent/2.1.12
+    Brotli/1.1.0                        Redis/8.2.2                         libfabric/2.1.0
+    Brunsli/0.1                         Rust/1.88.0                         libffi/3.5.1
+    CFITSIO/4.6.2                       SDL2/2.32.10                        libgd/2.3.3
+    CGAL/6.0.1                          SIONlib/1.7.7-tools                 libgeotiff/1.7.4
+     ...
+ ----------------------------------- /mnt/beegfs/appsx/modules/all/Core -----------------------------------
+    GCC/14.3.0     (L)    foss/2026.1  (D)    iimpi/2025b                     intel-compilers/2025.3.3 (D)
+    GCC/15.2.0     (D)    gfbf/2025b          iimpi/2026.1             (D)    intel/2025b
+    GCCcore/14.3.0 (L)    gfbf/2026.1  (D)    imkl/2025.2.0                   intel/2026.1             (D)
+    GCCcore/15.2.0 (D)    gompi/2025b         imkl/2025.3.1            (D)    site/langs
+    foss/2025b            gompi/2026.1 (D)    intel-compilers/2025.2.0
+...
+
+Here one can see (from bottom to top) the foundation layer (Core) modules (compilers, toolchains, base configurations) indicating those currently loaded with (L). This is followed by a minimalist layer (GCCcore) built using only the GCC compiler; it intentionally separates software from specific math optimizations (like BLAS) and parallel communication libraries (MPI) to maximize reusability across different toolchains. Finally, the full compiler layer (GCC) contains software leveraging the full capabilities of GCC, including high-level scientific libraries, math-intensive Python bundles, and the core parallel communication engines (OpenMPI and MPICH) compiled for this specific GCC version.
+
+To have access to software compiled with OpenMPI-5.0.8, the user needs to use ``module load OpenMPI/5.0.8``. The list of packages loaded is now given by ``module list``:
 
 .. code-block:: julia
 
-  --------------------------------- /mnt/beegfs/apps/modules/all/Compiler/GCC/13.3.0 ---------------------------------
-     ASE/3.23.0                       GEOS/3.12.2                    Simple-DFTD3/1.2.1    mrcfile/1.5.4
-     ASE/3.24.0                       GSL/2.8                        TOML-Fortran/0.4.2    mstore/0.3.0
-     ASE/3.25.0                (D)    HTSlib/1.21                    bokeh/3.6.0           multiprocess/0.70.17
-     Arrow/17.0.0                     MAFFT/7.526-with-extensions    btllib/1.7.5          networkx/3.4.2
-     BBMap/39.19                      MPICH/4.2.2                    dask/2024.9.1         pybind11/2.12.0
-     BCFtools/1.21                    OpenBLAS/0.3.27                flook/0.8.4           scikit-learn/1.5.2
-     BEDTools/2.31.1                  OpenMPI/5.0.3                  imageio/2.36.1        spglib-python/2.5.0
-     BLIS/1.0                         Osi/0.108.11                   json-fortran/9.0.3    statsmodels/0.14.4
-     BamTools/2.5.2                   PyTensor/2.30.3                kim-api/2.4.1         sympy/1.13.3
-     Boost.Python-NumPy/1.85.0        Pysam/0.22.1                   libPSML/2.1.0         tensorboard/2.18.0
-     Boost.Python/1.85.0              R/4.4.2                        libcint/6.1.2         test-drive/0.5.0
-     Boost/1.85.0                     SAMtools/1.21                  libfdf/0.5.1          wrapt/1.16.0
-     CoinUtils/2.11.12                SOCI/4.0.3                     libxc/6.2.2           xarray/2024.11.0
-     DIAMOND/2.1.11                   SPAdes/4.1.0                   lpsolve/5.5.2.11      xmlf90/1.6.3
-     Exonerate/2.4.0                  SciPy-bundle/2024.05           matplotlib/3.9.2
-     FFTW/3.3.10                      Seaborn/0.13.2                 mctc-lib/0.3.1
-     FlexiBLAS/3.4.4                  Shapely/2.0.6                  ml_dtypes/0.5.0
-
-  ------------------------------- /mnt/beegfs/apps/modules/all/Compiler/GCCcore/13.3.0 -------------------------------
-     ANTLR/2.7.7                         Python-bundle-PyPI/2024.06           libepoxy/1.5.10
-     ATK/2.38.0                          Python/3.12.3                        libevent/2.1.12
-     Abseil/20240722.0                   Qhull/2020.2                         libfabric/1.21.0
-     Autoconf/2.72                (D)    Qt5/5.15.16                          libffi/3.4.5
-     Automake/1.16.5                     Qt6/6.7.2                            libgd/2.3.3
-     Autotools/20231222                  RE2/2024-07-02                       libgeotiff/1.7.3
-     BWA/0.7.18                          RapidJSON/1.1.0-20240815             libgit2/1.8.1
-     Bazel/6.5.0-Java-11                 Redis/7.4.1                          libglvnd/1.7.0
-     BeautifulSoup/4.12.3                Rust/1.78.0                          libheif/1.19.5
-     Bison/3.8.2                  (D)    SDL2/2.30.6                          libiconv/1.17
-     Blosc/1.21.6                        SIONlib/1.7.7-tools                  libidn2/2.3.8
-     Blosc2/2.17.0                       SIP/6.10.0                           libjpeg-turbo/3.0.1
-     Brotli/1.1.0                        SQLAlchemy/2.0.36                    libogg/1.3.5
-     Brunsli/0.1                         SQLite/3.45.3                        libopus/1.5.2
-     CFITSIO/4.4.1                       SWIG/4.2.1                           libpciaccess/0.18.1
-     CGAL/5.6.1                          Szip/2.1.1                           libpng/1.6.43
-     CMake/3.29.3                        Tcl/8.6.14                           libreadline/8.2
-     ...
-
-  ---------------------------------------- /mnt/beegfs/apps/modules/all/Core -----------------------------------------
-     Anaconda3/2025.06-1                  OpenSSL/3           (D)    iimkl/2025a              (D)
-     Autoconf/2.71                        Perl/5.38.0                iimpi/2023a
-     Bison/3.8.2                          ant/1.10.12-Java-17        iimpi/2024a
-     FastQC/0.11.9-Java-11                ant/1.10.14-Java-11 (D)    iimpi/2025a              (D)
-     GCC/12.3.0                           binutils/2.40              imkl/2023.1.0
-     GCC/13.3.0                 (L)       binutils/2.42              imkl/2023.2.0
-     GCC/14.2.0                 (D)       ecBuild/3.8.0              imkl/2024.2.0
-     GCCcore/12.3.0                       ffnvcodec/12.0.16.0        imkl/2025.1.0            (D)
-     GCCcore/13.3.0             (L)       ffnvcodec/12.1.14.0        intel-compilers/2023.1.0
-     GCCcore/14.2.0             (D)       ffnvcodec/12.2.72.0 (D)    intel-compilers/2024.2.0
-     GPAW-setups/24.1.0                   flex/2.6.4                 intel-compilers/2025.1.1 (D)
-     GPAW-setups/24.11.0        (D)       foss/2023a                 intel/2023a
-     IJulia/1.29.0-Julia-1.11.6           foss/2024a                 intel/2024a
-     Java/11.0.27               (11)      foss/2025a          (D)    intel/2025a              (D)
-     Java/17.0.15               (D:17)    gettext/0.21.1             iompi/2023a
-     ...
+   Currently Loaded Modules:
+     1) GCCcore/14.3.0   6) XZ/5.8.1                 11) libevent/2.1.12  16) UCC/1.4.4
+     2) zlib/1.3.1       7) libxml2/2.14.3           12) UCX/1.19.0       17) OpenMPI/5.0.8
+     3) binutils/2.44    8) libpciaccess/0.18.1      13) libfabric/2.1.0
+     4) GCC/14.3.0       9) hwloc/2.12.1             14) PMIx/5.0.8
+     5) numactl/2.0.19  10) OpenSSL/3           (H)  15) PRRTE/3.0.11
 
   Where:
-   L:        Module is loaded
-   D:        Default Module
+   H:  Hidden Module
+...
 
-Here one can see (from bottom to top) the list of sytem Core modules indicating those loaded with **(L)**, followed by the general software compiled with GCC-13.3.0 becoming the core software (GCCcore) against which all the packages are compiled, and, the software compiled using the GCCcore software, e.g., MPICH and OpenMPI-5.0.3. Note that GCC-13.3.0 is the base compilers collection for 2024a toolchains.
+Not only OpenMPI is loaded, but also UCX, PMIx, etc., are loaded. UCX stands for Unified Communication X and is "an optimized production communication framework for modern, high-bandwidth and low-latency networks" (see https://github.com/openucx/ucx) meaning for infiniband. PMIx stands for "Process Management Interface - Exascale" and enables the interaction of MPI applications with Resource Managers like SLURM (see https://pmix.github.io).
 
-To have access to software compiled with OpenMPI-5.0.3, the user needs to use ``module load OpenMPI/5.0.3``. The list of packages loaded is now given by ``module list``:
-
-.. code-block:: julia
-
-   Currently Loaded Modules:
-      1) GCCcore/13.3.0   6) XZ/5.4.5             11) libevent/2.1.12   16) UCC/1.3.0
-      2) zlib/1.3.1       7) libxml2/2.12.7       12) UCX/1.16.0        17) OpenMPI/5.0.3
-      3) binutils/2.42    8) libpciaccess/0.18.1  13) libfabric/1.21.0
-      4) GCC/13.3.0       9) hwloc/2.10.0         14) PMIx/5.0.2
-      5) numactl/2.0.18  10) OpenSSL/3            15) PRRTE/3.0.5
-
-Now, not only OpenMPI is loaded, but also UCX, PMIx, etc., are loaded. UCX stands for Unified Communication X and is "an optimized production communication framework for modern, high-bandwidth and low-latency networks" (see https://github.com/openucx/ucx) meaning for infiniband. PMIx stands for Process Management Interface - Exascale and enables the interaction of MPI applications with Resource Managers like SLURM (see https://pmix.github.io)
-
-Let us now change the enviromment to one using GCC-14.2.0. Hence, load the module GCC/14.2.0 (use ``module load GCC/14.2.0``) and immediately it is seen
+We loaded ``OpenMPI/5.0.8`` and checked the list of loaded modules, but loading OpenMPI/5.0.8 module opens a new avenue to access all the packages compiled against OpenMPI/5.0.8 that can be seen by exe cuting the command ``module av``:
 
 .. code-block:: julia
 
-   Inactive Modules:
-     1) OpenMPI/5.0.3     3) PRRTE/3.0.5     5) hwloc/2.10.0         7) libxml2/2.12.7
-     2) PMIx/5.0.2        4) XZ/5.4.5        6) libfabric/1.21.0
+  --------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/14.3.0/OpenMPI/5.0.8 ----------------------
+    ABINIT/10.4.7               Kraken2/2.17.1                        Valgrind/3.25.1
+    ADIOS2/2.10.2               MDAnalysis/2.10.0                     Wannier90/3.1.0
+    ASAP3/3.13.11               MDTraj/1.11.0                         Zoltan/3.901
+    AUGUSTUS/3.5.0              MUMPS/5.8.1-metis                     arpack-ng/3.9.1
+    Armadillo/15.0.1            ORCA/6.1.0-avx2                       biom-format/2.1.17
+    Armadillo/15.2.6     (D)    ORCA/6.1.0                            buildenv/default
+    BLAST+/2.17.0               ORCA/6.1.1-avx2                       cnvpytor/1.3.1
+    Boost.MPI/1.88.0            ORCA/6.1.1                     (D)    dtcmp/1.1.5
+    CASTEP/25.12                OSU-Micro-Benchmarks/7.5.1            ecCodes/2.43.0
+    CASTEP/26.11         (D)    OpenFOAM/v2506                        h5py/3.14.0
+    CDO/2.5.3                   OpenFOAM/v2512                 (D)    iodata/1.0.0a8
+    Cabana/0.7.0                Optuna/4.6.0                          libcircle/0.3
+    Cartopy/0.25.0              PLUMED/2.9.4                          libosmium/2.22.0
+    Cbc/2.10.12                 ParMETIS/4.0.3                        libvdwxc/0.5.0
+    Cgl/0.60.9                  ParaView-Catalyst/2.0.0               lwgrp/1.0.6
+    Clp/1.17.10                 ParaView/6.0.1                        maeparser/1.3.3
+    CoordgenLibs/3.0.2          PnetCDF/1.14.1                        mpi4py/4.1.0
+    DIRAC/25.0                  PuLP/3.3.0                            mpifileutils/0.12
+    DIRAC/26.0           (D)    PyHMMER/0.12.0                        ncbi-vdb/3.4.1
+    Dalton/2026-parallel        PyTables/3.10.2                       ncview/2.1.11
+    ESPResSo/4.2.2              PyWavelets/1.9.0                      netCDF-C++4/4.3.1
+    FFTW.MPI/3.3.10             SCOTCH/7.0.10                         netCDF-Fortran/4.6.2
+    Fiona/1.10.1                SUNDIALS/7.6.0                        netCDF/4.9.3
+    GDAL/3.11.3                 ScaFaCoS/1.0.4                        netcdf4-python/1.7.2
+    HDF5/1.14.6                 ScaLAPACK/2.2.2-fb                    numba/0.62.0
+    HMMER/3.4                   Scalasca/2.6.2                        osmium-tool/1.18.0
+    HPCToolkit/2025.0.1         Score-P/9.4                           pyFFTW/0.15.1
+    HPL/2.3                     SuiteSparse/7.11.0-METIS-5.1.0        s3fs/2025.10.0
+    HeFFTe/2.4.1                SuperLU_DIST/9.1.0                    scikit-bio/0.7.2
+    HighFive/3.3.0              VASP/6.5.0                            scikit-image/0.25.0
+    Hypre/2.33.0                VASP/6.5.1                     (D)    snakemake/9.22.0
+    KaHIP/3.19                  VTK/9.5.2
 
-   Due to MODULEPATH changes, the following have been reloaded:
-     1) UCC/1.3.0     2) binutils/2.42     3) libevent/2.1.12     4) libpciaccess/0.18.1     5) zlib/1.3.1
+ -------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/14.3.0 --------------------------
+   AOCL-BLAS/5.1            Delly/2.0.0       (D)    OpenMPI/5.0.8        (L)    imageio/2.37.0
+   ASE/3.26.0               Dyninst/13.0.0           Osi/0.108.11                kim-api/2.4.1
+   ASE/3.29.0        (D)    FFTW/3.3.10              Pysam/0.23.3                libxc/7.0.0
+   Arrow/22.0.0             FlexiBLAS/3.4.5          R/4.5.2                     lpsolve/5.5.2.14
+   BCFtools/1.22            GEOS/3.13.1              SAMtools/1.22.1             matplotlib/3.10.5
+   BLIS/2.0                 GKlib-METIS/5.1.1        SOCI/4.1.2                  mrcfile/1.5.4
+   BamTools/2.5.3           GSL/2.8                  SciPy-bundle/2025.07        networkx/3.5
+   Biopython/1.86           HTSlib/1.22.1            Seaborn/0.13.2              pybind11/3.0.0
+   Boost/1.88.0             Kokkos/5.0.2             Shapely/2.1.1               scikit-learn/1.7.1
+   CoinUtils/2.11.12        MGARD/1.6.0              SuiteSparse/7.11.0   (D)    spglib-python/2.6.0
+   DFT-D3/3.2.0             MPICH/4.3.2              bokeh/3.7.3                 statsmodels/0.14.6
+   Delly/1.7.3              OpenBLAS/0.3.30          dask/2025.9.1
+   ...
+...
 
-   The following have been reloaded with a version change:
-     1) GCC/13.3.0 => GCC/14.2.0             3) UCX/1.16.0 => UCX/1.18.0
-     2) GCCcore/13.3.0 => GCCcore/14.2.0     4) numactl/2.0.18 => numactl/2.0.19
+This list shows the new level in the hierarchy: the parallel software compiled with OpenMPI/5.0.8, followed by the compiler layer (GCC) discussed previously. A large number of packages were compiled and optimized for OBLIVION CPUs.
 
-So, what happen? Basically the system is smart enough to understand that the dependences and core files in the previous environment are incompatible with GCC/14.2.0 and replaces or deactivates modules. Check the loaded modules with ``module list``
 
-.. code-block:: julia
-
-   Currently Loaded Modules:
-     1) GCCcore/14.2.0   3) GCC/14.2.0   5) libpciaccess/0.18.1   7) libevent/2.1.12   9) UCX/1.18.0
-     2) binutils/2.42    4) zlib/1.3.1   6) OpenSSL/3             8) numactl/2.0.19   10) UCC/1.3.0
-
-   Inactive Modules:
-     1) XZ/5.4.5         3) hwloc/2.10.0       5) PMIx/5.0.2    7) OpenMPI/5.0.3
-     2) libxml2/2.12.7   4) libfabric/1.21.0   6) PRRTE/3.0.5
-
-No longer have access to OpenMPI-5.0.3 and associated frameworks. Let's check what is available (use ``module --nx av``)
-
-.. code-block:: julia
-
-   ------------------------------- /mnt/beegfs/apps/modules/all/Compiler/GCC/14.2.0 --------------------------------
-      AOCL-BLAS/5.0                    FlexiBLAS/3.4.5         Seaborn/0.13.2       networkx/3.5
-      ASE/3.25.0                       GEOS/3.13.1             Shapely/2.1.1        pybind11/2.13.6
-      ASE/3.26.0                (D)    GSL/2.8                 bokeh/3.7.3          scikit-learn/1.7.0
-      BLIS/1.1                         OpenBLAS/0.3.29         dask/2025.5.1        spglib-python/2.6.0
-      Boost.Python-NumPy/1.88.0        OpenMPI/5.0.7           libxc/7.0.0
-      Boost/1.88.0                     SAMtools/1.22.1         matplotlib/3.10.3
-      FFTW/3.3.10                      SciPy-bundle/2025.06    mrcfile/1.5.4
-
-   ----------------------------- /mnt/beegfs/apps/modules/all/Compiler/GCCcore/14.2.0 ------------------------------
-      Abseil/20250512.1                   PyZMQ/27.0.0                         libdeflate/1.24
-      Autoconf/2.72                (D)    Python-bundle-PyPI/2025.04           libevent/2.1.12          (L)
-      Automake/1.17                       Python/3.13.1                        libfabric/2.0.0
-      Autotools/20240712                  Qhull/2020.2                         libffi/3.4.5
-      BeautifulSoup/4.13.4                Redis/8.0.2                          libgeotiff/1.7.4
-      Bison/3.8.2                  (D)    Rust/1.85.1                          libheif/1.19.8
-      Blosc/1.21.6                        SIONlib/1.7.7-tools                  libiconv/1.18
-      Blosc2/2.19.0                       SQLite/3.47.2                        libidn2/2.3.7
-      Brotli/1.1.0                        SWIG/4.3.1                           libjpeg-turbo/3.1.0
-      Brunsli/0.1                         Szip/2.1.1                           libpciaccess/0.18.1      (L)
-      CFITSIO/4.6.2                       Tcl/8.6.16                           libpng/1.6.48
-      CMake/3.31.3                        Tk/8.6.16                            libpsl/0.21.5
-      Catch2/2.13.10                      Tkinter/3.13.1                       libreadline/8.2
-      Catch2/3.8.1                 (D)    UCC/1.3.0                   (L)      libsodium/1.0.20
-      Check/0.15.2                        UCX/1.18.0                  (L)      libtirpc/1.3.6
-      ...
-      Perl-bundle-CPAN/5.40.0             json-c/0.18                          xorg-macros/1.20.2
-      Perl/5.40.0                  (D)    jupyter-server/2.16.0                xxd/9.1.1457
-      Pillow/11.3.0                       libaec/1.1.4                         zlib/1.3.1               (L,D)
-      Pint/0.24.4                         libarchive/3.7.7                     zstd/1.5.6
-      PyYAML/6.0.2                        libde265/1.0.16
-
-   --------------------------------------- /mnt/beegfs/apps/modules/all/Core ---------------------------------------
-      Anaconda3/2025.06-1                  OpenSSL/3           (L,D)    iimkl/2025a              (D)
-      Autoconf/2.71                        Perl/5.38.0                  iimpi/2023a
-      Bison/3.8.2                          ant/1.10.12-Java-17          iimpi/2024a
-      FastQC/0.11.9-Java-11                ant/1.10.14-Java-11 (D)      iimpi/2025a              (D)
-      GCC/12.3.0                           binutils/2.40                imkl/2023.1.0
-      GCC/13.3.0                           binutils/2.42                imkl/2023.2.0
-      GCC/14.2.0                 (L,D)     ecBuild/3.8.0                imkl/2024.2.0
-      GCCcore/12.3.0                       ffnvcodec/12.0.16.0          imkl/2025.1.0            (D)
-      ...
-
-    Where:
-      L:        Module is loaded
-      D:        Default Module
-
-Again, besides the core modules, there is a huge list of packages compiled with GCC-14.2.0 including OpenMPI-5.0.7, OpenBLAS, LAPACK, etc.. Load OpenMPI/5.0.7 (``module load OpenMPI/5.0.7``) obtaining
+Let us now change the enviromment to one using GCC-15.2.0. Hence, load the module GCC/15.2.0 (use ``module load GCC/15.2.0``) and immediately it is seen
 
 .. code-block:: julia
 
-   Activating Modules:
-      1) OpenMPI/5.0.7     3) PRRTE/3.0.8     5) hwloc/2.11.2        7) libxml2/2.13.4
-      2) PMIx/5.0.6        4) XZ/5.6.3        6) libfabric/2.0.0
+  Inactive Modules:
+    1) OpenMPI/5.0.8     3) PRRTE/3.0.11     5) UCX/1.19.0     7) hwloc/2.12.1        9) libpciaccess/0.18.1
+    2) PMIx/5.0.8        4) UCC/1.4.4        6) XZ/5.8.1       8) libfabric/2.1.0    10) libxml2/2.14.3
+
+  Due to MODULEPATH changes, the following have been reloaded:
+    1) libevent/2.1.12     2) numactl/2.0.19
+
+  The following have been reloaded with a version change:
+    1) GCC/14.3.0 => GCC/15.2.0             3) binutils/2.44 => binutils/2.45
+    2) GCCcore/14.3.0 => GCCcore/15.2.0     4) zlib/1.3.1 => zlib/2.3.2
+```
+
+So, what happen? Basically the system is smart enough to understand that the dependences and core files in the previous environment are incompatible with GCC/15.2.0 and replaces or deactivates modules. Check the loaded modules with ``module list``
+
+.. code-block:: julia
+
+  Currently Loaded Modules:
+    1) GCCcore/15.2.0   3) binutils/2.45   5) numactl/2.0.19       7) libevent/2.1.12
+    2) zlib/2.3.2       4) GCC/15.2.0      6) OpenSSL/3      (H)
+
+  Where:
+    H:  Hidden Module
+
+  Inactive Modules:
+    1) XZ/5.8.1         3) libpciaccess/0.18.1   5) UCX/1.19.0        7) PMIx/5.0.8     9)  UCC/1.4.4
+    2) libxml2/2.14.3   4) hwloc/2.12.1          6) libfabric/2.1.0   8) PRRTE/3.0.11   10) OpenMPI/5.0.8
+...
+
+No longer have access to OpenMPI/5.0.8 and associated frameworks. Let's check what is available (use ``module --nx av``)
+
+.. code-block:: julia
+
+  ------------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCC/15.2.0 -------------------------------
+     AOCL-BLAS/5.2     Delly/2.0.0     (D)    Kokkos/5.1.1       SciPy-bundle/2026.05    matplotlib/3.10.9
+     ASE/3.28.0        FFTW/3.3.10            MPICH/5.0.1        Seaborn/0.13.2          mrcfile/1.5.4
+     Arrow/24.0.0      FlexiBLAS/3.5.0        OpenBLAS/0.3.32    Shapely/2.1.2           networkx/3.6.1
+     BLIS/2.0          GEOS/3.14.1            OpenMPI/5.0.10     SuiteSparse/7.12.2      scikit-learn/1.8.0
+     Biopython/1.87    GSL/2.8                Pysam/0.24.0       bokeh/3.10.0            spglib-python/2.7.0
+     Delly/1.7.3       HTSlib/1.23.1          R/4.6.1            dask/2026.7.1
+
+  ----------------------------- /mnt/beegfs/appsx/modules/all/Compiler/GCCcore/15.2.0 -----------------------------
+    Abseil/20260107.1                   PyYAML/6.0.3                        libde265/1.1.0
+    Autoconf/2.72                       Pygments/2.20.0                     libdeflate/1.25
+    Automake/1.18.1                     Python-bundle-PyPI/2026.04          libdrm/2.4.133
+    Autotools/20250626                  Python/3.14.2                       libevent/2.1.12          (L)
+    BeautifulSoup/4.14.3                Qhull/2020.2                        libfabric/2.5.0
+    Bison/3.8.2                         RE2/2025-11-05                      libffi/3.5.2
+    Blosc/1.21.6                        RapidJSON/1.1.0-20250205            libgeotiff/1.7.4
+    Blosc2/3.1.2                        Rust/1.94.1                         libgit2/1.9.4
+    Boost/1.90.0                        SIONlib/1.7.7-tools                 libheif/1.22.2
+    Brotli/1.2.0                        SOCI/4.1.4                          libiconv/1.18
+    Brunsli/0.1                         SQLite/3.51.1                       libidn2/2.3.8
+    CFITSIO/4.6.4                       SWIG/4.4.1                          libjpeg-turbo/3.1.4.1
+    CMake/3.31.11                       Szip/2.1.1                          libogg/1.3.6
+    CMake/4.2.1                  (D)    Tcl/9.0.3                           libopus/1.6.1
+    Catch2/2.13.10                      Tk/9.0.3                            libpciaccess/0.19
+    Check/0.15.2                        Tkinter/3.14.2                      libpng/1.6.56
+    CubeLib/4.9.1                       UCC/1.7.0                           libpsl/0.21.5
+    ...
+   
+ -------------------------------------- /mnt/beegfs/appsx/modules/all/Core ---------------------------------------
+   GCC/14.3.0              foss/2025b         gompi/2026.1  (D)    intel-compilers/2025.2.0
+   GCC/15.2.0     (L,D)    foss/2026.1 (D)    iimpi/2025b          intel-compilers/2025.3.3 (D)
+   GCCcore/14.3.0          gfbf/2025b         iimpi/2026.1  (D)    intel/2025b
+   GCCcore/15.2.0 (L,D)    gfbf/2026.1 (D)    imkl/2025.2.0        intel/2026.1             (D)
+   binutils/2.45           gompi/2025b        imkl/2025.3.1 (D)    site/langs
+
+  Where:
+   L:  Module is loaded
+   D:  Default Module
+...
+
+Again, besides the core modules, there is a large list of packages compiled with GCC-15.2.0 including OpenMPI-5.0.10, OpenBLAS, LAPACK, etc.. Load OpenMPI/5.0.10 (``module load OpenMPI/5.0.10``) obtaining
+
+.. code-block:: julia
+
+  Activating Modules:
+  1) OpenMPI/5.0.10     3) PRRTE/4.1.0     5) UCX/1.20.0       7) libfabric/2.5.0       9) libxml2/2.15.1
+  2) PMIx/6.1.0         4) UCC/1.7.0       6) hwloc/2.13.0     8) libpciaccess/0.19
 
 and list the loaded modules (``module list``)
 
 .. code-block:: julia
 
-   Currently Loaded Modules:
-      1) GCCcore/14.2.0        6) OpenSSL/3        11) XZ/5.6.3         16) PRRTE/3.0.8
-      2) binutils/2.42         7) libevent/2.1.12  12) libxml2/2.13.4   17) OpenMPI/5.0.7
-      3) GCC/14.2.0            8) numactl/2.0.19   13) hwloc/2.11.2
-      4) zlib/1.3.1            9) UCX/1.18.0       14) libfabric/2.0.0
-      5) libpciaccess/0.18.1  10) UCC/1.3.0        15) PMIx/5.0.6
+  Currently Loaded Modules:
+    1) GCCcore/15.2.0   6) libxml2/2.15.1         11) libevent/2.1.12  16) UCC/1.7.0
+    2) binutils/2.45    7) libpciaccess/0.19      12) UCX/1.20.0       17) OpenMPI/5.0.10
+    3) GCC/15.2.0       8) ncurses/6.6            13) libfabric/2.5.0
+    4) numactl/2.0.19   9) hwloc/2.13.0           14) PMIx/6.1.0
+    5) zlib/2.3.2      10) OpenSSL/3         (H)  15) PRRTE/4.1.0
+
+  Where:
+    H:  Hidden Module
+
+  Inactive Modules:
+    1) XZ/5.8.1
 
 and see what is available (``module --nx av``)
 
 .. code-block:: julia
 
-   ------------------ /mnt/beegfs/apps/modules/all/MPI/GCC/14.2.0/OpenMPI/5.0.7 -------------------
-      Armadillo/14.6.0              OSU-Micro-Benchmarks/7.5              Wannier90/3.1.0
-      Biopython/1.85                OpenMM/8.3.0                          arpack-ng/3.9.1
-      CDO/2.5.2                     PETSc/3.23.5                          buildenv/default
-      Cartopy/0.24.1                PLUMED/2.9.4                          dtcmp/1.1.5
-      DIRAC/25.0                    ParMETIS/4.0.3                        ecCodes/2.43.0
-      ELPA/2025.01.002              PnetCDF/1.14.0                        h5py/3.14.0
-      FFTW.MPI/3.3.10               PyStan/3.10.0                         ipyparallel/9.0.1
-      Fiona/1.10.1                  PyTables/3.10.2                       libcircle/0.3
-      GDAL/3.11.1                   RDKit/2025.03.4                       libvdwxc/0.5.0
-      GPAW/25.7.0-ASE-3.26.0        Ray-project/2.47.1                    lwgrp/1.0.6
-      GPAW/25.7.0            (D)    SCOTCH/7.0.8                          mpi4py/4.1.0
-      GROMACS/2025.2                ScaLAPACK/2.2.2-fb                    mpifileutils/0.12
-      HDF5/1.14.6                   Scalasca/2.6.2                        netCDF-Fortran/4.6.2
-      HPCG/3.1                      Score-P/9.0                           netCDF/4.9.3
-      HPL/2.3                       Score-P/9.2                    (D)    netcdf4-python/1.7.2
-      Hypre/2.33.0                  SuiteSparse/7.10.3-METIS-5.1.0        nglview/3.1.4
-      MDAnalysis/2.9.0              SuiteSparse/7.10.3             (D)    zarr/3.0.10
-      MDTraj/1.11.0                 SuperLU_DIST/9.1.0
-      MUMPS/5.8.1-metis             Valgrind/3.25.0
+  --------------------------- /mnt/beegfs/appsx/modules/all/MPI/GCC/15.2.0/OpenMPI/5.0.10 ---------------------------
+    Armadillo/15.2.7        MDAnalysis/2.10.0                       SuperLU_DIST/9.2.1
+    Boost.MPI/1.90.0        MDTraj/1.11.1                           arpack-ng/3.9.1
+    CASTEP/26.11            MUMPS/5.9.1-metis                       buildenv/default
+    Cartopy/0.25.0          OSU-Micro-Benchmarks/7.5.2              cnvpytor/1.3.1
+    CoordgenLibs/3.0.2      OpenMM/8.5.2                            h5py/3.16.0
+    Dalton/2026-parallel    PETSc/3.25.0                            iodata/1.0.1
+    Extrae/5.0.6            PLUMED/2.10.0                           maeparser/1.3.3
+    FFTW.MPI/3.3.10         ParMETIS/4.0.3                          mpi4py/4.1.2
+    Fiona/1.10.1            PnetCDF/1.14.1                          ncbi-vdb/3.4.1
+    GDAL/3.13.0             PyTables/3.11.1                         netCDF-C++4/4.3.1
+    HDF5/2.1.1              R-bundle-CRAN/2026.07                   netCDF-Fortran/4.6.3
+    HPCToolkit/2026.0.1     RStudio-Server/2026.06.0+242-R-4.6.1    netCDF/4.10.0
+    HPL/2.3                 SCOTCH/7.0.11                           netcdf4-python/1.7.4
+    HeFFTe/2.4.1            ScaLAPACK/2.2.2-fb                      numba/0.65.1
+    Hypre/3.1.0             Score-P/10.1
+    ...
+...
 
-   ----------------------- /mnt/beegfs/apps/modules/all/Compiler/GCC/14.2.0 -----------------------
-      AOCL-BLAS/5.0                    GSL/2.8                     libxc/7.0.0
-      ASE/3.25.0                       OpenBLAS/0.3.29             matplotlib/3.10.3
-      ASE/3.26.0                (D)    OpenMPI/5.0.7        (L)    mrcfile/1.5.4
-      BLIS/1.1                         SAMtools/1.22.1             networkx/3.5
-      Boost.Python-NumPy/1.88.0        SciPy-bundle/2025.06        pybind11/2.13.6
-      Boost/1.88.0                     Seaborn/0.13.2              scikit-learn/1.7.0
-      FFTW/3.3.10                      Shapely/2.1.1               spglib-python/2.6.0
-      FlexiBLAS/3.4.5                  bokeh/3.7.3
-      GEOS/3.13.1                      dask/2025.5.1
-
-The user got access to  a new level the software hierarchy. Hence, having access to all the software that was compiled against OpenMPI-5.0.7 (top row), which in turn was compiled with GCC-14.2.0 (as displayed in the second row of modules - from top to bottom).
+The user got access to  a new level the software hierarchy. Hence, having access to all the software that was compiled against OpenMPI-5.0.10, which in turn was compiled with GCC-15.2.0.
 
 
 3.2 Foss/2025a Toolchain
