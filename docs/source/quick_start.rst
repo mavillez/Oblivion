@@ -34,9 +34,9 @@ The software directories are located at
 
 .. code-block:: julia
 
-    /mnt/beegfs/apps/software
+    /mnt/beegfs/appsx/software
   
-Using ``ls /mnt/beegfs/apps/software`` a list of all software directories is displayed
+Using ``ls /mnt/beegfs/appsx/software`` a list of all software directories is displayed
 
 .. code-block:: julia
 
