@@ -1,3 +1,5 @@
+.. _Submission Scripts:
+
 Submission Scripts
 ==================
 
