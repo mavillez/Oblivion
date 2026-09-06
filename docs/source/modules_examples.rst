@@ -156,7 +156,7 @@ which is used to test the MPI communication between cores through the submission
   # Run python script
   srun python hello_mpi4py.py
 
-Details of this script are presented :ref:`submission scripts section <Installed Software>`
+Details of this script are presented in the :ref:`submission scripts section <Submission Scripts>`
 
 What matters here, for the sake of the discussion, is the use of the module and how it can be included into a parallel communication test script.
 
