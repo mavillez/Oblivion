@@ -130,7 +130,7 @@ There it is, mpi4py/4.1.0 is loaded. Now it can be used, say in a file named hel
   rank = comm.Get_rank()
   print('hello world from process', rank)
 
-which is used to test the MPI communication between cores through the submission script 
+which is used to test the MPI communication between cores through the submission script named ``hello_mpi4py.sh``
 
 .. code-block:: julia
    
@@ -155,9 +155,15 @@ which is used to test the MPI communication between cores through the submission
   # Run python script
   srun python hello_mpi4py.py
 
-The details of this script are presented in the :ref:`Submission Scripts section <Submission Scripts>`. What matters here, for the sake of the discussion, is the use of the module and how it can be included into a parallel communication test script.
+The ``<ACCOUNT NAME>`` is the user's project account name. Without this the system outputs an error message and does not execute the script instructions. The details of this script are discussed in the :ref:`Submission Scripts <Submission Scripts>` section. 
 
-The result of the above submission is given in file named ``hello_mpi4py_65368.out`` (resulting from the directive ``--output=%x_%j.out`` in the script; ``%j`` is the job number):
+What matters here, for the sake of the argument, is the use of the module and how it can be included into a parallel communication test script. The script is submitted using the command 
+
+.. code-block:: julia
+  
+  sbatch hello_mpi4py.sh``. 
+
+The result of this run is found in the file ``hello_mpi4py_65368.out`` (created according the directive ``--output=%x_%j.out`` in the script; ``%j`` is the job number):
 
 .. code-block:: julia
   
@@ -170,7 +176,9 @@ The result of the above submission is given in file named ``hello_mpi4py_65368.o
   hello world from process 467
   hello world from process 117
 
-Et voilà, the cores replied and said "hello" to the world.
+Et voilà, the cores replied saying "hello" to the world. 
+
+Note that the user needs to replace the <ACCOUNT NAME> by his project account name, otherwise the system ouputs an error message and does not execute the script.
 
 
 3. scipy, numpy, numexpr, pandas
