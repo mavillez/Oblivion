@@ -23,6 +23,7 @@ Contents
    information.rst
    quick_start.rst
    modules.rst
+   modules_examples.rst
    software.rst
    compilation.rst
    scripts.rst
