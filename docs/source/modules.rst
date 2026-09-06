@@ -583,10 +583,59 @@ The user can change to GCC based modules, e.g., to the foss/2025b toochain, by i
    H:  Hidden Module
 
 
-4. Loading a Particular Software
---------------------------------
+4. Loading a Particular Software Modules
+----------------------------------------
 
-4.1 mpi4py
+4.1 Julia
+~~~~~~~~~
+
+Julia is a high-level, high-performance dynamic programming language designed for
+numerical and scientific computing, combining the productivity of Python with the
+performance of compiled languages like C and Fortran. On OBLIVION, Julia is not
+part of the default module view; it is available through the language ecosystems
+tree. To access it, first load the languages meta-module and then the desired
+Julia version:
+
+.. code-block:: julia
+
+    module load site/langs
+    module load Julia/1.12.7
+
+or in just a single line command ``module load site/langs Julia/1.12.7``.
+
+Lets see what is loaded using ``module list``:
+
+.. code-block:: julia
+  
+  Currently Loaded Modules:
+    1) site/langs   2) Julia/1.12.7
+
+Two versions are currently provided (1.12.6 and 1.12.7, with the newest marked as
+default). The user can learn on these versions by using ``module spider Julia`` or module spider julia``.
+
+Note that Julia's package manager (Pkg) is available directly from the REPL or via
+`julia --project` workflows; users are encouraged to install packages into their
+own project environments under their home or project directories, since the
+central Julia installation is read-only. 
+
+For MPI-parallel Julia workloads, load a toolchain (e.g. `foss/2025b`) before 
+loading Julia so that MPI.jl can pick up the system OpenMPI libraries. 
+
+for instance the PAMNEI (Parallel Adaptive Mesh Refinement MHD Multispecies Non-Equilibrium Ionization; de Avillez+ 2026) code is a Julia based plasma astrophysics code that uses MPI (either in OpenMPI or MPICH flavours), HDF5, NetCDF, and VTK data formats and ADIOS2 (ADaptable I/O System 2) which is an I/O framework/middleware for HPC that includes its own format (BP). So, to run this code one needs to load the different modules in the submission scripts or in an interactive session:
+
+.. code-block:: julia
+
+  module purge
+  module load site/langs Julia/1.12.7
+  module load GCC/14.3.0
+  module load OpenMPI/5.0.8
+  module load HDF5/1.14.6
+  module load netCDF/4.9.3
+  module load ADIOS2/2.10.2
+
+Here we start by purging the modules and then load the needed modules. Note thta to load Julia/1.12.7 we load the module site/langs.
+
+4.2 mpi4py
 ~~~~~~~~~~
 
 Lets load mpi4py to test the communication between different cores and compute nodes. First we need to find if mpi4py is available by using ``module spider mpi4py``:
@@ -817,7 +866,7 @@ Check the modules that were loaded (``module list``):
 Now the user can use, for example, scipy or numpy in their submission scripts.
 
 
-4.3 GROMACS
+4.4 GROMACS
 ~~~~~~~~~~~
 
 In OBLIVION there are several versions of GROMACS compiled with/without PLUMED. First determine the GROMACS versions that are available using `module spider gromacs`
