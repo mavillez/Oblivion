@@ -38,7 +38,7 @@ central Julia installation is read-only.
 
 For MPI-parallel Julia workloads, load a toolchain (e.g. `foss/2025b`) or MPI framework (OpenMPI, MPICH) modules, before loading Julia so that MPI.jl can pick up the system OpenMPI/MPICH libraries. 
 
-For example the PAMNEI (**P**arallel Block **A**daptive Mesh Refinement **M**HD **M**ultispecies **N**on-**E**quilibrium **I**onization; de Avillez+ 2026) code is a Julia based plasma astrophysics code uses MPI (either OpenMPI or MPICH), HDF5, NetCDF, and VTK data formats and ADIOS2 (ADaptable I/O System 2) which is an I/O framework/middleware for HPC that includes its own format (BP). So, to run this code one needs to load the different modules in the submission scripts or in an interactive session:
+For example the PAMNEI (**\P**\ arallel Block **\A**\ daptive Mesh Refinement **\M**\ HD **\M** ultispecies **\N**\ on-**\E**\ quilibrium **\I**\ onization; de Avillez+ 2026) code is a Julia based plasma astrophysics code uses MPI (either OpenMPI or MPICH), HDF5, NetCDF, and VTK data formats and ADIOS2 (ADaptable I/O System 2) which is an I/O framework/middleware for HPC that includes its own format (BP). So, to run this code one needs to load the different modules in the submission scripts or in an interactive session:
 
 .. code-block:: julia
 
