@@ -155,7 +155,7 @@ which is used to test the MPI communication between cores through the submission
   # Run python script
   srun python hello_mpi4py.py
 
-The details of this script are presented in the :ref:`submission scripts section <Submission Scripts>`. What matters here, for the sake of the discussion, is the use of the module and how it can be included into a parallel communication test script.
+The details of this script are presented in the :ref: `Submission Scripts section <Submission Scripts>`. What matters here, for the sake of the discussion, is the use of the module and how it can be included into a parallel communication test script.
 
 The result of the above submission is given in file named ``hello_mpi4py_65368.out`` (resulting from the directive ``--output=%x_%j.out`` in the script; ``%j`` is the job number):
 
