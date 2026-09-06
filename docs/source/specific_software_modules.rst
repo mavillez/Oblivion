@@ -1,9 +1,11 @@
 
 Loading Specific Software Modules
----------------------------------
+=================================
 
-1. Julia
-~~~~~~~~
+Running a user's code or software installed in OBLIVION requires the loading of specific modules or a toolchain. This section deal with examples on the modules to be loaded for specific software execution.
+
+1. Julia Language
+~~~~~~~~~~~~~~~~~
 
 Julia is a high-level, high-performance dynamic programming language designed for
 numerical and scientific computing, combining the productivity of Python with the
@@ -27,17 +29,16 @@ Lets see what is loaded using ``module list``:
     1) site/langs   2) Julia/1.12.7
 
 Two versions are currently provided (1.12.6 and 1.12.7, with the newest marked as
-default). The user can learn on these versions by using ``module spider Julia`` or module spider julia``.
+default). Further information on these versions is obtained with ``module spider Julia`` or module spider julia``.
 
 Note that Julia's package manager (Pkg) is available directly from the REPL or via
 `julia --project` workflows; users are encouraged to install packages into their
 own project environments under their home or project directories, since the
 central Julia installation is read-only. 
 
-For MPI-parallel Julia workloads, load a toolchain (e.g. `foss/2025b`) before 
-loading Julia so that MPI.jl can pick up the system OpenMPI libraries. 
+For MPI-parallel Julia workloads, load a toolchain (e.g. `foss/2025b`) or MPI framework (OpenMPI, MPICH) modules, before loading Julia so that MPI.jl can pick up the system OpenMPI/MPICH libraries. 
 
-for instance the PAMNEI (Parallel Adaptive Mesh Refinement MHD Multispecies Non-Equilibrium Ionization; de Avillez+ 2026) code is a Julia based plasma astrophysics code that uses MPI (either in OpenMPI or MPICH flavours), HDF5, NetCDF, and VTK data formats and ADIOS2 (ADaptable I/O System 2) which is an I/O framework/middleware for HPC that includes its own format (BP). So, to run this code one needs to load the different modules in the submission scripts or in an interactive session:
+For example the PAMNEI (**P**arallel Block **A**daptive Mesh Refinement **M**HD **M**ultispecies **N**on-**E**quilibrium **I**onization; de Avillez+ 2026) code is a Julia based plasma astrophysics code uses MPI (either OpenMPI or MPICH), HDF5, NetCDF, and VTK data formats and ADIOS2 (ADaptable I/O System 2) which is an I/O framework/middleware for HPC that includes its own format (BP). So, to run this code one needs to load the different modules in the submission scripts or in an interactive session:
 
 .. code-block:: julia
 
