@@ -1064,4 +1064,4 @@ To list all the available modules the user can use the command ``module spider``
     well-validated ANSYS Fluent and ANSYS CFX.
   ...
 
-For the full list of installed modules see the :ref:`installed software section <Installed Software>`.
+For the full list of installed modules see the :ref:`Installed Software section <Installed Software>`.
