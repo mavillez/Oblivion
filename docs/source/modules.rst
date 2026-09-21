@@ -47,11 +47,14 @@ Toolchain is a pack of compiler(s) and libraries bundled together to provide a s
 Toolchains:
 
 - foss: 2025b, 2026.1
+- lfoss: 2025b, 2026.1
 - intel: 2025b, 2026.1
+
  
 Sub-toolchains:
 
 - gompi: 2025b, 2026.1
+- lompi: 2025b, 2026.1
 - iimpi: 2025b, 2026.1
 - iompi: 2025b
 - intel-compilers: 2025.2.0, 2025.3.3
@@ -70,11 +73,13 @@ After logging into the machine the user should execute the command ``module av``
 .. code-block:: julia
 
   ----------------------------------- /mnt/beegfs/appsx/modules/all/Core -----------------------------------
-    GCC/14.3.0            foss/2026.1  (D)    iimpi/2025b                     intel-compilers/2025.3.3 (D)
-    GCC/15.2.0     (D)    gfbf/2025b          iimpi/2026.1             (D)    intel/2025b
-    GCCcore/14.3.0        gfbf/2026.1  (D)    imkl/2025.2.0                   intel/2026.1             (D)
-    GCCcore/15.2.0 (D)    gompi/2025b         imkl/2025.3.1            (D)    site/langs
-    foss/2025b            gompi/2026.1 (D)    intel-compilers/2025.2.0
+    GCC/14.3.0             foss/2026.1  (D)    iimpi/2025b                     intel/2026.1          (D)
+    GCC/15.2.0     (D)     gfbf/2025b          iimpi/2026.1             (D)    lfoss/2025b
+    GCCcore/14.3.0         gfbf/2026.1  (D)    imkl/2025.2.0                   lfoss/2026.1          (D)
+    GCCcore/15.2.0 (D)     gompi/2025b         imkl/2025.3.1            (D)    llvm-compilers/20.1.8
+    Java/21.0.8    (21)    gompi/2026.1 (D)    intel-compilers/2025.2.0        llvm-compilers/21.1.8 (D)
+    Perl/5.42.0            iimkl/2025b         intel-compilers/2025.3.3 (D)    lompi/2025b
+    foss/2025b             iimkl/2026.1 (D)    intel/2025b                     site/langs
 
   Where:
      Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
